@@ -16,6 +16,3 @@ $opt_data = array();
 
 //옵션저장
 btbo\save_option($bo_table, $wr_id, $opt_data);
-
-//알림 작동
-btbo\send_alim_reply();
