@@ -1,0 +1,19 @@
+/**
+ * BootStrap Responsive Spacing Utility
+ */
+
+@each $size, $lengths in $spacers {
+    $length-x: map-get($lengths, x);
+    $length-y: map-get($lengths, y);
+
+    @each $prop, $abbrev in (margin: m, padding: p) {
+        @each $breakpoint in map-keys($grid-breakpoints) {
+            .#{$abbrev}-#{$breakpoint}-x-#{$size} {
+                @include media-breakpoint-up($breakpoint) {
+                    #{$prop}-right: $length-x !important;
+                    #{$prop}-left: $length-x !important;
+                }
+            }
+        }
+    }
+}

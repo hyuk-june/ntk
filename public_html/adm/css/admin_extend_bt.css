@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+#gnb .gnb_li .btn_op.menu-801 {
+    background: url(../img/menu-bart.png) 50% 50% no-repeat #ebebeb;
+}
+
+#gnb .gnb_li.on .btn_op.menu-801 {
+    background: url(../img/menu-bart-1.png) 50% 50% no-repeat #ebebeb;
+}
+
+#fmenuform{padding:5px;}
+
+#bt_install_wrap{max-width:500px; margin: auto;}
+#bt_install_wrap .caption{margin-bottom:20px;}

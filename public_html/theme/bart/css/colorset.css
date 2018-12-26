@@ -1,0 +1,88 @@
+@charset "utf-8";
+
+.bg-Black{background: Black; color:#fff}
+.btn.bg-Black.active, .btn.bg-Black:hover, .btn.bg-Black:active, .btn.bg-Black:focus{background: #333; color:#fff;}
+
+.bg-BlackLight{background: #414141; color:#fff}
+.btn.bg-BlackLight.active, .btn.bg-BlackLight:hover, .btn.bg-BlackLight:active, .btn.bg-BlackLight:focus{background: #000; color:#fff;}
+
+.bg-Aqua{background: Aqua; color:#333}
+.btn.bg-Aqua.active, .btn.bg-Aqua:hover, .btn.bg-Aqua:active, .btn.bg-Aqua:focus{background: #00e8e8; color:#333;}
+
+.bg-Brown{background: Brown; color:#fff}
+.btn.bg-Brown.active, .btn.bg-Brown:hover, .btn.bg-Brown:active, .btn.bg-Brown:focus{background: #681c1c; color:#fff;}
+
+.bg-CadetBlue{background: CadetBlue; color:#fff}
+.btn.bg-CadetBlue.active, .btn.bg-CadetBlue:hover, .btn.bg-CadetBlue:active, .btn.bg-CadetBlue:focus{background: #49797a; color:#fff;}
+
+.bg-Chartreuse{background: Chartreuse; color:#333}
+.btn.bg-Chartreuse.active, .btn.bg-Chartreuse:hover, .btn.bg-Chartreuse:active, .btn.bg-Chartreuse:focus{background: #71e100; color:#fff;}
+
+.bg-Chocolate{background: Chocolate; color:#fff}
+.btn.bg-Chocolate.active, .btn.bg-Chocolate:hover, .btn.bg-Chocolate:active, .btn.bg-Chocolate:focus{background: #954b15; color:#fff;}
+
+.bg-CornflowerBlue{background: CornflowerBlue; color:#fff}
+.btn.bg-CornflowerBlue.active, .btn.bg-CornflowerBlue:hover, .btn.bg-CornflowerBlue:active, .btn.bg-CornflowerBlue:focus{background: #3f7ae9; color:#fff;}
+
+.bg-Crimson{background: Crimson; color:#fff}
+.btn.bg-Crimson.active, .btn.bg-Crimson:hover, .btn.bg-Crimson:active, .btn.bg-Crimson:focus{background: #ad1030; color:#fff;}
+
+.bg-DarkBlue{background: DarkBlue; color:#fff}
+.btn.bg-DarkBlue.active, .btn.bg-DarkBlue:hover, .btn.bg-DarkBlue:active, .btn.bg-DarkBlue:focus{background: #000048; color:#fff;}
+
+.bg-DarkOrange{background: DarkOrange; color:#fff}
+.btn.bg-DarkOrange.active, .btn.bg-DarkOrange:hover, .btn.bg-DarkOrange:active, .btn.bg-DarkOrange:focus{background: #bf6900; color:#fff;}
+
+.bg-DarkRed{background: DarkRed; color:#fff}
+.btn.bg-DarkRed.active, .btn.bg-DarkRed:hover, .btn.bg-DarkRed:active, .btn.bg-DarkRed:focus{background: #420000; color:#fff;}
+
+.bg-Red{background: Red; color:#fff}
+.btn.bg-Red.active, .btn.bg-Red:hover, .btn.bg-Red:active, .btn.bg-Red:focus{background: #b70000; color:#fff;}
+
+.bg-ForestGreen{background: ForestGreen; color:#fff}
+.btn.bg-ForestGreen.active, .btn.bg-ForestGreen:hover, .btn.bg-ForestGreen:active, .btn.bg-ForestGreen:focus{background: #165c16; color:#fff;}
+
+.bg-Gainsboro{background: Gainsboro; color:#fff}
+.btn.bg-Gainsboro.active, .btn.bg-Gainsboro:hover, .btn.bg-Gainsboro:active, .btn.bg-Gainsboro:focus{background: #cdcdcd; color:#fff;}
+
+.bg-Gold{background: Gold; color:#fff}
+.btn.bg-Gold.active, .btn.bg-Gold:hover, .btn.bg-Gold:active, .btn.bg-Gold:focus{background: #dbba00; color:#fff;}
+
+.bg-Goldenrod{background: Goldenrod; color:#fff}
+.btn.bg-Goldenrod.active, .btn.bg-Goldenrod:hover, .btn.bg-Goldenrod:active, .btn.bg-Goldenrod:focus{background: #b88c1b; color:#fff;}
+
+.bg-Gray{background: Gray; color:#fff}
+.btn.bg-Gray.active, .btn.bg-Gray:hover, .btn.bg-Gray:active, .btn.bg-Gray:focus{background: #707070; color:#fff;}
+
+.bg-IndianRed{background: IndianRed; color:#fff}
+.btn.bg-IndianRed.active, .btn.bg-IndianRed:hover, .btn.bg-IndianRed:active, .btn.bg-IndianRed:focus{background: #bc3a3a; color:#fff;}
+
+.bg-Khaki{background: Khaki; color:#fff}
+.btn.bg-Khaki.active, .btn.bg-Khaki:hover, .btn.bg-Khaki:active, .btn.bg-Khaki:focus{background: #eadb57; color:#fff;}
+
+.bg-Lime{background: Lime; color:#fff}
+.btn.bg-Lime.active, .btn.bg-Lime:hover, .btn.bg-Lime:active, .btn.bg-Lime:focus{background: #00e300; color:#fff;}
+
+.bg-LimeGreen{background: LimeGreen; color:#fff}
+.btn.bg-LimeGreen.active, .btn.bg-LimeGreen:hover, .btn.bg-LimeGreen:active, .btn.bg-LimeGreen:focus{background: #2db72d; color:#fff;}
+
+.bg-LightGray{background: LightGray; color:#fff}
+.btn.bg-LightGray.active, .btn.bg-LightGray:hover, .btn.bg-LightGray:active, .btn.bg-LightGray:focus{background: #b9b9b9; color:#fff;}
+
+.bg-OrangeRed{background: OrangeRed; color:#fff}
+.btn.bg-OrangeRed.active, .btn.bg-OrangeRed:hover, .btn.bg-OrangeRed:active, .btn.bg-OrangeRed:focus{background: #d53a00; color:#fff;}
+
+.bg-RoyalBlue{background: RoyalBlue; color:#fff}
+.btn.bg-RoyalBlue.active, .btn.bg-RoyalBlue:hover, .btn.bg-RoyalBlue:active, .btn.bg-RoyalBlue:focus{background: #214ed1; color:#fff;}
+
+.bg-Tomato{background: Tomato; color:#fff}
+.btn.bg-Tomato.active, .btn.bg-Tomato:hover, .btn.bg-Tomato:active, .btn.bg-Tomato:focus{background: #ff2802; color:#fff;}
+
+.bg-orange{background: orange; color:#fff}
+.btn.bg-orange.active, .btn.bg-orange:hover, .btn.bg-orange:active, .btn.bg-orange:focus{background: #cc8500; color:#fff;}
+
+.bg-white{background: white; color:#333; border:1px solid #ddd;}
+.btn.bg-white.active, .btn.bg-white:hover, .btn.bg-white:active, .btn.bg-white:focus{background: #f5f5f5; color:#fff;}
+
+.bg-light{color:#333;}
+.btn.bg-light.active, .btn.bg-light:hover, .btn.bg-light:active, .btn.bg-light:focus{color:#333;}

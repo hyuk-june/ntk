@@ -1,0 +1,32 @@
+.sound_only{display:none}
+
+#total_cnt{line-height:4em}
+
+.alim_btn ul{list-style:none; margin:0; padding:0}
+.alim_btn ul li{float:left}
+.alim_btn .btn_ctrl{float:left}
+.alim_btn .btn_view{float:right}
+
+.alim_btn .btn_ctrl li{margin-right:5px}
+.alim_btn .btn_view li{margin-left:5px}
+
+#alim .readbefore {font-weight:bold;}
+
+/*#alim_list {margin-top:10px; padding:0px; list-style:none; border-top:1px solid #ddd}
+#alim_list li{position:relative; border-bottom:1px solid #ddd; line-height:3em;}
+#alim_list li .al_idx{display:inline-block; width:30px; text-align:center}
+#alim_list li .regdate{display:inline-block; width:60px}
+#alim_list li .read{display:inline-block; width:50px; text-align:center;}
+#alim_list li .readbefore{color:#8080FF; font-weight:bold;}
+#alim_list li .al_del{position:absolute; right:0;top:10px}*/
+
+
+/*#alim_list li .al_memo,
+#alim_list li .al_del{cursor:pointer}
+
+#alim_list li .al_memo{text-decoration:none}
+#alim_list li .al_memo:hover{color:#f00}*/
+
+#page_navi { clear:both; text-align:center; margin:10px 0 0 0; }
+#page_navi a:link { color:#777; }
+

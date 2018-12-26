@@ -1,0 +1,94 @@
+@charset "utf-8";
+
+/* 목록 */
+
+.qa-list #bo_cate li {min-width:100px;}
+.qa-list #bo_cate li a{border:1px solid #ddd; display:block; margin-right:-1px; text-align:center; padding:4px;}
+.qa-list #bo_cate li #bo_cate_on{background-color:#414141; color:#fff; border:1px solid #414141;}
+
+.qa-list .list-wrap {display:table; table-layout: fixed; width:100%;}
+.qa-list .list-head {display:table-header-group;}
+.qa-list .list-body {display:table-row-group;}
+.qa-list .list-head .list-row .list-cell {border-top:2px solid #777; border-bottom:1px solid #ddd; padding:10px 0; font-weight:bold;}
+.qa-list .list-body .list-row .list-cell {border-bottom:1px solid #ddd; padding:8px 0;}
+.qa-list .list-body .list-row.row-notice .list-cell{background:#f5f5f5;}
+.qa-list .list-row {display:table-row;}
+.qa-list .list-row .list-cell{display:table-cell;}
+.qa-list .list-row .list-cell-num{width:80px; text-align:center;}
+.qa-list .list-row .list-cell-chk{width:40px; text-align:center;}
+.qa-list .list-row .list-cell-cate{width:100px; text-align:center; font-weight:bold;}
+.qa-list .list-row .list-cell-subject{width:auto;}
+.qa-list .list-row .list-cell-writer{width:150px; text-align:center;}
+.qa-list .list-row .list-cell-status{width:100px; text-align:center;}
+.qa-list .list-row .list-cell-datetime{width:100px; text-align:center;}
+
+
+@media(max-width:576px){
+    .qa-list .list-wrap,
+    .qa-list .list-body {display:block;}
+/*    .qa-list .list-head {display:none;}*/
+    .qa-list .list-head {display:block;}
+    .qa-list .list-head .list-row {width:100%; padding:0;}
+    .qa-list .list-head .list-row .list-cell{display:none;}
+    .qa-list .list-head .list-row .list-cell.list-cell-subject{display:block; width:100%; text-align:center; padding:5px 0 !important;}
+    .qa-list .list-body .list-row.row-notice{background:#f5f5f5;}
+    .qa-list .list-body .list-row.row-notice .list-cell{background:transparent;}
+    .qa-list .list-row {display:block; border-bottom:1px solid #ddd; padding:10px 5px;}
+    .qa-list .list-row .list-cell {display:inline-block; border-bottom:0 !important; padding:0 !important; width:auto;}
+    .qa-list .list-row .list-cell-num{display:none;}
+    .qa-list .list-row .list-cell-cate,
+    .qa-list .list-row .list-cell-subject{display:inline;}
+    .qa-list .list-row .list-cell-cate a{color:#00be39;}
+    .qa-list .list-row .list-cell-subject a{ line-height:5px;}
+    .qa-list .list-row .list-cell-subject:after{clear:both; display:block; content:''; margin-bottom:5px;}
+    .qa-list .list-row .list-cell-writer,
+    .qa-list .list-row .list-cell-writer .sv_member,
+    .qa-list .list-row .list-cell-datetime,
+    .qa-list .list-row .list-cell-status{color:#777 !important;}
+    
+}
+
+
+/* 읽기 */
+.qa-view{}
+
+.qa-view header {border-bottom:1px solid #ddd;}
+.qa-view header h1{font-size:1.5em; font-weight:bold; line-height:1.6em; padding:10px 0;}
+
+.qa-view .article-info{margin-bottom:20px;}
+
+.qa-view .page-info {border-bottom:1px dashed #ddd; padding:10px; background:#f5f5f5;}
+.qa-view .page-info h2{display:none;}
+.qa-view .page-info dl{overflow:hidden; margin:0;}
+.qa-view .page-info dl dt,
+.qa-view .page-info dl dd{float:left;}
+.qa-view .page-info dl dt{margin-right:10px;}
+.qa-view .page-info dl dd{margin-right:15px; margin-bottom:0;}
+
+.qa-view .attach-file h2 {display:none;}
+.qa-view .attach-file {border-bottom:1px dashed #ddd; padding:10px 0;}
+.qa-view .attach-file>ul>li>div{display:inline-block;}
+
+.qa-view .rel-link {border-bottom:1px dashed #ddd; padding:10px 0;}
+.qa-view .rel-link h2 {display:none;}
+.qa-view .rel-link ul{margin:0; padding:0; list-style:none;}
+
+/*.qa-view .contact-wrap {min-height:300px;}
+.qa-view .contact-wrap dl{border-top:1px solid #ddd; border-left:1px solid #ddd;}
+.qa-view .contact-wrap dl dt,
+.qa-view .contact-wrap dl dd{border-right:1px solid #ddd; border-bottom:1px solid #ddd;}
+.qa-view .contact-wrap dl dt{background:#f5f5f5;}*/
+
+.qa-view .content-wrap {min-height:300px;}
+
+
+/* 답변읽기 */
+.qa-cmt h2{font-size:1.3rem;}
+.qa-cmt .qa-datetime{color:#777;}
+
+
+
+/* 답변쓰기 */
+.qa-cmt-write{}
+.qa-cmt-write h2{font-size:1.3rem;}
+.qa-cmt-write form{border:1px solid #ddd; border-top:2px solid #777; padding:10px;}

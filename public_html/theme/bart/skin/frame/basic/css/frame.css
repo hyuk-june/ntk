@@ -1,0 +1,246 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,300,500,500italic,700,900,400italic,700italic');
+@import url('https://cdn.rawgit.com/theeluwin/NotoSansKR-Hestia/master/stylesheets/NotoSansKR-Hestia.css');
+
+/* border 지정시 박스크기 안 늘어나게 */
+* {
+			box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	   -mox-box-sizing: border-box;
+		 -o-box-sizing: border-box;
+}
+
+html{
+    height:100%;
+}
+
+body{
+	font-family: dotum;
+    line-height: 22px;
+	color:#333;
+
+    position: relative;
+    margin: 0;
+    min-height: 100%;
+}
+
+h1, h2, h3, h4, h5, h1 a, h2 a, h3 a, h4 a, h5 a, .enf{font-family: "Roboto", sans-serif !important;}
+
+a{color:#333}
+a:hover, a:active, a:visited, a:link{text-decoration: none !important;}
+a:hover{color:#f00;}
+
+/* required 박스의 불릿 기호 (*) */
+.required, textarea.required{
+    background-position: right center !important;
+}
+
+
+/* 그누보드 기본 h1 안보이게 */
+#main_title{position:absolute; top:-100px;}
+
+
+/* TOP 메뉴 */
+.tnb{
+    background:#f4f8f1;
+    font-size:12px;
+    border-bottom: 1px solid #dee7d7;
+}
+
+.tnb:after{
+    content:'';
+    display:block;
+    clear:both;
+}
+
+.tnb a{color:#223c73;}
+.tnb a:hover{color:#223c73 !important;}
+
+.tnb ul.tnb-menu>li,
+.tnb ul.adm-menu>li{
+    float: left;
+    padding:4px 10px;
+    border-left: 1px solid #dee7d7;
+}
+.tnb ul.tnb-menu>li:last-child,
+.tnb ul.adm-menu>li:last-child{
+    border-right: 1px solid #dee7d7;
+}
+.tnb ul.tnb-menu>li>a,
+.tnb ul.adm-menu>li>a{
+    color:#223c73;
+}
+.tnb ul.tnb-menu>li>a:hover{
+    color:#223c73 !important;
+}
+
+.tnb ul li a{color:#fff;}
+
+.tnb .dropdown-menu{left:inherit !important; right:0; z-index:10;}
+.tnb .dropdown-menu li{padding:0 10px;}
+.tnb .dropdown-menu a{color:#333; font-size:.8em; color:#555;}
+.tnb .dropdown-menu a:hover{ color:#007bff !important; }
+
+
+/* frame 안의 View 영역 */
+#content_wrap{position: relative;}
+
+#container_title{display:none;}
+
+/*******************************
+* 메인메뉴영역
+*******************************/
+.menubar{
+	background: white;
+    position:relative;
+    width:100%;
+    z-index:9;
+}
+
+.menubar.fixed{
+    position:fixed;
+    top:0;
+    left:0;
+}
+
+#btn_toggle_menu{
+    font-size: 2rem;
+    color:#333;
+}
+
+
+.header{}
+.header .container{
+    position:relative;
+}
+
+/*******************************
+* slide bar
+*******************************/
+#slide_mask.active{
+    position:fixed; top:0; left:0; z-index:99998; 
+    background-color:#000; opacity: 0.75; filter:alpha(opacity=75); -moz-opacity:0.75; 
+    width:100%; height:100%;
+}
+.slide-wrap{position: fixed; left:-270px; top:0; width:270px; z-index:99999; background:#fff; height:100%; overflow:auto; overflow-x: hidden;}
+.slide-wrap h4{margin:0; padding:0; font-size:14px; padding:10px; width:100%; line-height:14px; color:#fff; background:#2d2d2d;}
+
+
+/*******************************
+* 제목 및 현재위치
+*******************************/
+.content-title{color:#333; border-bottom:1px solid #ddd; 
+    box-shadow: 0 1px 5px 1px #f5f5f5; 
+    margin-top:0;
+    padding: 10px 0;
+    background-color:#f7f8fa;
+}
+.content-title .container{position:relative;}
+.content-title .curpos{font-size:1em; position:absolute; right:0; bottom:0;}
+.content-title .curpos .breadcrumb{margin:0px; padding:0; border:0; background:none;}
+.content-title .title-wrap .page-title{font-size:1.5rem;}
+.content-title .title-wrap .page-desc{font-size:1rem;}
+
+@media (max-width:768px){
+    .content-title .curpos{position: relative; margin-bottom:5px;}
+}
+
+
+/*******************************
+* 양쪽 날개 영역
+*******************************/
+#wing{
+    position:absolute;
+    width:100%;
+}
+
+#wing.fixed{
+    position:fixed;
+    top:60px !important;
+}
+
+#wing .container{
+    position:relative;
+}
+
+#wing #lside,
+#wing #rside{
+    position:absolute;
+    width:150px;
+    min-height:500px;
+}
+    
+#wing #lside{
+    top: 0px;
+    left: -160px;
+}
+
+#wing #rside{
+    top: 0px;
+    right: -160px;
+}
+
+/*******************************
+* tail 영역
+*******************************/
+.tail{
+    min-height: 50px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+}
+
+/*******************************
+* 기타
+*******************************/
+.overflow-hidden{overflow:hidden !important;}
+
+.float-btns{position:fixed; bottom:50px; right:10px;}
+.float-btns .float-btn{display:block; font-size:30px; padding:10px; border-radius:50%; background:rgba(0,0,0,0.5); color:#fff; float:right; margin-left:10px;}
+
+.card, .img-thumbnail{border-radius:0 !important;}
+
+/* 확인, 취소 버튼 wrap */
+.btn_confirm{ text-align:center; }
+
+.btn{height:auto !important;}
+
+/*페이지네이션*/
+.pagination .page-item a{color:#414141; border:1px solid #ddd;}
+.pagination .page-item.active a{background-color:#414141; color:#fff; border:1px solid #414141;}
+
+.pagination >li >a, .pagination >li >span {
+    border-radius:0 !important;
+    border-radius:0 !important;
+}
+
+
+
+
+
+/**************************************
+* BootStrap 재설정
+**************************************/
+.container{padding-right:5px; padding-left:5px; max-width:1000px;}
+
+.row{margin-right:-5px; margin-left:-5px;}
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto{
+    padding-right:5px;
+    padding-left:5px;
+}
+
+.input-group *
+.input-group-prepend *,
+.input-group-append *,
+.input-group-text,
+.alert, .card{
+    border-radius:0 !important;
+}
+
+.form-control, .input-group>.form-control, .input-group>.input-group-append>.btn, .input-group>.input-group-append>.input-group-text, .input-group>.input-group-prepend>.btn, .input-group>.input-group-prepend>.input-group-text{
+    border-radius:0 !important;
+}

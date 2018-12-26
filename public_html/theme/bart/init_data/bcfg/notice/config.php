@@ -1,0 +1,2 @@
+<?php exit();?>
+{"ca_type":"normal","ca_col_cnt":"","skin_list":"basic","list_head_color":"","list_show_writer":"1","list_show_datetime":"1","list_show_hit":"1","skin_view":"basic","write_show_writer":"1","write_show_datetime":"1","write_show_hit":"1","skin_write":"basic"}

@@ -1,0 +1,9 @@
+/* 사이드 메뉴 */
+#sidemenu{padding:0;}
+#sidemenu nav h2{padding:5px;font-size:1.5em; margin:0px; color:#D95C00;border-bottom:1px solid #ddd; border-bottom:1px solid #ddd}
+
+#sidemenu nav ul{font-weight: normal;}
+#sidemenu nav ul li{line-height:22px;padding-left:10px;margin-left:5px; background:url(../img/bul_arrow.gif) 0 6px no-repeat}
+#sidemenu nav>ul{font-weight:bold;list-style: none;}
+#sidemenu nav>ul>li{margin:4px 0 0 0;background-image:none}
+#sidemenu .cur_menu{color:#334A77}

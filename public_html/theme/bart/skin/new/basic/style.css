@@ -1,0 +1,26 @@
+@charset "utf-8";
+/* SIR 지운아빠 */
+
+.newpost .list-cell-chk{width:40px;}
+.newpost .list-cell-grp{width:150px;}
+.newpost .list-cell-board{width:150px;}
+.newpost .list-cell-subject{width:auto;}
+.newpost .list-cell-writer{width:150px;}
+.newpost .list-cell-datetime{width:100px;}
+
+/* 최근게시물 스킨 (new) */
+@media(max-width:576px){
+    .newpost .list-cell-chk{margin-right:5px;}
+    .newpost .list-cell-grp{margin-right:5px;}
+    .newpost .list-cell-board{margin-right:5px;}
+    .newpost .list-body .list-row .list-cell.list-cell-subject{margin-right:5px; clear:both; font-size:1.05rem;}
+    .newpost .list-cell-writer{clear:both; margin-right:5px;}
+    .newpost .list-cell-datetime{color:#999;}
+    
+    .newpost .list-cell-chk,
+    .newpost .list-cell-grp,
+    .newpost .list-cell-board,
+    .newpost .list-cell-subject,
+    .newpost .list-cell-writer,
+    .newpost .list-cell-datetime{width:auto;}
+}

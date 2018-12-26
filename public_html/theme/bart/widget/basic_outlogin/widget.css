@@ -1,0 +1,4 @@
+@charset "utf-8";
+
+/* 그누보드 기본 스킨에 여백을 없앤다 */
+#ol_before, #ol_after{margin:0;}

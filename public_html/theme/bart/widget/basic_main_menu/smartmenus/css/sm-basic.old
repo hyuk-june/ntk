@@ -1,0 +1,219 @@
+/* ...end */
+    
+    .sm-basic > li > a{
+        font-family: "Roboto", sans-serif !important;
+    }
+
+    .sm-basic.sm-rtl li {
+        float: right;
+    }
+
+    /* 서브메뉴는 float left 안함 */
+    .sm-basic ul li, .sm-basic.sm-rtl ul li, .sm-basic.sm-vertical li {
+        float: none;
+    }
+
+    .sm-basic a {
+        padding: 5px;
+        margin: 5px;
+        white-space: nowrap;
+    }
+
+    .sm-basic ul a, .sm-basic.sm-vertical a {
+        white-space: normal;
+    }
+    
+    /* 마우스 올렸을때 색깔 */
+    .sm-basic a:hover, .sm-basic a:focus, .sm-basic a:active, .sm-basic a.highlighted {
+        background: #286090;
+        color: #fff;
+    }
+
+    .sm-basic .sm-nowrap > li > a, .sm-basic .sm-nowrap > li > :not(ul) a {
+        white-space: nowrap;
+    }
+
+    /* 첫번째 서브메뉴 윗쪽 풍선도움말 화살표 */
+    .sm-basic > li > ul:before{
+        /*border-color: #aaa;*/
+        transform: rotate(45deg);
+        width:8px;
+        height:8px;
+        background:#fff;
+        border-left:1px solid #aaa;
+        border-top:1px solid #aaa;
+        box-shadow:none;
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 48%;
+    }
+
+    /* 현재위치일때 색깔 */
+    .sm-basic a.current {
+        background: #2d2d2d;
+        color: #fff;
+    }
+
+    .sm-basic a.disabled {
+        background: white;
+        color: #cccccc;
+    }
+
+    /* 서브메뉴 있을때 화살표 공간만큼 여백 */
+    .sm-basic a.has-submenu {
+        padding-right: 32px;
+    }
+
+    /* 서브메뉴표시 화살표 */
+    .sm-basic a span.sub-arrow {
+        top: 50%;
+        margin-top: -2px;
+        right: 10px;
+        width:0;
+        height:0;
+        font: 14px/16px monospace !important;
+        background: transparent;
+        border-style: dashed dashed dashed solid;
+        border-color: #aaa transparent transparent transparent;
+        overflow:hidden;
+        border-width:5px;
+    }
+
+    .sm-basic li a.current span.sub-arrow,
+    .sm-basic > li a.highlighted span.sub-arrow {
+        border-color: #fff transparent transparent transparent;
+    }
+
+
+    /* 첫번째 서브 메뉴는 메인메뉴와 가로크기 같게 */
+    .sm-basic > li > ul{
+        width:100% !important;
+    }
+
+    .sm-basic > li > a {
+        border-top: 0;
+        border-left: 1px solid #eeeeee;
+        padding: 15px 40px !important;
+        font-weight:bold;
+        margin:-1px 0;
+    }
+
+    .sm-basic > li > a:hover,
+    .sm-basic > li > a.current,
+    .sm-basic > li > a.highlighted {
+    /*border-left: 1px solid #78aeda;*/
+        font-weight:bold;
+    }
+
+
+    /*.sm-basic > li:first-child {
+    border-left: 0;
+    }*/
+    .sm-basic ul {
+        border: 1px solid #bbbbbb;
+        background: white;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    .sm-basic ul a {
+        border: 0 !important;
+    }
+    .sm-basic ul a.has-submenu {
+        padding-right: 20px;
+    }
+    .sm-basic ul a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #aaa;
+        width:0;
+        height:0;
+        overflow:hidden;
+        border-width:5px;
+    }
+    .sm-basic ul a.current span.sub-arrow,
+    .sm-basic ul a:hover span.sub-arrow,
+    .sm-basic ul a.highlighted span.sub-arrow {
+        border-color: transparent transparent transparent #fff;
+    }
+
+    .sm-basic ul > li {
+        border-left: 0;
+        border-top: 1px solid #eeeeee;
+    }
+    .sm-basic ul > li:first-child {
+        border-top: 0;
+    }
+    
+    .sm-basic span.scroll-up,
+    .sm-basic span.scroll-down {
+        position: absolute;
+        display: none;
+        visibility: hidden;
+        overflow: hidden;
+        background: white;
+        height: 20px;
+    }
+    .sm-basic span.scroll-up-arrow, .sm-basic span.scroll-down-arrow {
+        position: absolute;
+        top: -2px;
+        left: 50%;
+        margin-left: -8px;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+        border-width: 8px;
+        border-style: dashed dashed solid dashed;
+        border-color: transparent transparent #555555 transparent;
+    }
+    .sm-basic span.scroll-down-arrow {
+        top: 6px;
+        border-style: solid dashed dashed dashed;
+        border-color: #555555 transparent transparent transparent;
+    }
+    .sm-basic.sm-rtl a.has-submenu {
+        padding-right: 20px;
+        padding-left: 32px;
+    }
+    .sm-basic.sm-rtl a span.sub-arrow {
+        right: auto;
+        left: 20px;
+    }
+    .sm-basic.sm-rtl.sm-vertical a.has-submenu {
+        padding: 11px 20px;
+    }
+
+    .sm-basic.sm-rtl.sm-vertical a span.sub-arrow {
+        right: 20px;
+        margin-right: -12px;
+    }
+    .sm-basic.sm-rtl > li:first-child {
+        border-left: 1px solid #eeeeee;
+    }
+    .sm-basic.sm-rtl > li:last-child {
+        border-left: 0;
+    }
+    .sm-basic.sm-rtl ul a.has-submenu {
+        padding: 11px 20px;
+    }
+    .sm-basic.sm-rtl ul a span.sub-arrow {
+        right: 20px;
+        margin-right: -12px;
+    }
+    .sm-basic.sm-vertical a span.sub-arrow {
+        right: auto;
+        margin-left: -12px;
+    }
+    .sm-basic.sm-vertical li {
+        border-left: 0;
+        border-top: 1px solid #eeeeee;
+    }
+    .sm-basic.sm-vertical > li:first-child {
+        border-top: 0;
+    }

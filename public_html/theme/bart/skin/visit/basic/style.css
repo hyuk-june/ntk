@@ -1,0 +1,9 @@
+@charset "utf-8";
+
+/* 방문자 집계 */
+.bt-basic-visit {}
+.bt-basic-visit .title{font-size:16px;}
+.bt-basic-visit ul {margin:0;padding:0; position:relative; list-style:none;}
+.bt-basic-visit ul li {position:relative; line-height:28px;}
+.bt-basic-visit ul li span.lt{font-weight: bold;}
+.bt-basic-visit ul li span.ln{position:absolute; top:2px; right:0}

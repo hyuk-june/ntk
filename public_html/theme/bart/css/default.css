@@ -1,0 +1,180 @@
+@charset "utf-8";
+
+/*html{overflow-y:scroll; font-size:14px;}*/
+/*body{font-size:12px; text-decoration:none;font-family:Arial,'돋움'}*/
+
+/*.bar{
+	margin: 0 5px;
+	color: #ccc;
+	font-style: normal;
+}*/
+
+/*ul{margin:0; padding:0; list-style:none;}*/
+
+label{margin-bottom:0; display:inline; vertical-align:bottom;}
+/*input[type=checkbox]{margin:0; vertical-align: middle;}*/
+
+html, body{width:100%; background:#fff;}
+html{font-size: 13px;}
+body{font-size: 1rem;}
+
+
+/* 크롬 focus시 파란테두리 없애기 */
+*:focus { outline:none !important; }
+/* 부트스트랩 focus시 파란테두리 없애기 */
+input:focus, select:focus, textarea:focus {
+  box-shadow:none !important;
+}
+
+
+.ellipsis{display: block; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; overflow: hidden;}
+
+.title-underline{display:block; border-bottom:1px solid #ddd; margin-bottom: 10px;}
+.title-underline-focus{display:inline-block; border-bottom:2px solid #333; margin-bottom:-1px; font-weight:500; padding-bottom:5px;}
+.title-underline .more{font-size:12px; color:#777; margin-top:5px;}
+
+.font-size-1{font-size: .8rem;}
+.font-size-2{font-size: 1rem;}
+.font-size-3{font-size: 1.25rem;}
+.font-size-4{font-size: 1.5rem;}
+.font-size-5{font-size: 1.75rem;}
+.font-size-6{font-size: 2rem;}
+.font-size-7{font-size: 2.5rem;}
+.font-size-8{font-size: 3rem;}
+.font-size-9{font-size: 4rem;}
+
+.text-left{text-align:left;}
+.text-center{text-align:center;}
+.text-right{text-align:right;}
+
+/* 위젯 컨테이너 */
+.bt-widget-container{ box-sizing: border-box; width:100%; /*overflow-x:hidden;*/}
+.bt-widget-container > .control-header{display:none; background: #ff6e33; border:1px solid #555; text-align:right;}
+.bt-widget-container > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}
+.bt-widget-container.edit{border:1px solid blue;}
+.bt-widget-container.edit > .control-header{display:flex;}
+
+.bt-widget > .control-header{display:none; background: #608ffb; text-align:right;}
+.bt-widget > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}
+.bt-widget.edit > .control-header{display:flex;}
+
+.bt-frame.edit{border:4px solid #f00;}
+
+/* 버튼 컬러 */
+.btn.btn-black{
+    background:#111; color:#fff;
+}
+
+.btn.btn-black.active, .btn.btn-black.current, .btn.btn-black:focus, .btn.btn-black:hover, .btn.btn-black:active{
+    background:#333; color:#fff;
+}
+
+.btn.btn-brown{
+    background:#a52a2a; color:#fff;
+}
+
+.btn.btn-brown.active, .btn.btn-brown.current, .btn.btn-brown:focus, .btn.btn-brown:hover, .btn.btn-brown:active{
+    background:#741d1d; color:#fff;
+}
+
+/* 팝업 타이틀 */
+.popup-title{background-color:#414141; font-weight:bold; font-size:14px; line-height:30px; border-bottom:2px solid #000; margin-bottom:20px; color:#fff; padding:4px; display:block; width:100%; text-align:center;}
+
+.user-photo {
+    width: 60px;
+    height: 60px;
+    line-height: 60px !important;
+    color: #fff;
+    font-size: 40px !important;
+    background: #ddd;
+    border-radius: 50%;
+    text-align:center;
+}
+
+.msg_error{color:#f00; font-weight:bold; display:block;}
+
+/* 목록 div를 table 타입으로 */
+.table-type #bo_cate li {min-width:100px;}
+.table-type #bo_cate li a{border:1px solid #ddd; display:block; margin-right:-1px; text-align:center; padding:4px;}
+.table-type #bo_cate li #bo_cate_on{background-color:#414141; color:#fff; border:1px solid #414141;}
+
+.table-type .list-wrap {display:table; table-layout: fixed; width:100%;}
+.table-type .list-head {display:table-header-group; width:100%;}
+.table-type .list-body {display:table-row-group; width:100%;}
+.table-type .list-head .list-row .list-cell {border-top:2px solid #777; border-bottom:1px solid #ddd; padding:10px 0; font-weight:bold;}
+.table-type .list-body .list-row .list-cell {border-bottom:1px solid #ddd; padding:8px 0;}
+.table-type .list-row {display:table-row;}
+.table-type .list-row .list-cell{display:table-cell;}
+.table-type .list-row .list-cellempty{width:100%;}
+
+@media(max-width:576px){
+    .table-type .list-wrap,
+    .table-type .list-body {display:block;}
+    .table-type .list-head {display:block;}
+    .table-type .list-head .list-row {width:100%; padding:0;}
+    .table-type .list-head .list-row .list-cell{display:block;}
+    .table-type .list-body .list-row.row-notice{background:#f5f5f5;}
+    .table-type .list-body .list-row.row-notice .list-cell{background:transparent;}
+    .table-type .list-row {display:block; border-bottom:1px solid #ddd; padding:10px 5px; overflow:hidden;}
+    .table-type .list-body .list-row .list-cell {display:block; float:left; border-bottom:0 !important; padding:5px 0; width:auto;}
+/*    .table-type .list-head .list-row .list-cell.list-cellhead{display:block; width:100%; text-align:center; padding:5px 0 !important;}*/
+}
+
+/* 박스 그림자 */
+/*.shadow-border {
+    box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset, 1px 1px 0 0 #ddd;
+    -webkit-box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset, 1px 1px 0 0 #ddd;
+    -moz-box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset, 1px 1px 0 0 #ddd;
+    -o-box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset, 1px 1px 0 0 #ddd;
+    -ms-box-shadow: 1px 0 0 0 #ddd, 0 1px 0 0 #ddd, 1px 0 0 0 #ddd inset, 0 1px 0 0 #ddd inset, 1px 1px 0 0 #ddd;
+}*/
+
+.shadow-border {
+    box-shadow: 1px 0 0 0 , 0 1px 0 0 , 1px 0 0 0  inset, 0 1px 0 0  inset, 1px 1px 0 0 ;
+    -webkit-box-shadow: 1px 0 0 0 , 0 1px 0 0 , 1px 0 0 0  inset, 0 1px 0 0  inset, 1px 1px 0 0 ;
+    -moz-box-shadow: 1px 0 0 0 , 0 1px 0 0 , 1px 0 0 0  inset, 0 1px 0 0  inset, 1px 1px 0 0 ;
+    -o-box-shadow: 1px 0 0 0 , 0 1px 0 0 , 1px 0 0 0  inset, 0 1px 0 0  inset, 1px 1px 0 0 ;
+    -ms-box-shadow: 1px 0 0 0 , 0 1px 0 0 , 1px 0 0 0  inset, 0 1px 0 0  inset, 1px 1px 0 0 ;
+}
+
+#main_title{display:none;}
+
+.form-control-inline{display:inline-block !important; width:auto !important;}
+
+
+
+
+/************************************************
+* BootStrap override
+************************************************/
+input, textarea, button, .btn, 
+.panel, .panel-heading, .breadcrumb,
+.dropdown-menu, .form-control, 
+.input-sm, .input-lg, .input-xl,
+.input-group-text,
+.input-group-prepend,
+.input-group-append,
+.thumbnail{border-radius:0 !important}
+
+/************************************************
+* Gnuboard override
+************************************************/
+.btn, a.btn, button.btn{/*font-size:1em !important;*/ line-height: 1.5; height: auto; font-weight:bold; border:inherit; padding: .375rem .75rem;}
+
+#bo_w .btn_submit,
+#bo_w .btn_cancel,
+a.btn.btn-sm, .btn.btn-sm{
+/*    padding: .25rem .5rem !important;*/
+    padding: .375rem .75rem !important;
+    line-height: 1.5;
+}
+
+/* 게시판 내용보기 제목 */
+#bo_v_title .bo_v_tit{
+    font-size: 2rem !important;
+}
+
+/* 그누보드의 값 때문에 bootstrap 값이 안 먹는다 */
+.btn-outline-secondary {
+    border:1px solid #6c757d;;
+}

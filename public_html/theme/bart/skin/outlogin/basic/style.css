@@ -1,0 +1,45 @@
+@charset: utf-8;
+
+.bt-basic-outlogin{border:1px solid #ddd; background:#fff;}
+
+/* 로그인 상태 */
+.bt-basic-outlogin .status-login{position:relative;}
+.bt-basic-outlogin .status-login .info{position:relative; overflow:hidden; margin-bottom:5px;}
+
+.bt-basic-outlogin .status-login .info .profile{width:80px;height:80px; padding:10px; left:10px; top:10px; margin-right:5px; text-align:center;}
+.bt-basic-outlogin .status-login .info .profile i{width:60px;height:60px; line-height:60px; color:#fff; font-size:40px; background:#ddd; border-radius:50%;}
+.bt-basic-outlogin .status-login .info ul.summary{display:inline-block; height:80px; margin-bottom: 0;}
+.bt-basic-outlogin .status-login .info ul.summary li{line-height: 26px;}
+
+.bt-basic-outlogin .status-login ul.service{border-top:1px solid #ddd; margin-bottom:0; border-bottom:1px solid #ddd; width:100%; overflow:hidden;}
+.bt-basic-outlogin .status-login ul.service>li{width:25%; height:50px; float:left; border-right:1px solid #ddd; text-align:center;}
+.bt-basic-outlogin .status-login ul.service>li:last-child{border:0;}
+.bt-basic-outlogin .status-login ul.service>li a{display:block;}
+.bt-basic-outlogin .status-login ul.service>li i{display:block; text-align:center; color:#aaa; font-size:16px; padding:4px 0;}
+.bt-basic-outlogin .status-login ul.service>li .al-cnt {font-weight:normal; padding:3px 6px; border-radius:50%;}
+.bt-basic-outlogin .status-login ul.service>li:hover{background-color:#efefef;}
+
+.bt-basic-outlogin .status-login .buttons{text-align:center; line-height:30px;}
+
+.bt-basic-outlogin .spl{display:inline-block; width:20px; text-align:center; color:#ddd;}
+
+.bt-basic-outlogin .ol-alim-wrap{position:relative}
+.bt-basic-outlogin .ol-alim-wrap .ol-alim{position:absolute; display:none; left:0; top:0; right:0px; margin:-1px -1px 0 -1px;  z-index:9999; background-color:#fff; border:3px solid #ddd; padding:0 4px;}
+.bt-basic-outlogin .ol-alim-wrap .ol-alim li{border-bottom:1px dashed #ddd; padding:4px 0;}
+.bt-basic-outlogin .ol-alim-wrap .ol-alim li:last-child{border:0;}
+.bt-basic-outlogin .ol-alim-wrap .ol-alim .alim-title {font-size:11px; border-bottom:1px solid #ddd; overflow:hidden;}
+
+/* 로그아웃 상태 */
+.bt-basic-outlogin .status-logout{}
+.bt-basic-outlogin .status-logout .frm-outlogin{position:relative; }
+.bt-basic-outlogin .status-logout .input-info {padding: 10px 69px 10px 10px;}
+.bt-basic-outlogin .status-logout .input-info .ol-id,
+.bt-basic-outlogin .status-logout .input-info .ol-pw {width:100% !important; border:1px solid #ddd; display:block; vertical-align:top; border:1px solid #ddd; line-height:28px; height:28px;}
+.bt-basic-outlogin .status-logout .input-info .ol-id {border-bottom:none;}
+.bt-basic-outlogin .status-logout .input-info .ol-submit{width:60px; height:56px; top:10px; right:10px; display:block; position:absolute; border:1px solid #ddd; background:#fff; color:#333; color:#777;}
+.bt-basic-outlogin .status-logout .input-info .ol-submit:hover{background-color:#efefef;}
+.bt-basic-outlogin .status-logout .input-info .ol-submit i{display:block; font-size:16px;}
+.bt-basic-outlogin .status-logout .service{padding: 10px; line-height:22px; border-top:1px dashed #ddd; overflow:hidden;}
+
+.bt-basic-outlogin #sns_outlogin{margin:4px;}
+.bt-basic-outlogin h3{font-size:.8rem;}

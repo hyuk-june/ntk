@@ -1,0 +1,10 @@
+@charset "utf-8";
+
+/* 인기검색어 */
+.bt-basic-popular div {margin:0 auto; zoom:1}
+.bt-basic-popular div:after {display:block;visibility:hidden;clear:both;content:""}
+.bt-basic-popular .title{font-size:16px;}
+.bt-basic-popular ul {display:flex; flex-wrap: wrap; margin:0;padding:0;list-style:none}
+.bt-basic-popular li {}
+.bt-basic-popular a {display:inline-block;padding:10px;text-decoration:none}
+.bt-basic-popular a:focus, .widget-basic-popular a:hover {}

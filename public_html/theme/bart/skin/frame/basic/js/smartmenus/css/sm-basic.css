@@ -1,0 +1,215 @@
+@charset "utf-8";
+
+.sm-basic{
+    margin:6px 0;
+}
+
+/* 기본 모양 */
+.sm-basic a, .sm-basic a:hover, .sm-basic a:focus, .sm-basic a:active {
+    padding: 6px 0px;
+    /* make room for the toggle button (sub indicator) */
+    padding-right: 58px;
+    color: #555555;
+    /*font-family: "Lucida Sans Unicode", "Lucida Sans", "Lucida Grande", Arial, sans-serif;*/
+    font-family: "Roboto", sans-serif !important;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 28px;
+    text-decoration: none;
+}
+
+.sm-basic a.disabled {
+    color: #cccccc;
+}
+
+/* 화살표 모양 */
+.sm-basic a span.sub-arrow {
+    position: absolute;
+    top: 50%;
+    margin-top: -17px;
+    left: auto;
+    right: 4px;
+    width: 34px;
+    height: 34px;
+    overflow: hidden;
+    font: bold 14px/34px monospace !important;
+    text-align: center;
+    text-shadow: none;
+    background: rgba(0, 0, 0, 0.08);
+}
+
+/* 마우스 오버시 화살표 모양 */
+.sm-basic a.highlighted span.sub-arrow:before {
+    display: block;
+    content: '-';
+}
+
+
+.sm-basic ul {
+/*  background: rgba(179, 179, 179, 0.1);*/
+}
+
+.sm-basic>li{
+    border-bottom:1px solid #f5f5f5;
+}
+
+.sm-basic>li:last-child(){
+    border-bottom:0;
+}
+
+/* 서브 메뉴 기본 모양 */
+.sm-basic ul a, .sm-basic ul a:hover, .sm-basic ul a:focus, .sm-basic ul a:active {
+    font-size: 14px;
+    border-left: 8px solid transparent;
+    border-bottom:0;;
+}
+
+
+/* 모바일일때 서브메뉴 여백 */
+.sm-basic ul{
+    margin-left:20px;
+}
+
+.sm-basic{
+    margin-left:0;
+}
+
+/* PC 버전일 때 */
+@media (min-width: 768px) {
+    
+    /* Switch to desktop layout
+    -----------------------------------------------
+     These transform the menu tree from
+     collapsible to desktop (navbar + dropdowns)
+    -----------------------------------------------*/
+    /* start... (it's not recommended editing these rules) */
+    
+    .sm-basic {
+        background: white;
+        margin:0;
+    }
+    
+    .sm-basic ul {
+        position: absolute;
+        width:auto;
+    }
+    
+    .sm-basic>li {
+        float: left;
+        border:0;
+        border-left:1px solid #ddd;
+        margin:-1px 0;
+    }
+    
+    /*.sm-basic>li:last-child(){
+        border-right-width:1px solid #ddd;
+    }*/
+    
+    /* 서브메뉴는 float left 안함 */
+    .sm-basic ul li{
+        float: none;
+    }
+    
+    /*.sm-basic a, .sm-basic a:active, .sm-basic a:hover, .sm-basic a:visited {
+        white-space: nowrap;
+    }*/
+    
+    .sm-basic a, .sm-basic a:active, .sm-basic a:hover, .sm-basic a:visited{
+        padding: 2px 2px;
+        margin: 4px;
+        white-space: nowrap;
+    }
+    
+    .sm-basic>li>a, .sm-basic>li>a:active, .sm-basic>li>a:hover, .sm-basic>li>a:visited, .sm-basic>li>a:focus{
+        padding: 10px 20px;
+        margin:0;
+    }
+    
+    .sm-basic ul a, .sm-basic.sm-vertical a, .sm-basic .sm-nowrap > li > a, .sm-basic .sm-nowrap > li > :not(ul) a {
+        white-space: nowrap;
+    }
+    
+    .sm-basic a:hover, .sm-basic a:focus, .sm-basic a:active, .sm-basic a.highlighted, .sm-basic a.current {
+        background: #3ab4a6;
+        color: #fff;
+    }
+    
+    /* 첫번째 서브메뉴 윗쪽 풍선도움말 화살표 */
+    .sm-basic > li > ul:before{
+        /*border-color: #aaa;*/
+        transform: rotate(45deg);
+        width:8px;
+        height:8px;
+        background:#fff;
+        border-left:1px solid #aaa;
+        border-top:1px solid #aaa;
+        box-shadow:none;
+        content: '';
+        position: absolute;
+        top: -5px;
+        left: 48%;
+    }
+    
+    /* 서브메뉴 있을때 화살표 공간만큼 여백 */
+    .sm-basic a.has-submenu {
+        padding-right: 32px !important;
+    }
+    
+    /* 서브메뉴표시 화살표 */
+    .sm-basic a span.sub-arrow {
+        top: 50%;
+        margin-top: -2px;
+        right: 10px;
+        width:0;
+        height:0;
+        font: 14px/16px monospace !important;
+        background: transparent;
+        border-style: dashed dashed dashed solid;
+        border-color: #aaa transparent transparent transparent;
+        overflow:hidden;
+        border-width:5px;
+    }
+    
+    /* 서브메뉴표시 화살표 반전 */
+    .sm-basic li a.current span.sub-arrow,
+    .sm-basic > li a.highlighted span.sub-arrow {
+        border-color: #fff transparent transparent transparent;
+    }
+    
+    /* 첫번째 서브 메뉴는 메인메뉴와 가로크기 같게 */
+    .sm-basic > li > ul{
+        min-width:100% !important;
+    }
+    
+    /* 서브메뉴 박스 */
+    .sm-basic ul {
+        border: 1px solid #ddd;
+        background: white;
+        -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+        box-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* 서브메뉴 화살표 */
+    .sm-basic ul a span.sub-arrow {
+        top: 50%;
+        margin-top: -5px;
+        bottom: auto;
+        left: auto;
+        margin-left: 0;
+        right: 10px;
+        border-style: dashed dashed dashed solid;
+        border-color: transparent transparent transparent #aaa;
+        width:0;
+        height:0;
+        overflow:hidden;
+        border-width:5px;
+    }
+    
+    /* 서브메뉴 화살표 반전 */
+    .sm-basic ul a.current span.sub-arrow,
+    .sm-basic ul a:hover span.sub-arrow,
+    .sm-basic ul a.highlighted span.sub-arrow {
+        border-color: transparent transparent transparent #fff;
+    }
+}

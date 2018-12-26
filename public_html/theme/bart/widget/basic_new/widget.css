@@ -1,0 +1,14 @@
+@charset "utf-8";
+
+.widget-basic-new {}
+.widget-basic-new .title{font-size:16px;}
+.widget-basic-new ul{margin:0; padding:0; list-style:none; line-height:22px;}
+.widget-basic-new ul li{}
+.widget-basic-new ul li a{}
+.widget-basic-new ul li i{color:#ddd;}
+.widget-basic-new ul li .cmt-cnt{color:#f00; font-weight:bold;}
+.widget-basic-new ul li .icon{display:inline-block; line-height:22px; margin-right:2px;}
+.widget-basic-new ul li .icon-new{width:12px; height:12px; background:url('img/icon_new.gif')}
+.widget-basic-new ul li .icon-hot{width:12px; height:12px;background:url('img/icon_hot.gif')}
+.widget-basic-new ul li .icon-lock{width:11px; height:13px; background:url('img/icon_lock.gif')}
+.widget-basic-new ul li .name, .widget-basic-new ul li .name a, .widget-basic-new ul li .date{display:inline-block; margin-left:5px; color:#999;}
