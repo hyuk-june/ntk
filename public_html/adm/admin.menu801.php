@@ -8,6 +8,6 @@ $menu['menu801'] = array (
 	array('801401', '페이지관리', BT_ADMIN_URL.'/page_list.php', 'page', 2),
     array('801402', '위젯페이지관리', BT_ADMIN_URL.'/wpage_list.php', 'wpage', 2),
     array('801403', '모듈페이지관리', BT_ADMIN_URL.'/mpage_list.php', 'mpage', 2),
-    array('801901', '도움말', 'guide.php', 'guide', 3),
+    array('801901', '도움말', BT_ADMIN_URL.'/guide.php', 'guide', 3),
     array('801902', '상세도움말', '//kbay.co.kr/guide.php', 'manual', 3),
 );
