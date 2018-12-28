@@ -11,6 +11,8 @@ include_once('./_common.php');
 $sql = "SELECT * FROM ".$bt['page_table']." WHERE pg_id='".$mid."'";
 $pgrow = $bdb->fetch($sql);
 
+$pg_id = $pgrow["pg_id"];
+
 if(!$pgrow){
     alert('해당 페이지가 존재하지 않습니다');
 }

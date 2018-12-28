@@ -34,6 +34,8 @@ if($mtype == 'module'){
     $Q = "SELECT * FROM ".$bt['page_table']." WHERE pg_type='mpage' AND pg_id='".$mid."'";
     $pgrow = sql_fetch($Q);
     
+    $pg_id = $pgrow["pg_id"];
+    
     if(!$pgrow){
         alert('해당 페이지가 존재하지 않습니다');
     }

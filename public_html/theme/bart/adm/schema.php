@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS `bt_alim` (
   `al_regdate` varchar(20) NOT NULL,
   PRIMARY KEY (`al_idx`),
   KEY `mb_id` (`mb_id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 =====123456789=====
 
@@ -35,7 +35,7 @@ CREATE TABLE IF NOT EXISTS `bt_file_manager` (
   `fm_regdate` varchar(20) NOT NULL,
   PRIMARY KEY (`fm_idx`),
   KEY `fm_dir` (`fm_dir`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 =====123456789=====
 
@@ -56,7 +56,7 @@ CREATE TABLE IF NOT EXISTS `bt_frame` (
   `fs_regdate` varchar(20) NOT NULL,
   PRIMARY KEY (`fs_idx`),
   UNIQUE KEY `4` (`fs_idx`,`fs_skin`,`fs_path`,`fs_mtype`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 
 =====123456789=====
 
@@ -85,7 +85,7 @@ CREATE TABLE IF NOT EXISTS `bt_menu` (
   `bm_regdate` varchar(20) NOT NULL,
   PRIMARY KEY (`bm_idx`),
   KEY `bm_mid` (`bm_mid`)
-) ;
+) ENGINE=MyISAM AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 
 =====123456789=====
 
@@ -113,7 +113,7 @@ CREATE TABLE IF NOT EXISTS `bt_page` (
   `pg_level_max` int(11) NOT NULL COMMENT '최대접근권한',
   `pg_regdate` varchar(20) NOT NULL COMMENT '등록일자',
   PRIMARY KEY (`pg_id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
 
 =====123456789=====
 
@@ -125,9 +125,9 @@ CREATE TABLE IF NOT EXISTS `bt_page` (
 
 CREATE TABLE IF NOT EXISTS `bt_widget` (
   `wg_idx` int(11) NOT NULL AUTO_INCREMENT,
-  `wg_skindir` varchar(255) NOT NULL,
-  `wp_id` varchar(255) NOT NULL,
-  `wg_id` varchar(255) NOT NULL,
+  `wg_skindir` varchar(100) NOT NULL,
+  `wp_id` varchar(40) NOT NULL,
+  `wg_id` varchar(40) NOT NULL,
   `wg_name` varchar(255) NOT NULL,
   `wg_step` int(11) NOT NULL,
   `wg_data` text NOT NULL,
@@ -140,4 +140,4 @@ CREATE TABLE IF NOT EXISTS `bt_widget` (
   `wg_isset` tinyint(4) NOT NULL,
   PRIMARY KEY (`wg_idx`),
   KEY `wg_group` (`wg_skindir`,`wp_id`,`wg_id`)
-) ;
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;

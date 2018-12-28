@@ -53,6 +53,7 @@ $skin_url = BT_SKIN_URL.'/wpage/'.$wpage_skin;
 $g5['title'] = $cur_title;
 
 $pg_id = $pgrow["pg_id"];
+
 include_once('./_head.php');
 
 include_once("wpage.inc.php");
