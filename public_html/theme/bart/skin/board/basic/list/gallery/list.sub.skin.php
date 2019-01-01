@@ -262,7 +262,7 @@ add_stylesheet($style);
                     
                     <?php if($list_show_datetime){?>
                             <li>
-                                <span class="datetime"><i class="fa fa-calendar-alt"></i> <?php echo $list[$i]["datetime"];?></span>
+                                <span class="datetime"><i class="fa fa-calendar"></i> <?php echo $list[$i]["datetime"];?></span>
                             </li>
                     <?php }?>
                 

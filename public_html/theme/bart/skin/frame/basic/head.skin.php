@@ -57,7 +57,7 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
 			    <ul class="tnb-menu">
 		    <?php if($is_member){?>
 			    <?php if ($is_admin) {  ?>
-            	    <li><a href="<?php echo G5_ADMIN_URL ?>"><i class="fa fa-cog"></i> 관리자</b></a></li>
+            	    <li><a href="<?php echo G5_ADMIN_URL ?>"><i class="fa fa-cog"></i> 관리자</a></li>
                 <?php }  ?>
             	    <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-edit"></i> 정보수정</a></li>
 				    <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>

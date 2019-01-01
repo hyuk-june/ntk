@@ -11,7 +11,7 @@ use kr\bartnet\builder as btb;
 // 디버그모드 or 릴리즈 모드
 //===========================================================================
 //디버그모드(true), 릴리즈모드(false)
-define('BT_DEBUG', true);
+define('BT_DEBUG', false);
 
 if(BT_DEBUG) ini_set('display_errors', '1');
 else ini_set('display_errors', '0');

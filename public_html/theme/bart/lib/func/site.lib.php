@@ -113,6 +113,29 @@ function get_latest_alim(){
 	return $bdb->fetchAll($sql);
 }
 
+/**
+* 디렉토리 목록으로 option 태그 리스트 반화
+* @param string Path
+* @param mixed selected value
+* @param array 첫번째 아이템
+*/
+
+function get_dir_option($path, $value='', $first_opt=array()){
+    
+    $dirs = array();
+    bt\file\BFiledir::getDirEntry($dirs, $path, 'd', 1);
+    
+    if(is_array($dirs)){
+        $s = new bt\html\BSelectbox();
+        if(is_array($first_opt) && count($first_opt) > 0){
+            $s->add($first_opt[0], $first_opt[1]);
+        }
+        foreach($dirs as $key=>$val) $s->add(basename($val), basename($val));
+        $s->selectedFromValue = $value;
+        
+        return $s->getOption();
+    }else return;
+}
 
 /**
 * @bref 스킨 select 옵션
@@ -126,70 +149,13 @@ function get_skin_option($skin_type, $value='', $first_opt=array()){
 	if($device=='mobile') $dir .= "/".BT_MSKIN_PATH;
 	else $dir = BT_SKIN_PATH;
     */
-    $dir = BT_SKIN_PATH;
+    $dir = BT_SKIN_PATH."/".$skin_type;
 	
-	$dir .= "/".$skin_type;
-	
-	$dirs = array();
-	bt\file\BFiledir::getDirEntry($dirs, $dir, 'd', 1);
-	
-	if(is_array($dirs)){
-		$s = new bt\html\BSelectbox();
-		if(is_array($first_opt) && count($first_opt) > 0){
-			$s->add($first_opt[0], $first_opt[1]);
-		}
-		foreach($dirs as $key=>$val) $s->add(basename($val), basename($val));
-		$s->selectedFromValue = $value;
-		
-		return $s->getOption();
-	}else return;
+	return get_dir_option($dir, $value, $first_opt);
 }
-/*
-function get_outskin_option($type, $value='', $first_opt=array()){
-    
-    $type = strtolower($type);
-    
-    $dir = BT_PATH.'/'.$type;
-    
-    $dirs = array();
-    bt\file\BFiledir::getDirEntry($dirs, $dir, 'd', 1);
-    
-    if(is_array($dirs)){
-        $s = new bt\html\BSelectbox();
-        if(is_array($first_opt) && count($first_opt) > 0){
-            $s->add($first_opt[0], $first_opt[1]);
-        }
-        foreach($dirs as $key=>$val) $s->add(basename($val), basename($val));
-        $s->selectedFromValue = $value;
-        
-        return $s->getOption();
-    }else return;
-}
-*/
 
-/*
-function get_widget_option($device, $value='', $first_opt=array()){
-    
-    $dir = '';
-    
-    if($device=='mobile') $dir .= "/".BT_MWIDGET_PATH;
-    else $dir = BT_WIDGET_PATH;
-    
-    $dirs = array();
-    bt\file\BFiledir::getDirEntry($dirs, $dir, 'd', 1);
-    
-    if(is_array($dirs)){
-        $s = new bt\html\BSelectbox();
-        if(is_array($first_opt) && count($first_opt) > 0){
-            $s->add($first_opt[0], $first_opt[1]);
-        }
-        foreach($dirs as $key=>$val) $s->add(basename($val), basename($val));
-        $s->selectedFromValue = $value;
-        
-        return $s->getOption();
-    }else return;
-}
-*/
+
+
 
 /**
 * @bref 상황에 따른 레이아웃 스킨을 결정한다
@@ -269,33 +235,6 @@ function show_widgets($skindir, $wp_id, $wg_id){
     $w->showWidgetList($wg_skindir, $wp_id, $wg_id);
 }
 
-
-//존재하는 mid인지 확인
-/*function exists_mid($mid){
-    global $g5, $bt;
-    $bdb = \bt\database\BDB::getInstance();
-    
-    $mid = trim($mid);
-    
-    $sql = "SELECT * FROM ".$g5['board_table']." WHERE bo_table='".$mid."'";
-    $rowcnt = $bdb->rowCount();
-    if($rowcnt > 0) return true;
-    
-    $sql = "SELECT * FROM ".$bt['page_table']." WHERE pg_id='".$mid."'";
-    $rowcnt = $bdb->rowCount();
-    if($rowcnt > 0) return true;
-    
-    $sql = "SELECT * FROM ".$bt['wpage_table']." WHERE wp_id='".$mid."'";
-    $rowcnt = $bdb->rowCount();
-    if($rowcnt > 0) return true;
-    
-    return false;
-}*/
-/*
-function get_widget_skindir($filepath){
-    $search = BT_PATH;
-    return str_replace(DS, "^", trim(str_replace($search, "", dirname($filepath)), "/"));
-}*/
 
 
 

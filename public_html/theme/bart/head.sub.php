@@ -38,6 +38,7 @@ header("Pragma: no-cache"); // HTTP/1.0
 <meta charset="utf-8">
 <!--<meta content="width=device-width,initial-scale=1" name=viewport>-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <?php
 if (G5_IS_MOBILE) {
     echo '<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=0,maximum-scale=10,user-scalable=yes">'.PHP_EOL;
@@ -45,7 +46,7 @@ if (G5_IS_MOBILE) {
     echo '<meta name="format-detection" content="telephone=no">'.PHP_EOL;
 } else {
     echo '<meta http-equiv="imagetoolbar" content="no">'.PHP_EOL;
-    echo '<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">'.PHP_EOL;
+    //echo '<meta http-equiv="X-UA-Compatible" content="IE=10,chrome=1">'.PHP_EOL;
 }
 
 if($config['cf_add_meta'])
@@ -69,7 +70,7 @@ foreach($files as $_file){
 <!-- 확장 기본로딩 css -->
 
 <!-- 그누보드 필수 js -->
-<script src="//code.jquery.com/jquery.min.js"></script>
+<script src="<?php echo BT_JS_URL?>/jquery-1.11.1.js"></script>
 <script src="<?php echo G5_JS_URL ?>/common.js"></script>
 <script src="<?php echo G5_JS_URL ?>/wrest.js"></script>
 <!-- //그누보드 필수 js -->
