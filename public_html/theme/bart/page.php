@@ -46,9 +46,11 @@ $g5['title'] = $cur_title;
 include_once('./_head.php');
 ?>
 
+<?php btb\show_widgets('page', $pg_id, "page_top");?>
 <section>
 	<?php echo get_view_thumbnail($content, $btcfg['bc_image_width']);?>
 </section>
+<?php btb\show_widgets('page', $pg_id, "page_bot");?>
 
 <?php
 include_once('./_tail.php');

@@ -60,7 +60,7 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
             	    <li><a href="<?php echo G5_ADMIN_URL ?>"><i class="fa fa-cog"></i> 관리자</b></a></li>
                 <?php }  ?>
             	    <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-edit"></i> 정보수정</a></li>
-				    <li><a href="<?php echo G5_URL?>/bbs/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
+				    <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" id="tnb_dropdown_menu1" data-toggle="dropdown"><i class="fa fa-plus"></i> 추가메뉴</a>
                         <ul class="dropdown-menu" aria-labelledby="tnb_dropdown_menu1">

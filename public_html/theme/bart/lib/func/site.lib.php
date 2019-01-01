@@ -259,7 +259,7 @@ function show_widgets($skindir, $wp_id, $wg_id){
     
     $search = BT_PATH;
     
-    if($skindir == 'wpage'){
+    if($skindir == 'wpage' || $skindir == 'page' || $skindir == 'mpage'){
         $wg_skindir = $skindir;
     }else{
         $wg_skindir = str_replace(DS, "^", trim(str_replace($search, "", dirname($skindir)), "/"));
