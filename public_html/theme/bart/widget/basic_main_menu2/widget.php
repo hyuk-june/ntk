@@ -3,7 +3,7 @@
 title:메인메뉴2
 description:전체항목이 펼쳐지는 메인메뉴
 version:1.0.0
-author:bartnet
+author:NTK
 single:true
 */
 

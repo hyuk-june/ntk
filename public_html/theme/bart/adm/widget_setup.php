@@ -81,7 +81,7 @@ HEREDOC;
 
 
 
-$g5['title'] = $rs['wg_name'].' ['.$rs['wp_id'].' - '.$rs['wg_id'].'] 위젯설정';
+$g5['title'] = $rs['wg_name'].' [ '.trim($rs['wp_id'].' - '.$rs['wg_id'], ' -').' ] 위젯설정';
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.BT_ADMIN_URL.'/style.css" />');
 include(G5_PATH.'/head.sub.php');

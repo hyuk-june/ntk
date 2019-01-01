@@ -3,7 +3,7 @@
 title:IFRAME 위젯
 description:IFRAME 페이지를 삽입합니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 if(!defined("_GNUBOARD_")) exit("Access Denied");

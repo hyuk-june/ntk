@@ -22,9 +22,13 @@ if($config['cf_cert_use'] && ($config['cf_cert_ipin'] || $config['cf_cert_hp']))
 <style type="text/css">
 h4{margin:0; padding:10px;vertical-align: middle; width:100%;}
 
-#login_wrap, #cert_wrap{
+#login_wrap, #cert_wrap, #social{
 	background-color:#fff;
 	padding:10px;
+}
+
+#login_wrap{
+    border-right: 2px dashed #ddd;
 }
 
 #cert_wrap .tab-content {
@@ -41,6 +45,22 @@ h4{margin:0; padding:10px;vertical-align: middle; width:100%;}
 #cert_wrap button{
 	position:relative; display:block; margin:0 auto; 
 }
+
+#social{
+    position: relative;
+    height:100%;
+}
+
+#sns_login{
+    border:0 !important;
+    margin:0 !important;
+    height: auto;
+    overflow: hidden;
+    min-height:100% !important;
+    padding:0 !important;
+}
+
+#sns_login h3{display:none;}
 
 @media(min-width:768px){
 	#loginbox{margin-top:100px; margin-bottom:100px;}
@@ -113,14 +133,17 @@ h4{margin:0; padding:10px;vertical-align: middle; width:100%;}
 				</form>
 			</div>
 		<?php }else{?>
-			<div class="col-sm-6">
-				광고
+			<div id="social" class="col-sm-6">
+				<?php
+                // 소셜로그인 사용시 소셜로그인 버튼
+                @include_once(get_social_skin_path().'/social_login.skin.php');
+                ?>
 			</div>
 		<?php }?>
 		</div>
-		
+        
 	</div>
-	
+    
 	<div class="row">
 		<div class="col-sm-offset-2 col-sm-10">
 			<section>

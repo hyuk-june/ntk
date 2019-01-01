@@ -81,7 +81,6 @@ function cfgform_submit(f){
         	<th scope="row"><label for="bc_skin_frame_main">메인프레임</label></th>
         	<td>
         		<select name="bc_skin_frame_main" id="bc_skin_frame_main" required="required" class="required"><?php echo $frame_main_opts?></select>
-        		<!--Mobile : <select name="bc_skin_mframe_main" id="bc_skin_mframe_main"><?php echo $mframe_main_opts?></select>-->
         	</td>
         </tr>
         <tr>

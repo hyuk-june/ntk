@@ -3,7 +3,7 @@
 title:회사연혁
 description:회사연혁을 출력하는 위젯입니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

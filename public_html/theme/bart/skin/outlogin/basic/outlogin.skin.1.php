@@ -38,7 +38,7 @@ global $wcfg;
         
         <?php
         // 소셜로그인 사용시 소셜로그인 버튼
-        @include_once(get_social_skin_path().'/social_outlogin.skin.1.php');
+        @include(get_social_skin_path().'/social_outlogin.skin.1.php');
         ?>
     </div>
 

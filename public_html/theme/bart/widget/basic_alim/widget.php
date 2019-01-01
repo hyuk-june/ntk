@@ -3,7 +3,7 @@
 title:알리미
 description:내게 온 소식목록입니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

@@ -31,6 +31,8 @@
 
 .bo-basic-view .view-content-wrap .view-act{margin:10px auto;}
 
+.bo-basic-view .down-point{font-weight:bold; color:#f00;}
+
 
 /* Comment 목록 */
 .bo-basic-view-cmt .cmt-wrap {margin-bottom:20px}
@@ -68,6 +70,7 @@
 .bo-basic-view-cmt .cmt-write .panel-body {padding:0px !important;}
 .bo-basic-view-cmt .cmt-write .panel-body #wr_content{display:block; height:100%; border:0; background-image:none !important; background-color:#fff !important;}
 .bo-basic-view-cmt .cmt-write .panel-heading #bo_vc_sns a{display:inline-block; margin-right:4px;}
+
 
 @media(max-width:576px){
     .bo-basic-view-cmt .cmt-item .cmt-photo-wrap{width:40px; height:40px;}

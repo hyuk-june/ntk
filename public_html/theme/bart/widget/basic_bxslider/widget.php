@@ -3,7 +3,7 @@
 title:가로회전배너(BxSlider)
 description:BxSlider를 이용한 가로로 회전하는 배너위젯입니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

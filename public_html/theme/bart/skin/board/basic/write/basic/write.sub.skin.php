@@ -8,6 +8,14 @@ use kr\bartnet\board as btbo;
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'].'/write.sub.skin.css" />');
 ?>
     <div class="bo-basic-write">
+<?php if($option){?>
+        <div class="form-group row">
+            <div for="wr_name" class="col-form-label col-form-label-sm col-sm-2">옵션</div>
+            <div class="col-sm-10">
+                <?php echo $option?>
+            </div>
+        </div>
+<?php }?>
     
 <?php if ($is_name) { ?>
         <div class="form-group row">
@@ -87,82 +95,6 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
             </div>
         </div>
         
-        <!-- 옵션 -->
-
-    <?php for($i=0; $i<count($bcfg['opt_code']); $i++){?>
-        <?php
-        $opt_code = $bcfg['opt_code'][$i];
-        $opt_name= $bcfg['opt_name'][$i];
-        $opt_type = $bcfg['opt_type'][$i];
-        $opt_attr = $bcfg['opt_attr'][$i];
-        $opt_value = $bcfg['opt_value'][$i];
-        $opt_help = $bcfg['opt_help'][$i];
-        
-        $db_value = '';
-        if(isset($opts[$opt_name])) $db_value = $opts[$opt_name];
-        $required = strstr($bcfg['opt_attr'][$i], 'required') ? ' required': '';
-        ?>
-        <div class="form-group row">
-            <label class="col-sm-2 col-form-label col-form-label-sm"><?php echo $opt_name?></label>
-            <div class="col-sm-10">
-                <input type="hidden" name="opt_code[<?php echo $i?>]" value="<?php echo $opt_code?>">
-        <?php if($opt_type=='text'){?>
-                <input type="text" name="opt_value[<?php echo $i?>]" class="form-control form-control-sm<?php echo $required?>"<?php echo $required?> 
-                data-btval="label:'<?php echo $opt_name?>'<?php echo $opt_attr ? ','.$opt_attr:'';?>" 
-                value="<?php echo $db_value?>">
-        <?php }else if($opt_type=='textbox'){?>
-                <textarea name="opt_value[<?php echo $i?>]" class="form-control form-control-sm<?php echo $required?>"<?php echo $required?> 
-                data-btval="label:'<?php echo $opt_name?>'<?php echo $opt_attr ? ','.$opt_attr:'';?>"><?php echo $db_value?></textarea>
-        <?php }else if($opt_type=='select'){?>
-                <select name="opt_value[<?php echo $i?>]" class="form-control form-control-sm<?php echo $required?>"<?php echo $required?> data-btval="label:'<?php echo $opt_name?>'<?php echo $opt_attr ? ','.$opt_attr:'';?>">
-            <?php
-            $list = explode('|', $opt_value);
-            for($j=0; $j<count($list); $j++){
-                $temp = explode('^', $list[$j]);
-                $value = $temp[0];
-                $text = isset($temp[1]) ? $temp[1] : $temp[0];
-            ?>
-                    <option value="<?php echo $value?>"<?php echo $db_value==$value ? ' selected="selected"':'';?>><?php echo $text?></option>
-            <?php
-            }
-            ?>
-                </select>
-        <?php }else if($opt_type=='checkbox' || $opt_type=='radio'){?>
-            <?php
-            $list = explode('|', $opt_value);
-            for($j=0; $j<count($list); $j++){
-                $temp = explode('^', $list[$j]);
-                if(count($temp) >= 2){
-                    $value = trim($temp[0]);
-                    $text = trim($temp[1]);
-                }else{
-                    $value = trim($list[$j]);
-                    $text = trim($list[$j]);
-                }
-                
-                $attr = '';
-                if($j==0) $attr = "data-btval=\"label:'".$opt_name."'".($opt_attr ? ','.$opt_attr:'')."\"";
-            ?>
-                <input type="<?php echo $opt_type?>" name="opt_value[<?php echo $i?>]" 
-                id="opt_value_<?php echo $i?>_<?php echo $j?>" value="<?php echo $value?>"
-                <?php echo $db_value==$value ? ' checked="checked"':'';?>
-                <?php echo $attr?> class="<?php echo $required?>">
-                <label for="opt_value_<?php echo $i?>_<?php echo $j?>"><?php echo $text?></label>
-            <?php
-            }
-            ?>
-        <?php }?>
-        
-        <?php if(isset($opt_help) && trim($opt_help)){?>
-                <div class="form-text text-muted"><?php echo $opt_help?></div>
-        <?php }?>
-            </div>
-        </div>
-        
-    <?php }?>
-   
-        <!-- //옵션 -->
-
         <div class="form-group">
             <div class="wr_content">
                 <?php if($write_min || $write_max) { ?>
@@ -190,21 +122,39 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
         <div class="form-group row">
             <label class="col-sm-2 control-label">파일 #<?php echo $i+1 ?></label>
             <div class="col-sm-10">
-                <input type="file" name="bf_file[]" title="파일첨부 <?php echo $i+1 ?> : 용량 <?php echo $upload_max_filesize ?> 이하만 업로드 가능" class="frm_file frm_input">
+                <input type="file" name="bf_file[]" title="파일첨부 <?php echo $i+1 ?> : 용량 <?php echo $upload_max_filesize ?> 이하만 업로드 가능" class="form-control form-control-sm">
                 <?php if ($is_file_content) { ?>
-                <input type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="frm_file frm_input" size="50">
+                <input type="text" name="bf_content[]" value="<?php echo ($w == 'u') ? $file[$i]['bf_content'] : ''; ?>" title="파일 설명을 입력해주세요." class="form-control form-control-sm">
                 <?php } ?>
                 <?php if($w == 'u' && $file[$i]['file']) { ?>
                 <input type="checkbox" id="bf_file_del<?php echo $i ?>" name="bf_file_del[<?php echo $i;  ?>]" value="1"> <label for="bf_file_del<?php echo $i ?>"><?php echo $file[$i]['source'].'('.$file[$i]['size'].')';  ?> 파일 삭제</label>
                 <?php } ?>
             </div>
         </div>
+        
+            <?php if($bcfg['use_point_down']){?>
+        <div class="form-group row">
+            <label for="opts_point_down_<?php echo $i?>" class="col-sm-2">다운로드포인트</label>
+            <div class="col-sm-2">
+                <input type="text" name="opts[point_down][]" id="opts_point_down_<?php echo $i?>" class="form-control form-control-sm text-right" placeholder="point" value="<?php echo $opts['point_down'][$i]?>">
+            </div>
+        </div>
+            <?php }?>
         <?php } ?>
-
+        
+        <?php if($bcfg['use_point_view']){?>
+        <div class="form-group row">
+            <label class="col-sm-2 control-label">내용보기포인트</label>
+            <div class="col-sm-2">
+                <input type="text" name="opts[point_view]" class="form-control form-control-sm text-right" placeholder="point" value="<?php echo $opts['point_view']?>">
+            </div>
+        </div>
+        <?php }?>
+        
         <?php if ($is_guest) { //자동등록방지  ?>
         <div class="form-group row">
             <label class="col-sm-2 control-label">자동등록방지</label>
-            <div class="sol-sm-10">
+            <div class="col-sm-10">
                 <?php echo $captcha_html ?>
             </div>
         </div>

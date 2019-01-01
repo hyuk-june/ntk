@@ -197,25 +197,14 @@ function get_widget_option($device, $value='', $first_opt=array()){
 function build_frame_skin(){
 	global $bt, $btcfg;
 	
-	if(G5_IS_MOBILE == 'mobile'){
-		$bt['default_css'] = BT_URL.'/css/mobile.css';
-		if(defined('_INDEX_')){
-			$bt['frame_skin'] = bt\binstr($btcfg['bc_skin_main_mframe'], $btcfg['bc_skin_mframe']);
-		}else{
-    		$bt['frame_skin'] = bt\binstr($bt['curmenu']['bm_skin_mframe'], $btcfg['bc_skin_mframe']);
-		}
-	    $bt['frame_css'] = BT_MSKIN_URL.'/frame/'.$bt['frame_skin'].'/css/style.css';
-		
-	}else{
-	    $bt['default_css'] = BT_URL.'/css/default.css';
+	$bt['default_css'] = BT_URL.'/css/default.css';
 
-	    if(defined('_INDEX_')){
-			$bt['frame_skin'] = bt\binstr($btcfg['bc_skin_main_frame'], $btcfg['bc_skin_frame']);
-		}else{
-    		$bt['frame_skin'] = bt\binstr($bt['curmenu']['bm_skin_frame'], $btcfg['bc_skin_frame']);
-		}
-	    $bt['frame_css'] = BT_SKIN_URL.'/frame/'.$bt['frame_skin'].'/css/style.css';
+	if(defined('_INDEX_')){
+		$bt['frame_skin'] = bt\binstr($btcfg['bc_skin_main_frame'], $btcfg['bc_skin_frame']);
+	}else{
+    	$bt['frame_skin'] = bt\binstr($bt['curmenu']['bm_skin_frame'], $btcfg['bc_skin_frame']);
 	}
+	$bt['frame_css'] = BT_SKIN_URL.'/frame/'.$bt['frame_skin'].'/css/style.css';
 }
 
 

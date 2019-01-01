@@ -3,7 +3,7 @@
 title: 링크탭
 description: 링크 탭
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 if(!defined("_GNUBOARD_")) exit("Access Denied");

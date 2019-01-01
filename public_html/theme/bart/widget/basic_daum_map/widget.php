@@ -3,7 +3,7 @@
 title:다음지도
 description:다음지도 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

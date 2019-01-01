@@ -14,21 +14,31 @@ add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0
 //게시판 추가 설정
 include_once('board.cmm.php');
 
+//옵션불러오기
+$opts = btbo\load_option($bo_table, $wr_id);
+
+//파일 다운로드 포인트 정리
+btbo\set_down_point($view['file'], $board['bo_download_point'], $opts);
+
+//view 내부 스킨 로딩
 include_once($sub_paths['view'].'/view.sub.skin.php');
 ?>
 
-
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>
 <script type="text/javascript">
-<?php if ($board['bo_download_point'] < 0) { ?>
+var point_down = '<?php echo $board['bo_download_point']?>';
+
+
 $(function() {
     $("a.view_file_download").click(function() {
         if(!g5_is_member) {
             alert("다운로드 권한이 없습니다.\n회원이시라면 로그인 후 이용해 보십시오.");
             return false;
         }
-
-        var msg = "파일을 다운로드 하시면 포인트가 차감(<?php echo number_format($board['bo_download_point']) ?>점)됩니다.\n\n포인트는 게시물당 한번만 차감되며 다음에 다시 다운로드 하셔도 중복하여 차감하지 않습니다.\n\n그래도 다운로드 하시겠습니까?";
+        
+        var point = $(this).data('point');
+        
+        var msg = "파일을 다운로드 하시면 포인트가 차감(" + point + ")됩니다.\n\n포인트는 게시물당 한번만 차감되며 다음에 다시 다운로드 하셔도 중복하여 차감하지 않습니다.\n\n그래도 다운로드 하시겠습니까?";
 
         if(confirm(msg)) {
             var href = $(this).attr("href")+"&js=on";
@@ -40,7 +50,7 @@ $(function() {
         }
     });
 });
-<?php } ?>
+
 
 function board_move(href)
 {

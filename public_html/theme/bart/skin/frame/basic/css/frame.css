@@ -193,6 +193,10 @@ a:hover{color:#f00;}
     padding: 1rem;
 }
 
+.bt-frame.edit .tail{
+    position: relative;
+}
+
 /*******************************
 * 기타
 *******************************/

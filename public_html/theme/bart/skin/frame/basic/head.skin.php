@@ -60,19 +60,19 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
             	    <li><a href="<?php echo G5_ADMIN_URL ?>"><i class="fa fa-cog"></i> 관리자</b></a></li>
                 <?php }  ?>
             	    <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-edit"></i> 정보수정</a></li>
-				    <li><a href="<?php G5_URL?>/bbs/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
+				    <li><a href="<?php echo G5_URL?>/bbs/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
                     <li class="dropdown">
                         <a href="#" data-toggle="dropdown" id="tnb_dropdown_menu1" data-toggle="dropdown"><i class="fa fa-plus"></i> 추가메뉴</a>
                         <ul class="dropdown-menu" aria-labelledby="tnb_dropdown_menu1">
                             <li><a href="<?php echo G5_BBS_URL ?>/faq.php"><i class="fa fa-question"></i> FAQ</a></li>
                             <li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><i class="fa fa-comment-o"></i> 1:1문의</a></li>
-                            <li><a href="<?php G5_URL?>/bbs/new.php"><i class="fa fa-plus-square"></i> 새글</a></li>
-                            <li><a href="<?php G5_URL?>/bbs/current_connect.php"><i class="fa fa-user"></i> 현재접속자</a></li>
+                            <li><a href="<?php echo G5_URL?>/bbs/new.php"><i class="fa fa-plus-square"></i> 새글</a></li>
+                            <li><a href="<?php echo G5_URL?>/bbs/current_connect.php"><i class="fa fa-user"></i> 현재접속자</a></li>
                         </ul>
                     </li>
 		    <?php }else{?>
-				    <li><a href="<?php G5_URL?>/bbs/login.php"><i class="fa fa-sign-in"></i> 로그인</a></li>
-				    <li><a href="<?php G5_URL?>/bbs/register.php"><i class="fa fa-sign-in"></i> 회원가입</a></li>
+				    <li><a href="<?php echo G5_URL?>/bbs/login.php"><i class="fa fa-sign-in"></i> 로그인</a></li>
+				    <li><a href="<?php echo G5_URL?>/bbs/register.php"><i class="fa fa-sign-in"></i> 회원가입</a></li>
 		    <?php }?>
 			    </ul>
 		    </nav>

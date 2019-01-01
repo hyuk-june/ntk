@@ -215,20 +215,19 @@ function save_option($bo_table, $wr_id, $data=array()){
     
     $str = '<'.'?php exit();?'.'>'.PHP_EOL;
     
-    if(isset($_POST["opt_code"]) && count($_POST["opt_code"]) > 0){
+    if(isset($_POST["opts"]) && count($_POST["opts"]) > 0){
+        
         $opts = array();
 
-        for($i=0; $i<count($_POST["opt_code"]); $i++){
-            $opts[$_POST["opt_code"][$i]] = $_POST["opt_value"][$i];
+        foreach($_POST["opts"] as $key => $value){
+            $opts[$key] = $value;
         }
-
-        $data['options'] = $opts;
+        
+        $str .= @json_encode($opts);
+        $fp = fopen(G5_DATA_PATH.'/file/'.$bo_table.'/opt_'.$wr_id.'.php', 'w+');
+        fwrite($fp, $str);
+        fclose($fp);
     }
-            
-    $str .= @json_encode($data);
-    $fp = fopen(G5_DATA_PATH.'/file/'.$bo_table.'/opt_'.$wr_id.'.php', 'w+');
-    fwrite($fp, $str);
-    fclose($fp);
 }
 
 //게시판 추가옵션로드
@@ -239,4 +238,18 @@ function load_option($bo_table, $wr_id){
     $line = file($file_path);
     array_shift($line);
     return @json_decode( @implode('', $line), true);
+}
+
+//내용보기, 다운로드 등의 필요포인트
+function set_down_point(&$files, $bo_download_point, &$opts){
+    
+    if(is_array($files) && (int)$files['count'] <= 0) return;
+    
+    for($i=0; $i<$files['count']; $i++){
+        if(bt\isval($opts['point_down']) && (int)$opts['point_down'][$i] > 0){
+            $files[$i]['point'] = abs($opts['point_down'][$i]) * -1;
+        }else{
+            $files[$i]['point'] = $bo_download_point;
+        }
+    }
 }

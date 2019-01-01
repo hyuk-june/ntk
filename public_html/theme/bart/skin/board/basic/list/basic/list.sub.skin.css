@@ -19,6 +19,7 @@
 .bo-basic-list .list-row .cell-good{width:60px; text-align:center;}
 .bo-basic-list .list-row .cell-nogood{width:60px; text-align:center;}
 
+.bo-basic-list .list-row .view-point{color:#f00; font-weight:bold;}
 
 
 @media(max-width:576px){

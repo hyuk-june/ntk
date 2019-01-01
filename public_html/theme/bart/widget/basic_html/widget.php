@@ -3,7 +3,7 @@
 title:HTML위젯
 description:텍스트나 HTML을 삽입할 수 있습니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

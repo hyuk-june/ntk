@@ -62,26 +62,27 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
         <!-- 첨부파일 시작 { -->
         <section class="attach-file">
             <h2>첨부파일</h2>
-            <ul>
+            <ul class="m-0">
             <?php
             // 가변 파일
             for ($i=0; $i<count($view['file']); $i++) {
                 if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view']) {
-             ?>
-                <li class="d-flex">
-                    <div>
-                        <a href="<?php echo $view['file'][$i]['href'];  ?>" class="view_file_download">
+            ?>
+                <li class="d-flex flex-wrap">
+                    <div class="d-inline-block d-sm-block mr-2">
+                        <a href="<?php echo $view['file'][$i]['href'];?>" data-point="<?php echo $view['file'][$i]['point']?>" class="view_file_download">
                             <img src="<?php echo $board_skin_url ?>/img/icon_file.gif" alt="첨부">
                             <strong><?php echo $view['file'][$i]['source'] ?></strong>
                             <?php echo $view['file'][$i]['content'] ?> (<?php echo $view['file'][$i]['size'] ?>)
                         </a>
+                <?php if((int)$view['file'][$i]['point'] < 0){?>
+                        <span class="down-point"><?php echo number_format($view['file'][$i]['point'])?> Point</span>
+                <?php }?>
                     </div>
-                    <div class="d-none d-sm-block">
-                        &nbsp;
+                    <div class="d-inline-block d-sm-block mr-2">
                         <i class="fa fa-download">&nbsp;</i><?php echo $view['file'][$i]['download'] ?>회 다운로드
                     </div>
-                    <div class="d-none d-sm-block">
-                        &nbsp;
+                    <div class="d-inline-block d-sm-block">
                         <i class="fa fa-calendar">&nbsp;</i>DATE : <?php echo $view['file'][$i]['datetime'] ?>
                     </div>
                 </li>

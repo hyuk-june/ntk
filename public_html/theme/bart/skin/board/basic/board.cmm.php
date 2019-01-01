@@ -9,15 +9,6 @@ include_once($board_skin_path.'/lib/board.lib.php');
 //게시판 추가 설정
 $bcfg = btbo\get_config($bo_table);
 
-//추가옵션 정리
-for($i=0; $i<count($bcfg['opt_name']); $i++){
-    $bcfg['opt_name'][$i] = stripcslashes($bcfg['opt_name'][$i]);
-    $bcfg['opt_type'][$i] = stripcslashes($bcfg['opt_type'][$i]);
-    $bcfg['opt_value'][$i] = stripcslashes($bcfg['opt_value'][$i]);
-    $bcfg['opt_attr'][$i] = stripcslashes($bcfg['opt_attr'][$i]);
-    $bcfg['opt_help'][$i] = stripcslashes($bcfg['opt_help'][$i]);
-}
-
 //서브스킨경로
 $sub_paths = array(
     'list' => $board_skin_path.'/list/'.bt\binstr($bcfg['skin_list'], 'basic'),
@@ -31,7 +22,6 @@ $sub_urls = array(
     'view' => $board_skin_url.'/view/'.bt\binstr($bcfg['skin_view'], 'basic'),
     'write' => $board_skin_url.'/write/'.bt\binstr($bcfg['skin_write'], 'basic'),
 );
-
 
 //목록 필드출력 여부
 $list_show_writer = true;

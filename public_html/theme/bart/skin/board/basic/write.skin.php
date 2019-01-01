@@ -9,11 +9,13 @@ use kr\bartnet\board as btbo;
 // add_stylesheet('css 구문', 출력순서); 숫자가 작을 수록 먼저 출력됨
 add_stylesheet('<link rel="stylesheet" href="'.$board_skin_url.'/style.css">', 0);
 
-add_javascript('<script type="text/javascript" src="'.BT_JS_URL.'/jquery.btvalidator.js"></script>');
 add_javascript('<script type="text/javascript" src="'.$board_skin_url.'/js/board.js"></script>');
 
 //게시판 추가 설정
 include_once('board.cmm.php');
+
+//옵션불러오기
+$opts = btbo\load_option($bo_table, $wr_id);
 ?>
 
 
@@ -83,7 +85,6 @@ include_once('board.cmm.php');
         $("#wr_content").on("keyup", function() {
             check_byte("wr_content", "char_count");
         });
-        //$('#fwrite').btvalidator();
     });
 
     <?php } ?>
@@ -157,10 +158,6 @@ include_once('board.cmm.php');
 
         return true;
     }
-    
-    $(function(){
-        $.validate();
-    })
     </script>
 </section>
 <!-- } 게시물 작성/수정 끝 -->

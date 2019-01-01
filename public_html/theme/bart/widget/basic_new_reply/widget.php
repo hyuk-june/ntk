@@ -3,7 +3,7 @@
 title:전체게시판 최신댓글
 description:모든게시판의 댓글 출력
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

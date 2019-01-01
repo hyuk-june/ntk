@@ -3,7 +3,7 @@
 title:스마트메뉴
 description:메인메뉴를 표시합니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:true
 */
 

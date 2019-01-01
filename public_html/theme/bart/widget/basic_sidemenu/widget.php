@@ -3,7 +3,7 @@
 title:사이드메뉴
 description:기본적인 사이드메뉴 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

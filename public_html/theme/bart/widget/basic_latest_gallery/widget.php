@@ -3,7 +3,7 @@
 title:최신글 갤러리 위젯
 description:기본적인 최신글 갤러리 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

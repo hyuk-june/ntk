@@ -2,7 +2,7 @@
 /*
 title:설문조사 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

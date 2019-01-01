@@ -180,6 +180,8 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
             }else{
                 $name = btl\hp_blind($list[$i]['wr_name']);
             }
+            
+            $opts = btbo\load_option($bo_table, $list[$i]['wr_id']);
         ?>
                 <li class="list-row<?php if ($list[$i]['is_notice']) echo " bo_notice"; echo $strcls?>">
                     <div class="cell cell-num"><?php echo $strnum?></div>

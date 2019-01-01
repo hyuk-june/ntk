@@ -79,7 +79,6 @@ foreach($files as $_file){
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script type="text/javascript" src="<?php echo BT_JS_URL?>/bt.common.js"></script>
 <script type="text/javascript" src="<?php echo BT_JS_URL?>/bt.builder.js"></script>
-<script type="text/javascript" src="<?php echo BT_JS_URL?>/jquery.btvalidator.js"></script>
 <!-- //NTK빌더 필수 js 파일 로딩 -->
 
 <!-- 그누보드의 특성상 </title> 다음에 <link> 태그 반드시 와야 해서 강제로 빈 <link>넣어 줌 -->

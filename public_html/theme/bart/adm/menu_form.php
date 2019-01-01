@@ -39,12 +39,10 @@ while($row = sql_fetch_array($result)){
 // 프레임 스킨 옵션
 $dir = BT_SKIN_PATH.'/frame';
 $frame_s = bt\get_select($dir);
-$mframe_s = bt\get_select($dir);
 
 // 레이아웃 스킨 옵션
 $dir = BT_SKIN_PATH.'/layout';
 $layout_s = bt\get_select($dir);
-$mlayout_s = bt\get_select($dir);
 
 
 //===========================================================================
@@ -96,10 +94,8 @@ if($bm_idx){
 	if($view['bm_type']=='board') $board_s->selectedFromValue = $view['bm_mid'];
 	
 	$frame_s->selectedFromValue = $view['bm_skin_frame'];
-    $mframe_s->selectedFromValue = $view['bm_skin_mframe'];
     
     $layout_s->selectedFromValue = $view['bm_skin_layout'];
-    $mlayout_s->selectedFromValue = $view['bm_skin_mlayout'];
 	
 	if($view['bm_type']=='page') $page_s->selectedFromValue = $view['bm_mid'];
     if($view['bm_type']=='wpage') $wpage_s->selectedFromValue = $view['bm_mid'];

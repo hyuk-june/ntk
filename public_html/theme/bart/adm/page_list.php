@@ -15,12 +15,10 @@ $total_count = sql_num_rows($result);
 // 프레임 스킨 옵션
 $dir = BT_SKIN_PATH.'/frame';
 $frame_s = bt\get_select($dir);
-$mframe_s = bt\get_select($dir);
 
 // 레이아웃 스킨 옵션
 $dir = BT_SKIN_PATH.'/layout';
 $layout_s = bt\get_select($dir);
-$mlayout_s = bt\get_select($dir);
 
 
 $g5['title'] = '페이지관리';

@@ -3,7 +3,7 @@
 title: 새글 위젯
 description:기본적인 모든게시판 새글 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

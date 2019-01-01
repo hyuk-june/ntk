@@ -1,6 +1,7 @@
 <?php
 /*
-title:외부로그인 위젯
+title:동영상
+description:Youtube등의 동영상을 반응형으로 출력합니다
 version:1.0.0
 author:NTK
 single:false
@@ -9,10 +10,9 @@ single:false
 if(!defined("_GNUBOARD_")) exit("Access Denied");
 
 use kr\bartnet as bt;
-use kr\bartnet\builder as btb;
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/widget.css" />');
-
-include_once(G5_LIB_PATH.'/outlogin.lib.php');
-
-echo btb\outlogin($wcfg['skin']);
+?>
+<div class="widget-ext-movie">
+    <?php echo $wcfg['mov_script'];?>
+</div>

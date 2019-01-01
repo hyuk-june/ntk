@@ -31,12 +31,10 @@ $type_s->add('link', '링크');
 //PC용 프레임 스킨 옵션
 $dir = BT_SKIN_PATH.'/frame';
 $frame_s = bt\get_select($dir);
-$mframe_s = bt\get_select($dir);
 
 //PC용 레이아웃 스킨 옵션
 $dir = BT_SKIN_PATH.'/layout';
 $layout_s = bt\get_select($dir);
-$mlayout_s = bt\get_select($dir);
 
 //링크타겟옵션 만들기
 $target_s = new bt\html\BSelectbox();
@@ -153,10 +151,8 @@ function chkDel(bm_idx){
         $target_s->selectedFromValue = $row['bm_target'];
         
         $frame_s->selectedFromValue = $row['bm_skin_frame'];
-        $mframe_s->selectedFromValue = $row['bm_skin_mframe'];
         
         $layout_s->selectedFromValue = $row['bm_skin_layout'];
-        $mlayout_s->selectedFromValue = $row['bm_skin_mlayout'];
         
         $device_s->selectedFromValue = $row['bm_device'];
         

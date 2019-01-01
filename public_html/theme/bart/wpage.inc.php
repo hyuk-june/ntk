@@ -52,5 +52,3 @@ foreach($layout_data as $row){
     
     echo "</div>".PHP_EOL;
 }
-?>
-

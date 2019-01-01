@@ -2,7 +2,7 @@
 /*
 title:인기검색어 위젯
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

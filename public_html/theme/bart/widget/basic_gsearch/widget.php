@@ -3,7 +3,7 @@
 title:전체검색
 description:게시판 전체에서 검색합니다
 version:1.0.0
-author:bartnet
+author:NTK
 single:false
 */
 

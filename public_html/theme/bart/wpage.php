@@ -26,16 +26,9 @@ $wpage_skin = ""; //위젯페이지 스킨
 $skin_path = ""; //위젯페이지 스킨경로
 $skin_url = ""; //위젯페이지 스킨url
 
-if(G5_IS_MOBILE){
-    $frame_skin = bt\binstr($pgrow['pg_skin_mframe'], "basic");
-    $layout_skin = bt\binstr($pgrow['pg_skin_mlayout'], "basic");
-    $wpage_skin = bt\binstr($pgrow['pg_skin_mwpage'], "basic");
-    
-}else{
-    $frame_skin = bt\binstr($pgrow['pg_skin_frame'], "basic");
-    $layout_skin = bt\binstr($pgrow['pg_skin_layout'], "basic");
-    $wpage_skin = bt\binstr($pgrow['pg_skin_wpage'], "basic");
-}
+$frame_skin = bt\binstr($pgrow['pg_skin_frame'], "basic");
+$layout_skin = bt\binstr($pgrow['pg_skin_layout'], "basic");
+$wpage_skin = bt\binstr($pgrow['pg_skin_wpage'], "basic");
 
 $skin_path = BT_SKIN_PATH.'/wpage/'.$wpage_skin;
 $skin_url = BT_SKIN_URL.'/wpage/'.$wpage_skin;
