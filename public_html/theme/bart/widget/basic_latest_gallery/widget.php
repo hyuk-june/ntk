@@ -2,7 +2,7 @@
 /*
 title:최신글 갤러리 위젯
 description:기본적인 최신글 갤러리 위젯
-version:1.0.0
+version:1.1.1
 author:NTK
 single:false
 */
@@ -61,12 +61,14 @@ if(bt\isval($wcfg['bo_table'])){
     ?>
             <li>
                 <div class="thumb"><a href="<?php echo $a_href?>"><?php echo $img?></a></div>
+            <?php if(bt\isval($wcfg['show_subject'])){?>
                 <div class="desc ellipsis">
                     <a href="<?php echo $a_href?>" title="<?php echo $row["subject"]?>">
                         <?php echo $icons?>
                         <?php echo $row["subject"]?>
                     </a>
                 </div>
+            <?php }?>
             <?php if(bt\isval($wcfg['show_name']) || bt\isval($wcfg['show_date'])){?>
                 <div class="foot ellipsis">
                     <span class="pull-right" data-regdate="<?php echo $row["datetime"]?>">

@@ -13,6 +13,7 @@
 .bo-basic-list .list-row .cell-cate{width:100px; text-align:center; font-weight:bold;}
 .bo-basic-list .list-row .cell-cate a{color:#999;}
 .bo-basic-list .list-row .cell-subject{width:auto;}
+.bo-basic-list .list-row .cell-subject .cnt_cmt{font-weight:bold; color:#f00;}
 .bo-basic-list .list-row .cell-writer{width:150px; text-align:center;}
 .bo-basic-list .list-row .cell-datetime{width:60px; text-align:center;}
 .bo-basic-list .list-row .cell-hit{width:60px; text-align:center;}

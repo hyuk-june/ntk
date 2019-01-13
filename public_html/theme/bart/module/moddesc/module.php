@@ -9,6 +9,7 @@ include_once(G5_PATH.'/head.php');
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$module_url.'/style.css" />');
 ?>
+<?php echo btb\show_widgets(__FILE__, $pg_id, "moddesc_top");?>
 
 <div class="card mb-3 custom-module">
     <div class="card-body">
@@ -45,6 +46,8 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$module_url.'/sty
     
     <button type="submit" class="btn btn-primary">전송테스트</button>
 </form>
+
+<?php echo btb\show_widgets(__FILE__, $pg_id, "moddesc_bot");?>
 
 
 

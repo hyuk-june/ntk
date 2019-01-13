@@ -16,9 +16,11 @@ $rowcnt = 5;
 $subject_len = 30;
 
 if($rs['wg_isset']){
+    $checked_subject = false;
     $checked_name = false;
     $checked_date = false;
 }else{
+    $checked_subject = true;
     $checked_name = false;
     $checked_date = true;
 }
@@ -33,7 +35,7 @@ $bo_opts = $s->getOption();
     <table>
     <tbody>
     <tr>
-        <th>게시판ID</th>
+        <th>게시판선택</th>
         <td>
             <select name="bo_table">
             <?php echo $bo_opts?>
@@ -53,33 +55,21 @@ $bo_opts = $s->getOption();
             <thead>
             <tr>
                 <th>구분</th>
-                <th>lg(≥1170px)</th>
-                <th>md(≥992px)</th>
-                <th>sm(≥768px)</th>
-                <th>xs(&lt;765px)</th>
+                <th>xs(&lt;576px)</th>
+                <th>sm(≥576px)</th>
+                <th>md(≥768px)</th>
+                <th>lg(≥992px)</th>
+                <th>xl(≥1200px)</th>
             </tr>
             </thead>
             <tbody>
             <tr>
                 <td>행당갯수</td>
-                <td><input type="text" name="numpr[lg]" value="<?php echo $wcfg['numpr']['lg']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="numpr[md]" value="<?php echo $wcfg['numpr']['md']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="numpr[sm]" value="<?php echo $wcfg['numpr']['sm']?>" class="frm_input" size="4"></td>
                 <td><input type="text" name="numpr[xs]" value="<?php echo $wcfg['numpr']['xs']?>" class="frm_input" size="4"></td>
-            </tr>
-            <tr>
-                <td>상하여백</td>
-                <td><input type="text" name="ma_w[lg]" value="<?php echo $wcfg['ma_w']['lg']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_w[md]" value="<?php echo $wcfg['ma_w']['md']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_w[sm]" value="<?php echo $wcfg['ma_w']['sm']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_w[xs]" value="<?php echo $wcfg['ma_w']['xs']?>" class="frm_input" size="4"></td>
-            </tr>
-            <tr>
-                <td>좌우여백</td>
-                <td><input type="text" name="ma_h[lg]" value="<?php echo $wcfg['ma_h']['lg']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_h[md]" value="<?php echo $wcfg['ma_h']['md']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_h[sm]" value="<?php echo $wcfg['ma_h']['sm']?>" class="frm_input" size="4"></td>
-                <td><input type="text" name="ma_h[xs]" value="<?php echo $wcfg['ma_h']['xs']?>" class="frm_input" size="4"></td>
+                <td><input type="text" name="numpr[sm]" value="<?php echo $wcfg['numpr']['sm']?>" class="frm_input" size="4"></td>
+                <td><input type="text" name="numpr[md]" value="<?php echo $wcfg['numpr']['md']?>" class="frm_input" size="4"></td>
+                <td><input type="text" name="numpr[lg]" value="<?php echo $wcfg['numpr']['lg']?>" class="frm_input" size="4"></td>
+                <td><input type="text" name="numpr[xl]" value="<?php echo $wcfg['numpr']['xl']?>" class="frm_input" size="4"></td>
             </tr>
             </tbody>
             </table>
@@ -98,6 +88,10 @@ $bo_opts = $s->getOption();
         <th>노출</th>
         <td>
             <label>
+                <input type="checkbox" name="show_subject" value="1"<?php echo bt\get_checked("1", $wcfg["show_subject"], $checked_name)?>>
+                제목
+            </label>
+            <label>
                 <input type="checkbox" name="show_name" value="1"<?php echo bt\get_checked("1", $wcfg["show_name"], $checked_name)?>>
                 작성자
             </label>
@@ -110,7 +104,7 @@ $bo_opts = $s->getOption();
     <tr>
         <th>캐시사용</th>
         <td>
-            <input type="text" name="cache_min" size="4" class="frm_input" value="<?php echo $wcfg['cache_min']?>">
+            <input type="text" name="wg_cache_min" size="4" class="frm_input" value="<?php echo $wrs['wg_cache_min']?>">
             <label>분 (캐시를 사용하시려면 분단위로 입력하세요)</label>
         </td>
     </tr>

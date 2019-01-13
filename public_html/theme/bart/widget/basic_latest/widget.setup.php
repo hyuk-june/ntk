@@ -89,7 +89,7 @@ $latest_skins = get_skin_select('latest', 'skin', 'skin', $wcfg['skin'], 'requir
     <tr>
         <th>캐시사용</th>
         <td>
-            <input type="text" name="cache_min" size="4" class="frm_input" value="<?php echo $wcfg['cache_min']?>">
+            <input type="text" name="wg_cache_min" size="4" class="frm_input" value="<?php echo $wrs['wg_cache_min']?>">
             <label>분 (캐시를 사용하시려면 분단위로 입력하세요)</label>
         </td>
     </tr>

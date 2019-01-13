@@ -9,7 +9,16 @@ $sql = "SELECT * FROM ".$bt['page_table']." WHERE pg_type='wpage' AND pg_id='".$
 $pgrow = $bdb->fetch($sql);
 
 if(!$pgrow){
-    alert('해당 페이지가 존재하지 않습니다');
+    if(defined('_MAIN_')){
+        
+        include_once('./_head.php');
+        echo 'NTK빌더 기본설정에서 메인 페이지를 세팅해주세요';
+        include_once('./_tail.php');
+        exit;
+        
+    }else{
+        alert('해당 페이지가 존재하지 않습니다');
+    }
 }
 
 if($member['mb_level'] < $pgrow['pg_level_min'] || $member['mb_level'] > $pgrow['pg_level_max']){

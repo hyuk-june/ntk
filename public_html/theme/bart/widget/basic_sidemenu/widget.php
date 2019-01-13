@@ -2,7 +2,7 @@
 /*
 title:사이드메뉴
 description:기본적인 사이드메뉴 위젯
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -28,13 +28,24 @@ if($bm_pidx > 0){
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/widget.css" />');
 
-$h_bg = '#'.trim(bt\binstr($wcfg['h_bg'], '49505a'), '#');
-$h_color = '#'.trim(bt\binstr($wcfg['h_color'], 'fff'), '#');
-
+$h_line = btb\colorformat($wcfg['h_line'], 'inherit');
+$h_bg = btb\colorformat($wcfg['h_bg'], '49505a');
+$h_color = btb\colorformat($wcfg['h_color'], 'fff');
+$s_line = btb\colorformat($wcfg['s_line'], 'inherit');
+$s_bg = btb\colorformat($wcfg['s_bg'], 'fff');
+$s_color = btb\colorformat($wcfg['s_color'], 'inherit');
+$s_bg_a = btb\colorformat($wcfg['s_bg_a'], 'inherit');
+$s_color_a = btb\colorformat($wcfg['s_color_a'], 'inherit');
 ob_start();
 ?>
 <style type="text/css">
-.widget-basic-sidemenu .card-heading{background-color:<?php echo $h_bg?>; color:<?php echo $h_color?>;}
+<?php echo $eid?> .widget-basic-sidemenu .card-heading{background-color:<?php echo $h_bg?>; color:<?php echo $h_color?>; border:1px solid <?php echo $h_line?>;}
+<?php echo $eid?> .widget-basic-sidemenu .card-body{background-color:<?php echo $s_bg?>; border:1px solid <?php echo $s_line?>;}
+<?php echo $eid?> .widget-basic-sidemenu .card-body >li{border-bottom:1px solid <?php echo $s_line?>;}
+<?php echo $eid?> .widget-basic-sidemenu .card-body a{color:<?php echo $s_color?>;}
+<?php echo $eid?> .widget-basic-sidemenu .card-body a:hover, 
+<?php echo $eid?> .widget-basic-sidemenu .card-body a:active,
+<?php echo $eid?> .widget-basic-sidemenu .card-body a.current{color:<?php echo $s_color_a?>;}
 </style>
 <?php
 $style = ob_get_contents();
@@ -45,7 +56,7 @@ add_stylesheet($style);
 
 <?php if(count($list)){?>
 <nav class="widget-basic-sidemenu card card-default">
-    <h2 id="side-title" class="card-heading">
+    <h2 class="side-title card-heading">
 <?php if($bm_pidx > 0){?>
     <?php echo $bt['curpath'][0]['bm_name']?>
 <?php }else{?>

@@ -91,6 +91,8 @@ $arr['bc_skin_mlayout_default']  = bt\binstr($_POST['bc_skin_mlayout_default'], 
 
 $arr['bc_pg_id']        = bt\binstr($_POST["bc_pg_id"], "basic");
 
+$arr['bc_font_family'] = $_POST["bc_font_family"];
+$arr['bc_font_url'] = $_POST["bc_font_url"];
 
 //===========================================================================
 // 데이타 갱신

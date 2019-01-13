@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+.widget-basic-curpath .content-title{color:#333;
+    margin-top:0;
+    padding: 10px 0;
+}
+.widget-basic-curpath .content-title .container{position:relative;}
+.widget-basic-curpath .content-title .curpos{font-size:1em; position:absolute; right:0; bottom:0;}
+.widget-basic-curpath .content-title .curpos .breadcrumb{margin:0px; padding:0; border:0; background:none;}
+.widget-basic-curpath .content-title .title-wrap .page-title{font-size:1.5rem;}
+.widget-basic-curpath .content-title .title-wrap .page-desc{font-size:1rem;}
+
+@media (max-width:768px){
+    .widget-basic-curpath .content-title .curpos{position: relative; margin-bottom:5px;}
+}

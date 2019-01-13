@@ -128,42 +128,6 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
     </div>
 
     <!-- 콘텐츠 시작 { -->
-
-    <?php if (!defined('_MAIN_') && bt\isval($cur_title)) { ?>
-    <div class="content-title p-2">
-        <div class="container enf">
-        <?php if (bt\isval($cur_path_list) && count($cur_path_list)>0) { ?>
-            <div class="curpos">
-                <ul class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="<?php echo G5_URL?>">Home</a></li>
-            <?php for($i=0; $i<count($cur_path_list); $i++){
-                $cls = 'breadcrumb-item';
-                if($i == count($cur_path_list)-1) $cls .= ' active';
-            ?>
-                    <li class="<?php echo $cls?>">
-                        <a href="<?php echo $cur_path_list[$i]['link']?>" target="<?php echo $cur_path_list[$i]['target']?>">
-                            <?php echo $cur_path_list[$i]['text']?>
-                        </a>
-                    </li>
-                    
-                <?php }?>
-                   <?php echo $cur_path?>
-                </ul>
-            </div>
-        <?php }?>
-            <div class="title-wrap">
-                <!--<i class="fa fa-map-marker"></i>-->
-                <h2 class="page-title font-weight-bold mt-2"><?php echo $cur_title?></h2>
-                <?php if(bt\isval($cur_subtitle)){?>
-                <small class="page-desc mt-2" style="display:block;">
-                    <?php echo $cur_subtitle?>
-                </small>
-                <?php }?>
-            </div>
-        </div>
-    </div>
-    <?php }?>
-
 </div>
 
 <div id="content_wrap">

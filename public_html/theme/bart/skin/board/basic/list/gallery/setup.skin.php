@@ -49,33 +49,21 @@ if(!btbo\exists_configfile($bo_table)){
         <thead>
         <tr>
             <th>구분</th>
-            <th>lg(≥1170px)</th>
-            <th>md(≥992px)</th>
-            <th>sm(≥768px)</th>
-            <th>xs(&lt;765px)</th>
+            <th>xs(&lt;576px)</th>
+            <th>sm(≥576px)</th>
+            <th>md(≥768px)</th>
+            <th>lg(≥992px)</th>
+            <th>xl(≥1200px)</th>
         </tr>
         </thead>
         <tbody>
         <tr>
             <td>행당갯수</td>
-            <td><input type="text" name="numpr[lg]" value="<?php echo $bcfg['numpr']['lg']?>" size="4"></td>
-            <td><input type="text" name="numpr[md]" value="<?php echo $bcfg['numpr']['md']?>" size="4"></td>
-            <td><input type="text" name="numpr[sm]" value="<?php echo $bcfg['numpr']['sm']?>" size="4"></td>
-            <td><input type="text" name="numpr[xs]" value="<?php echo $bcfg['numpr']['xs']?>" size="4"></td>
-        </tr>
-        <tr>
-            <td>상하여백</td>
-            <td><input type="text" name="ma_w[lg]" value="<?php echo $bcfg['ma_w']['lg']?>" size="4"></td>
-            <td><input type="text" name="ma_w[md]" value="<?php echo $bcfg['ma_w']['md']?>" size="4"></td>
-            <td><input type="text" name="ma_w[sm]" value="<?php echo $bcfg['ma_w']['sm']?>" size="4"></td>
-            <td><input type="text" name="ma_w[xs]" value="<?php echo $bcfg['ma_w']['xs']?>" size="4"></td>
-        </tr>
-        <tr>
-            <td>좌우여백</td>
-            <td><input type="text" name="ma_h[lg]" value="<?php echo $bcfg['ma_h']['lg']?>" size="4"></td>
-            <td><input type="text" name="ma_h[md]" value="<?php echo $bcfg['ma_h']['md']?>" size="4"></td>
-            <td><input type="text" name="ma_h[sm]" value="<?php echo $bcfg['ma_h']['sm']?>" size="4"></td>
-            <td><input type="text" name="ma_h[xs]" value="<?php echo $bcfg['ma_h']['xs']?>" size="4"></td>
+            <td><input type="text" name="numpr[xs]" value="<?php echo $bcfg['numpr']['xs']?>" size="6" placeholder="기본: 2"></td>
+            <td><input type="text" name="numpr[sm]" value="<?php echo $bcfg['numpr']['sm']?>" size="6" placeholder="기본: 2"></td>
+            <td><input type="text" name="numpr[md]" value="<?php echo $bcfg['numpr']['md']?>" size="6" placeholder="기본: 4"></td>
+            <td><input type="text" name="numpr[lg]" value="<?php echo $bcfg['numpr']['lg']?>" size="6" placeholder="기본: 4"></td>
+            <td><input type="text" name="numpr[xl]" value="<?php echo $bcfg['numpr']['xl']?>" size="6" placeholder="기본: 6"></td>
         </tr>
         </tbody>
         </table>

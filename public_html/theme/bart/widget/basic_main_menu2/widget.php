@@ -2,9 +2,9 @@
 /*
 title:메인메뉴2
 description:전체항목이 펼쳐지는 메인메뉴
-version:1.0.0
+version:1.0.1
 author:NTK
-single:true
+single:false
 */
 
 if(!defined("_GNUBOARD_")) exit("Access Denied");
@@ -41,16 +41,16 @@ $s_color_c = bt\binstr($wcfg['s_color_c'], '#'.$wcfg['s_color_c'], '#fff');
 
 ob_start();
 ?>
-
+<link rel="stylesheet" type="text/css" href="<?php echo $widget_url?>/widget.css" />
 <style type="text/css">
 
-.gnb .gnb-bar{background:<?php echo $bgcolor?>; border-top:1px solid <?php echo $border_color?>; border-bottom:1px solid <?php echo $border_color?>; }
+<?php echo $eid?> .gnb .gnb-bar{background:<?php echo $bgcolor?>; border-top:1px solid <?php echo $border_color?>; border-bottom:1px solid <?php echo $border_color?>; }
 
 
 <?php if(bt\varset($wcfg['split'])!='1'){?>
-.gnb .gnb-bar >li{border-width:0;}
+<?php echo $eid?> .gnb .gnb-bar >li{border-width:0;}
 <?php }else{?>
-.gnb .gnb-bar ul:first-child >li{
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li{
     box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
     -webkit-box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
     -o-box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
@@ -60,35 +60,35 @@ ob_start();
 <?php }?>
 
 
-.gnb .gnb-bar ul:first-child >li >a{color:<?php echo $color_n?>;}
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a{color:<?php echo $color_n?>;}
 
-.gnb .gnb-bar ul:first-child >li >a.current{background:<?php echo $bgcolor_c?>; color:<?php echo $color_c?>;}
-.gnb .gnb-bar ul:first-child >li >a:hover,
-.gnb .gnb-bar ul:first-child >li >a:active,
-.gnb .gnb-bar ul:first-child >li >a:focus,
-.gnb .gnb-bar ul:first-child >li >a.highlighted{background:<?php echo $bgcolor_o?>; color:<?php echo $color_o?>;}
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a.current{background:<?php echo $bgcolor_c?>; color:<?php echo $color_c?>;}
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a:hover,
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a:active,
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a:focus,
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a.highlighted{background:<?php echo $bgcolor_o?>; color:<?php echo $color_o?>;}
 
 /* 서브 메뉴 */
-.gnb .gnb-bar li ul a.current{background:<?php echo $s_bgcolor_c?>; color:<?php echo $s_color_c?>;}
-.gnb .gnb-bar li ul a:hover, 
-.gnb .gnb-bar li ul a:active, 
-.gnb .gnb-bar li ul a:focus, 
-.gnb .gnb-bar li ul a.highlighted {background-color:<?php echo $s_bgcolor_o?>; color:<?php echo $s_color_o?>;}
+<?php echo $eid?> .gnb .gnb-bar li ul a.current{background:<?php echo $s_bgcolor_c?>; color:<?php echo $s_color_c?>;}
+<?php echo $eid?> .gnb .gnb-bar li ul a:hover, 
+<?php echo $eid?> .gnb .gnb-bar li ul a:active, 
+<?php echo $eid?> .gnb .gnb-bar li ul a:focus, 
+<?php echo $eid?> .gnb .gnb-bar li ul a.highlighted {background-color:<?php echo $s_bgcolor_o?>; color:<?php echo $s_color_o?>;}
 
-.gnb .gnb-bar{position:relative; height:<?php echo $height?>px;}
-.gnb .gnb-bar ul{padding:0; margin:0; list-style:none;}
-.gnb .gnb-bar a{display:block;}
+<?php echo $eid?> .gnb .gnb-bar{position:relative; height:<?php echo $height?>px;}
+<?php echo $eid?> .gnb .gnb-bar ul{padding:0; margin:0; list-style:none;}
+<?php echo $eid?> .gnb .gnb-bar a{display:block;}
 
 /*메인메뉴*/
-.gnb .gnb-bar ul:first-child >li >a{padding:0 10px;font-size:1rem; text-align:center; font-weight:bold; line-height:<?php echo $height-1?>px;}
-.gnb .gnb-bar ul:first-child >li{width:<?php echo $width?>;}
-.gnb .wrap{position:absolute; overflow:hidden; width:100%; top:0; bottom:0; display:none; height:auto; background:transparent; transition: background-color .25s ease-out}
-.gnb.on .wrap{background-color:<?php echo $s_bgcolor?>; display:block; border-width:1px; border-bottom:2px solid <?php echo $border_color?>;}
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li >a{padding:0 10px;font-size:1rem; text-align:center; font-weight:bold; line-height:<?php echo $height-1?>px;}
+<?php echo $eid?> .gnb .gnb-bar ul:first-child >li{width:<?php echo $width?>;}
+<?php echo $eid?> .gnb .wrap{position:absolute; overflow:hidden; width:100%; top:0; bottom:0; display:none; height:auto; background:transparent; transition: background-color .25s ease-out}
+<?php echo $eid?> .gnb.on .wrap{background-color:<?php echo $s_bgcolor?>; display:block; border-width:1px; border-bottom:2px solid <?php echo $border_color?>;}
 
 /*서브메뉴*/
-.gnb .gnb-bar ul ul{display:none; height:100%; margin-top:-<?php echo $height?>px; padding:5px; padding-top:<?php echo $height+4?>px; bottom:0;}
-.gnb .gnb-bar ul ul li a{text-align:left; font-weight:normal; font-size:.9rem; padding:5px;}
-.gnb.on ul li >ul{display:block; opacity:1; width:100%; 
+<?php echo $eid?> .gnb .gnb-bar ul ul{display:none; height:100%; margin-top:-<?php echo $height?>px; padding:5px; padding-top:<?php echo $height+4?>px; bottom:0;}
+<?php echo $eid?> .gnb .gnb-bar ul ul li a{text-align:left; font-weight:normal; font-size:.9rem; padding:5px;}
+<?php echo $eid?> .gnb.on ul li >ul{display:block; opacity:1; width:100%; 
     box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
     -webkit-box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
     -moz-box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
@@ -107,36 +107,39 @@ add_stylesheet($style);
 <!--
 (function($){
     
+    var eid = '<?php echo $eid?>';
+    
     var gnb = null;
     var wrap = null;
     var sub_h = null;
     
     $.fn.fullDownMenu = function(){
         gnb = $(this);
-        $('.gnb .gnb-bar ul >li').mouseover(showMenu);
-        $('.gnb .gnb-bar ul >li').mouseleave(hideMenu);
+        $(eid + ' .gnb .gnb-bar ul >li').mouseover(showMenu);
+        $(eid + ' .gnb .gnb-bar ul >li').mouseleave(hideMenu);
         wrap = $('<div class="wrap"></div>');
-        $('.gnb').after().prepend(wrap);
+        $(eid + ' .gnb').after().prepend(wrap);
     }
     
     function showMenu(){
-        $('.gnb').addClass('on');
-        var th = $('.gnb .gnb-bar .container').outerHeight();
-        var mh = $('.gnb ul:first-child >li >a').outerHeight();
-        console.log('A:' + th);
+        $(eid + ' .gnb').addClass('on');
+        var th = $(eid + ' .gnb .gnb-bar .container').outerHeight();
+        var mh = $(eid + ' .gnb ul:first-child >li >a').outerHeight();
         wrap.height(th);
     }
     
     function hideMenu(){
-        $('.gnb').removeClass('on');
+        $(eid + ' .gnb').removeClass('on');
         wrap.height(0);
     }
     
+    $(document).ready(function(){
+        $(eid + ' .gnb').fullDownMenu();
+    });
+    
 })(jQuery);
 
-$(document).ready(function(){
-    $('.gnb').fullDownMenu();
-});
+
 //-->
 </script>
 

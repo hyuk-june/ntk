@@ -7,62 +7,37 @@ use kr\bartnet\board as btbo;
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list'].'/list.sub.skin.css" />');
 
-$col['lg'] = bt\binstr($bcfg['numpr']['lg'], 6);
-$col['md'] = bt\binstr($bcfg['numpr']['md'], 4);
-$col['sm'] = bt\binstr($bcfg['numpr']['sm'], 3);
 $col['xs'] = bt\binstr($bcfg['numpr']['xs'], 2);
-
-$ma_w['lg'] = bt\binstr($bcfg['ma_w']['lg'], 5);
-$ma_w['md'] = bt\binstr($bcfg['ma_w']['md'], 5);
-$ma_w['sm'] = bt\binstr($bcfg['ma_w']['sm'], 10);
-$ma_w['xs'] = bt\binstr($bcfg['ma_w']['xs'], 15);
-
-$ma_h['lg'] = bt\binstr($bcfg['ma_h']['lg'], 5);
-$ma_h['md'] = bt\binstr($bcfg['ma_h']['md'], 5);
-$ma_h['sm'] = bt\binstr($bcfg['ma_h']['sm'], 10);
-$ma_h['xs'] = bt\binstr($bcfg['ma_h']['xs'], 15);
+$col['sm'] = bt\binstr($bcfg['numpr']['sm'], 2);
+$col['md'] = bt\binstr($bcfg['numpr']['md'], 4);
+$col['lg'] = bt\binstr($bcfg['numpr']['lg'], 4);
+$col['xl'] = bt\binstr($bcfg['numpr']['xl'], 6);
 
 ob_start();
 ?>
 <style type="text/css">
+.bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['xs'], 4)?>%;}
 
-@media(max-width:750px){
-    .bo-list-gallery ul.plist {margin-left: -<?php echo $ma_w['xs']?>px; margin-right: -<?php echo $ma_w['xs']?>px;}
-    .bo-list-gallery ul.plist >li{
-        width:<?php echo round(100 / $col['xs'], 4)?>%;
-        padding: <?php echo $ma_h['xs']?>px <?php echo $ma_w['xs']?>px;
-    }
-    
+@media(max-width:576px){
+    .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['sm'], 4)?>%;}
 }
 
-@media(min-width:750px){
-    .bo-list-gallery ul.plist {margin-left: -<?php echo $ma_w['sm']?>px; margin-right: -<?php echo $ma_w['sm']?>px;}
-    .bo-list-gallery ul.plist >li{
-        width:<?php echo round(100 / $col['sm'], 4)?>%;
-        padding: <?php echo $ma_h['sm']?>px <?php echo $ma_w['sm']?>px;
-    }
+@media(min-width:768px){
+    .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['md'], 4)?>%; }
 }
 
-@media(min-width:970px){
-    .bo-list-gallery ul.plist {margin-left: -<?php echo $ma_w['md']?>px; margin-right: -<?php echo $ma_w['md']?>px;}
-    .bo-list-gallery ul.plist >li{
-        width:<?php echo round(100 / $col['md'], 4)?>%;
-        padding: <?php echo $ma_h['md']?>px <?php echo $ma_w['md']?>px;
-    }
+@media(min-width:992px){
+    .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['lg'], 4)?>%; }
 }
 
-@media(min-width:1170px){
-    .bo-list-gallery ul.plist {margin-left: -<?php echo $ma_w['lg']?>px; margin-right: -<?php echo $ma_w['lg']?>px;}
-    .bo-list-gallery ul.plist >li{
-        width:<?php echo round(100 / $col['lg'], 4)?>%;
-        padding: <?php echo $ma_h['lg']?>px <?php echo $ma_w['lg']?>px;
-    }
+@media(min-width:1200px){
+    .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['xl'], 4)?>%; }
 }
 </style>
 <?php
 $style = ob_get_contents();
-ob_end_clean();
 add_stylesheet($style);
+ob_end_clean();
 ?>
 
 <div class="bo-list-gallery">

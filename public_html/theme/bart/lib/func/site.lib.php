@@ -220,7 +220,7 @@ function get_view_image($contents)
 }
 
 //위젯컨테이너
-function show_widgets($skindir, $wp_id, $wg_id){
+function show_widgets($skindir, $pg_id, $wg_id){
     //include_once(BT_LIB_PATH.'/class/builder/widgets.php');
     
     $search = BT_PATH;
@@ -232,7 +232,7 @@ function show_widgets($skindir, $wp_id, $wg_id){
     }
     
     $w = btb\BWidgets::getInstance();
-    $w->showWidgetList($wg_skindir, $wp_id, $wg_id);
+    $w->showWidgetList($wg_skindir, $pg_id, $wg_id);
 }
 
 
@@ -460,6 +460,7 @@ function get_new_data($rowcnt, $widget_url, $subject_len, $is_reply=false){
     WHERE b.bo_use_search=1 AND n.wr_id ".$sign." n.wr_parent
     ORDER BY n.bn_id DESC
     LIMIT ".$rowcnt;
+    
     
     $bdb = bt\database\BDb::getInstance();
     $result = $bdb->query($sql);
@@ -831,4 +832,15 @@ function outlogin($skin_dir='basic')
     ob_end_clean();
 
     return $content;
+}
+
+function colorformat($color, $default=''){
+    
+    if(!bt\isval($color)) $color = $default;
+    
+    $color = trim($color, '#');
+    if(preg_match('~^[0-9a-f]{3}$|[0-9a-f]{6}$~is', $color)){
+        return '#'.$color;
+    }
+    return $color;
 }

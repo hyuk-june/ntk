@@ -3,10 +3,6 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
 
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
-
-if(is_mobile()) $vh = '100';
-else if(defined('_INDEX_')) $vh = '300';
-else $vh = '200';
 ?>
 
 <!--<div class="visual">
@@ -14,6 +10,7 @@ else $vh = '200';
 </div>-->
 
 <div class="middle ma-t-10">
+    <div class="visual-top"><?php btb\show_widgets(__FILE__, $pg_id, "visual_top")?></div>
     <div class="container pb-5">
         <div class="row">
             <div class="col-lg-9">

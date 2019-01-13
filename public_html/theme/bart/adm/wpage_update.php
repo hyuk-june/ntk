@@ -26,7 +26,9 @@ function buildColumnData(){
         $hide_lg = $_POST["hide_lg"][$rowid];
         $hide_xl = $_POST["hide_xl"][$rowid];
         
-        $arr[$i] = array('rowid' => $rowid, 'cols' => array());
+        $cell_css = $_POST["col_css"][$rowid];
+        
+        $arr[$i] = array('rowid' => $rowid, 'css' => $_POST['css'][$rowid], 'cols' => array());
         
         
         //칼럼갯수만큼 후프
@@ -37,6 +39,7 @@ function buildColumnData(){
                 'md' => array('value' => $md[$j], 'hide' => $hide_md[$j]),
                 'lg' => array('value' => $lg[$j], 'hide' => $hide_lg[$j]),
                 'xl' => array('value' => $xl[$j], 'hide' => $hide_xl[$j]),
+                'css' => $cell_css[$j]
             );
         }
         $i++;
@@ -52,7 +55,7 @@ switch($w){
         }
         
         $pg_config = buildColumnData();
-                
+        
         $sql = "UPDATE ".$bt['page_table']." SET
             pg_title='".$_POST["pg_title"]."',
             pg_subtitle='".$_POST["pg_subtitle"]."',
@@ -80,7 +83,12 @@ switch($w){
         if($rs['pg_system']=='1'){
             alert('해당 항목은 기본페이지이므로 삭제할 수 없습니다');
         }
+        
+        //위젯삭제
+        $sql = "DELETE FROM ".$bt['widget_table']." WHERE wp_id='".$_GET["pg_id"]."'";
+        sql_query($sql);
                 
+        //위젯페이지 삭제
         $sql = "DELETE FROM ".$bt['page_table']." WHERE pg_id='".$_GET["pg_id"]."'";
         sql_query($sql);
     break;
@@ -123,6 +131,10 @@ switch($w){
         
         if(count($aidx) > 0){
             $sidx = @implode("','", $aidx);
+            
+            $sql = "DELETE FROM ".$bt['widget_table']." WHERE wp_id IN('".$sidx."')";
+            sql_query($sql);
+            
             $sql = "DELETE FROM ".$bt['page_table']." WHERE pg_id IN('".$sidx."')";
             sql_query($sql);
         }

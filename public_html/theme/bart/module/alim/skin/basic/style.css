@@ -9,7 +9,7 @@
 
 .alim_btn .btn_ctrl li{margin-right:5px}
 .alim_btn .btn_view li{margin-left:5px}
-
+.alim_btn:after{content:''; clear:both; display:block;}
 #alim .readbefore {font-weight:bold;}
 
 /*#alim_list {margin-top:10px; padding:0px; list-style:none; border-top:1px solid #ddd}

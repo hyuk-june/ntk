@@ -1,7 +1,7 @@
 <?php
 /*
 title:인기검색어 위젯
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */

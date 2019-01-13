@@ -61,12 +61,6 @@ $(document).ready(function(){
 <table>
 <tbody>
 <tr>
-    <th>CSS</th>
-    <td>
-        <textarea name="css" id="css" style="width:100%;height:200px"><?php echo $wcfg['css']?></textarea>
-    </td>
-</tr>
-<tr>
     <th>이미지 URL</th>
     <td>
         <div><button type="button" id="btn_add">추가</button></div>
@@ -79,21 +73,30 @@ $(document).ready(function(){
         <table>
         <thead>
         <tr>
-            <th>lg(≥1170px)</th>
-            <th>md(≥992px)</th>
-            <th>sm(≥768px)</th>
-            <th>xs(&lt;765px)</th>
+            <th>xs(&lt;576px)</th>
+            <th>sm(≥576px)</th>
+            <th>md(≥768px)</th>
+            <th>lg(≥992px)</th>
+            <th>xl(≥1200px)</th>
         </tr>
         </thead>
         <tbody>
         <tr>
-            <td><input type="text" name="vheight[lg]" value="<?php echo $wcfg['vheight']['lg']?>" class="frm_input text-right" size="4">px</td>
-            <td><input type="text" name="vheight[md]" value="<?php echo $wcfg['vheight']['md']?>" class="frm_input text-right" size="4">px</td>
-            <td><input type="text" name="vheight[sm]" value="<?php echo $wcfg['vheight']['sm']?>" class="frm_input text-right" size="4">px</td>
             <td><input type="text" name="vheight[xs]" value="<?php echo $wcfg['vheight']['xs']?>" class="frm_input text-right" size="4">px</td>
+            <td><input type="text" name="vheight[sm]" value="<?php echo $wcfg['vheight']['sm']?>" class="frm_input text-right" size="4">px</td>
+            <td><input type="text" name="vheight[md]" value="<?php echo $wcfg['vheight']['md']?>" class="frm_input text-right" size="4">px</td>
+            <td><input type="text" name="vheight[lg]" value="<?php echo $wcfg['vheight']['lg']?>" class="frm_input text-right" size="4">px</td>
+            <td><input type="text" name="vheight[xl]" value="<?php echo $wcfg['vheight']['xl']?>" class="frm_input text-right" size="4">px</td>
         </tr>
         </tbody>
         </table>
+    </td>
+</tr>
+<tr>
+    <th>배경고정</th>
+    <td>
+        <input type="checkbox" name="fixed" id="fixed" value="1"<?php echo $wcfg['fixed']=='1' ? ' checked="checked"' : '';?>>
+        <label for="fixed">슬라이딩과 스크롤시 배경을 고정시킵니다</label>
     </td>
 </tr>
 </tbody>

@@ -150,6 +150,7 @@ $menulist = $btmenu->getTreeList($device, true, '0');
 //===========================================================================
 //NTK config 로드
 $btcfg = bt\builder\BConfig::getInstance()->getConfig();
+bt\array_map_recursive('stripslashes', $btcfg);
 
 /* @var Bdb */
 $bdb = bt\database\BDB::getInstance();
@@ -239,3 +240,5 @@ EOT;
 
 //그누보드 코어 보존을 위해 이걸로 작업함, 도저히 방법이 없다 ㅜㅜ
 register_shutdown_function('kr\bartnet\builder\BShutdownScript::execute');
+
+if($bo_table) $pg_id = $bo_table;

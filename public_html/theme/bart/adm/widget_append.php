@@ -58,6 +58,13 @@ if(bt\isval($_POST["wg_name"])){
         }
     }
     
+    
+    $wg_eid = btb\BWidgets::createElementID();
+    if(!$wg_eid){
+        alert('엘리먼트아이디 생성에 실패했습니다');
+        exit();
+    }
+    
     $sql = "SELECT max(wg_step) as wg_step
         FROM ".$bt['widget_table']."
         WHERE wg_skindir='".$_POST["wg_skindir"]."'
@@ -72,6 +79,7 @@ if(bt\isval($_POST["wg_name"])){
     $arr['wg_id'] = $_POST["wg_id"];
     $arr['wg_name'] = $_POST["wg_name"];
     $arr['wg_step'] = $wg_step;
+    $arr['wg_eid'] = $wg_eid;
     
     $bdb->insert($bt['widget_table'], $arr);
     

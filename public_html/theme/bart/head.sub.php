@@ -58,7 +58,14 @@ if($config['cf_add_meta'])
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/default.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/colorset.css" />
-
+<?php if(bt\isval($btcfg['bc_font_url'])){?>
+<link href="<?php echo $btcfg['bc_font_url']?>" rel="stylesheet">
+<?php }?>
+<?php if(bt\isval($btcfg['bc_font_family'])){?>
+<style type="text/css">
+* {font-family:<?php echo $btcfg['bc_font_family']?>}
+</style>
+<?php }?>
 <!-- 확장 기본로딩 css -->
 <?php
 $files = glob(BT_CSS_PATH.'/extends/*.css');

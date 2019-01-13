@@ -2,7 +2,7 @@
 /*
 title:알리미
 description:내게 온 소식목록입니다
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -11,8 +11,6 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
 
 use kr\bartnet as bt;
 use kr\bartnet\loan as btl;
-
-add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/style.css" />');
 ?>
 
 <?php

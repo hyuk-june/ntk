@@ -1,5 +1,3 @@
-/public_html/theme/bart/widget/ext_logoplan
-/public_html/theme/bart/widget/ext_movie
 public_html/theme/bart/widget/ext_logoplan/widget.php
 public_html/theme/bart/widget/ext_logoplan/widget.setup.before.php
 public_html/theme/bart/widget/ext_logoplan/widget.setup.php

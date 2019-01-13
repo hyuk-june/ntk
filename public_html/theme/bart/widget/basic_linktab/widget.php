@@ -2,7 +2,7 @@
 /*
 title: 링크탭
 description: 링크 탭
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -13,15 +13,6 @@ use kr\bartnet as bt;
 if(!isset($wcfg['url'])) return;
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/widget.css" />');
-
-$css = '<style type="text/css">'.PHP_EOL
-.$wcfg["css"].PHP_EOL
-.'</style>'.PHP_EOL;
-
-add_stylesheet($css);
-
-$str_ele = '';
-if(bt\isval($wcfg['ele_id'])) $str_ele = ' id="'.$wcfg['ele_id'].'"';
 
 $width = 'auto';
 
@@ -100,7 +91,7 @@ add_stylesheet($style);
 
 <?php if(isset($wcfg['url'])){?>
 <div class="widget-basic-linktab">
-    <ul<?php echo $class_ul?><?php echo $str_ele?><?php echo $style_ul?>>
+    <ul<?php echo $class_ul?><?php echo $style_ul?>>
 
 <?php for($i=0; $i<count($wcfg['url']); $i++){?>
         <li<?php echo $class_li?><?php echo $style_li?>><a href="<?php echo $wcfg['url'][$i]?>"<?php echo $style_txt?>><?php echo $wcfg['text'][$i]?></a></li>

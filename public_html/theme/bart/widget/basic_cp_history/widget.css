@@ -7,4 +7,4 @@
 .widget-basic-cp-history ul.list-month{list-style:disc;}
 .widget-basic-cp-history ul.list-month >li{border-bottom:1px dashed #ddd;}
 .widget-basic-cp-history ul.list-month >li:last-child{border:0;}
-.widget-basic-cp-history ul.list-month li .month{text-align:left; font-size:2rem; color:#777;}
+.widget-basic-cp-history ul.list-month li .month{text-align:left; font-size:2rem; color:#777; width: 40px; display:inline-block; text-align:right;}

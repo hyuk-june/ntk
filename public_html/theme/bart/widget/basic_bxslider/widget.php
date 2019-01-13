@@ -2,7 +2,7 @@
 /*
 title:가로회전배너(BxSlider)
 description:BxSlider를 이용한 가로로 회전하는 배너위젯입니다
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -20,23 +20,31 @@ $vh_xs = bt\binstr($wcfg['vheight']['xs'], 200);
 $vh_sm = bt\binstr($wcfg['vheight']['sm'], 300);
 $vh_md = bt\binstr($wcfg['vheight']['md'], 400);
 $vh_lg = bt\binstr($wcfg['vheight']['lg'], 400);
+$vh_xl = bt\binstr($wcfg['vheight']['xl'], 400);
+
+$fixed = '';
+if($wcfg['fixed']=='1') $fixed = 'fixed ';
+
+//inner widget 때문에
+global $pg_id;
 ?>
 
 <style type="text/css">
-@media(max-width: 768px){.sv{height:<?php echo $vh_xs?>px;}}
-@media(min-width: 768px){.sv{height:<?php echo $vh_sm?>px;}}
-@media(min-width: 992px){.sv{height:<?php echo $vh_md?>px;}}
-@media(min-width: 1170px){.sv{height:<?php echo $vh_lg?>px;}}
+<?php echo $eid?> .sv{height:<?php echo $vh_xs?>px;}
+@media(min-width: 576px){<?php echo $eid?> .sv{height:<?php echo $vh_sm?>px;}}
+@media(min-width: 768px){<?php echo $eid?> .sv{height:<?php echo $vh_md?>px;}}
+@media(min-width: 992px){<?php echo $eid?> .sv{height:<?php echo $vh_lg?>px;}}
+@media(min-width: 1200px){<?php echo $eid?> .sv{height:<?php echo $vh_xl?>px;}}
 
 <?php for($i=0; $i<count($wcfg['vbg']); $i++){?>
-.sv<?php echo ($i+1)?>{background: url(<?php echo $wcfg['vbg'][$i]?>) no-repeat; background-size:cover; background-position: center;}
+<?php echo $eid?> .sv<?php echo ($i+1)?>{background:<?php echo $fixed?> url(<?php echo $wcfg['vbg'][$i]?>) no-repeat; background-size:cover; background-position: center; overflow:hidden;}
 <?php }?>
-.bx-wrapper{border:0}
-<?php echo $wcfg['css']?>
-.slider-visual .sv .container{height:100%; text-align:center;}
-.bx-wrapper img{/*max-width:none;*/ display:inline;}
-.bx-wrapper >img{max-width:100%; display:block;}
-.bx-wrapper{margin-bottom:0;}
+
+<?php echo $eid?> .bx-wrapper{border:0}
+<?php echo $eid?> .slider-visual .sv .container{height:100%; text-align:center;}
+<?php echo $eid?> .bx-wrapper img{/*max-width:none;*/ display:inline;}
+<?php echo $eid?> .bx-wrapper >img{max-width:100%; display:block;}
+<?php echo $eid?> .bx-wrapper{margin-bottom:0;}
 </style>
 
 <?php
@@ -52,7 +60,7 @@ add_stylesheet($style);
         <li>
             <div class="sv sv<?php echo $j?>">
                 <div class="container d-flex align-items-center">
-                    <?php btb\show_widgets(__FILE__, "", "visual_inner".$j)?>
+                    <?php btb\show_widgets(__FILE__, $pg_id, "visual_inner".$j)?>
                 </div>
             </div>
         </li>

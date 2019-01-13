@@ -2,9 +2,10 @@
 
 .widget-basic-latest-gallery {}
 .widget-basic-latest-gallery .title{font-size:16px;}
-.widget-basic-latest-gallery ul{margin:0; padding:0; list-style:none; line-height:22px;}
+.widget-basic-latest-gallery ul{margin:0 -5px; padding:0; list-style:none; line-height:22px;}
 .widget-basic-latest-gallery ul:after{content:''; display:block; clear:both;}
-.widget-basic-latest-gallery ul li{float:left;}
+.widget-basic-latest-gallery ul li{float:left; padding: 5px;}
+.widget-basic-latest-gallery ul .thumb{border:1px solid #ddd;}
 .widget-basic-latest-gallery ul li a{}
 .widget-basic-latest-gallery ul li a i{color:#ddd;}
 .widget-basic-latest-gallery ul li .foot .cmt-cnt{color:#f00; font-weight:bold;}

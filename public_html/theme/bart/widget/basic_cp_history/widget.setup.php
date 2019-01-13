@@ -120,19 +120,6 @@ $(document).ready(function(){
 <table>
 <tbody>
 <tr>
-    <th><label for="css">CSS</label></th>
-    <td>
-        <textarea name="css" id="css" style="width:100%;height:200px"><?php echo $wcfg['css']?></textarea>
-    </td>
-</tr>
-<tr>
-    <th><label for="ele_id">엘리먼트아이디</label></th>
-    <td>
-        <input type="text" name="ele_id" id="ele_id" required="required" class="frm_input required alnum_" value="<?php echo $wcfg['ele_id']?>">
-        <?php echo help("※ 링크탭을 식별할 수 있는 html ID를 임의로 지정해주세요(영문,숫자,'_')");?>
-    </td>
-</tr>
-<tr>
     <th>연혁정보</th>
     <td>
         <div><button type="button" id="btn_add">추가</button></div>

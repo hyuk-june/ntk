@@ -12,6 +12,7 @@ $administrator = 1;
 
 include_once(G5_ADMIN_PATH.'/admin.head.php');
 
+bt\array_map_recursive('stripslashes', $btcfg);
 
 //===========================================================================
 // 기본설정
@@ -113,71 +114,23 @@ function cfgform_submit(f){
                 </div>
             </td>
         </tr>
+        <tr>
+            <th scope="row"><label for="bc_font">기본글꼴</label></th>
+            <td>
+                <dl>
+                    <dt>font-family</dt>
+                    <dd><input type="text" name="bc_font_family" class="frm_input" value="<?php echo $btcfg['bc_font_family']?>"></dd>
+                    <dt>font css URL</dt>
+                    <dd><input type="text" name="bc_font_url" class="frm_input" style="width:100%;" value="<?php echo $btcfg['bc_font_url']?>"></dd>
+                </dl>
+            </td>
+        </tr>
         </tbody>
         </table>
     
     </div>
     
 </section>
-
-
-<?php if($is_install && false){?>
-<section>
-    <div class="tbl_frm01 tbl_wrap">
-    
-        <table>
-        <caption>경험치설정</caption>
-        <colgroup>
-            <col class="grid_3">
-            <col>
-        </colgroup>
-        <tbody>
-        <tr>
-            <th>경험치제공방법</th>
-            <td>
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="write"<?php echo in_array('write', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    글쓰기
-                </label>
-                
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="cwrite"<?php echo in_array('cwrite', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    댓글쓰기
-                </label>
-                
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="read"<?php echo in_array('read', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    글읽기
-                </label>
-                
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="good"<?php echo in_array('good', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    추천
-                </label>
-                
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="nogood"<?php echo in_array('nogood', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    비추천
-                </label>
-                
-                <label>
-                    <input type="checkbox" name="bc_exp_type[]" value="login"<?php echo in_array('login', $btcfg['bc_exp_type']) ? ' checked="checked"' : '';?>>
-                    로그인
-                </label>
-            </td>
-        </tr>
-        <tr>
-            <th>레벨포인트</th>
-            <td>
-                
-                
-            </td>
-        </tr>
-        </tbody>
-        </table>
-    </div>
-</section>
-<?php }?>
 
 <div class="btn_confirm01 btn_confirm">
     <input type="submit" value="적용하기" class="btn_submit" accesskey="s">

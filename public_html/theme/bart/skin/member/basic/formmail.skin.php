@@ -68,7 +68,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$member_skin_url.'/style.css">', 
 
     <div class="win_btn">
         <input type="submit" value="메일발송" id="btn_submit" class="btn_submit">
-        <button type="button" onclick="window.close();">창닫기</button>
+        <button type="button" onclick="window.close();" class="btn_close">창닫기</button>
     </div>
 
     </form>

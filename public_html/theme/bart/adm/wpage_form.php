@@ -44,8 +44,11 @@ include_once(G5_ADMIN_PATH.'/admin.head.php');
 ?>
 
 <style type="text/css">
+#rowlist .row-prop{margin:4px 0; padding: 4px; border:1px solid #ddd;}
+#rowlist .row-prop input[type="text"]{ height:28px; width:100%;}
 #rowlist .cells{display:flex;}
 #rowlist .cell{padding:10px; text-align:center; border:1px solid #ddd; flex-grow:1;}
+#rowlist .cell-css{width:100%;}
 #rowlist td{padding:4px;}
 #rowlist td input[type="text"]{height:28px;}
 </style>
@@ -162,6 +165,7 @@ var _layout = function(_container){
     
     $(document).on('click', '.btn-add-cell', function(){
         var idx = $('.btn-add-cell').index(this);
+        console.log(idx);
         appendCol(idx);
     });
     
@@ -193,10 +197,11 @@ var _layout = function(_container){
         //console.log(cells);
         
         var rowid = createCode();
-        
+        var rowcss = '';
         if(row !== undefined){
             cellcnt = row.cols.length;
             rowid = row.rowid;
+            rowcss = row.css !== undefined ? row.css : '';
             //console.log(rowid);
         }
         //console.log(cells);
@@ -211,6 +216,9 @@ var _layout = function(_container){
         str += '<button type="button" class="btn btn_02 btn-stepup-row mr-1"><i class="fa fa-arrow-up"></i></button>';
         str += '<button type="button" class="btn btn_02 btn-stepdn-row mr-1"><i class="fa fa-arrow-down"></i></button>';
         str += 'Row ID: <strong>' + rowid + '</strong>';
+        str += '<div class="row-prop">';
+        str += '<span>행 CSS (선택사항) </span><input type="text" name="css[' + rowid + ']" class="row-css frm_input" value="' + rowcss + '"> ';
+        str += '</div>';
         str += '<div class="cells mt-1">';
         str += '</div>';
         str += '</li>';
@@ -230,7 +238,7 @@ var _layout = function(_container){
         $('.row', container).eq(idx).remove();
     }
     
-    function appendCol(rowidx, cell){
+    function appendCol(rowidx, _cell){
         //console.log(cell);
         var row = $('.row', container).eq(rowidx);
         
@@ -242,7 +250,7 @@ var _layout = function(_container){
         }
         
         
-        var default_cell = {
+        var cell = {
             xs:{
                 value: '',
                 hide: false,
@@ -263,13 +271,14 @@ var _layout = function(_container){
                 value: '',
                 hide: false,
             },
+            css: ''
         }
         
         //기본값
-        if(cell == undefined){
-            cell = $.extend({}, default_cell, cell);
+        if(_cell !== undefined){
+            cell = $.extend({}, cell, _cell);
         }
-        //console.log(cell);
+        //console.log(cell.css);
         
         
         //사이즈별 루프를 위한 값
@@ -325,6 +334,12 @@ var _layout = function(_container){
             str += '    <td><input type="checkbox" name="hide_' + e.size + '[' + rowid + '][' + cellidx + ']" id="hide_' + rowid + '_xs_' + cellidx + '" value="1"' + (hide_value == true ? ' checked="checked"' : '') + '></td>';
             str += '</tr>';
         });
+        
+        
+        str += '<tr>';
+        str += '<th scope="row"><label for="col_css_' + rowid + '_' + cellidx + '">열 CSS</label></th>';
+        str += '<td colspan="2"><input type="text" name="col_css[' + rowid + '][' + cellidx + ']" id="col_css_' + rowid + '_' + cellidx + '" class="cell-css frm_input" value="' + cell.css + '"></td>';
+        str += '</tr>';
         
         str += '</tbody>';
         str += '</table>';

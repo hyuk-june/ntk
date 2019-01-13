@@ -1,7 +1,7 @@
 <?php
 /*
 title:외부로그인 위젯
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */

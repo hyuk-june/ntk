@@ -2,7 +2,7 @@
 /*
 title: 새글 위젯
 description:기본적인 모든게시판 새글 위젯
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -24,5 +24,5 @@ try{
 }catch(Excpetion $e){}
 
 try{
-    echo latest($wcfg['skin'], $wcfg['bo_table'], $wcfg['rowcnt'], $wcfg['subject_len'], $wcfg['cache_min'], $options);
+    echo latest($wcfg['skin'], $wcfg['bo_table'], $wcfg['rowcnt'], $wcfg['subject_len'], $wcfg['wg_cache_min'], $options);
 }catch(Exception $e){}

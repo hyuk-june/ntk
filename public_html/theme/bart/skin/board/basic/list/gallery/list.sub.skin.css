@@ -23,3 +23,8 @@
 .bo-list-gallery ul.plist >li .nogood{display:block; height: 22px;}
 
 .bo-list-gallery ul.plist .foot .fa{color:#aaa !important;width:18px;}
+
+.bo-list-gallery ul.plist {margin-left: -5px; margin-right: -5px;}
+.bo-list-gallery ul.plist >li{
+    padding: 5px 5px;
+}

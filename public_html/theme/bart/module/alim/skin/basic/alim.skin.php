@@ -1,6 +1,8 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
+use kr\bartnet\builder as btb;
+
 $g5['title'] = "알림";
 include_once(G5_PATH.'/head.php');
 
@@ -81,6 +83,8 @@ $(function(){
 
 <h2 id="container_title"><span class="sound_only">알림 목록</span></h2>
 
+<?php echo btb\show_widgets(__FILE__, $pg_id, "alim_top");?>
+
 <div id="alim">
 
     <!-- 페이지 정보 및 버튼 시작 { -->
@@ -92,7 +96,7 @@ $(function(){
 <?php
 ob_start();
 ?>
-        <div class="alim_btn d-none d-sm-block">
+        <div class="alim_btn d-none d-sm-block mb-2">
         	<ul class="btn_ctrl">
         		<li><button class="chkdel btn btn-sm bg-Black">선택삭제</button></li>
         		<li><button class="chkread btn btn-sm bg-Black">읽음표시</button></li>
@@ -105,7 +109,7 @@ ob_start();
         	</ul>
         </div>
         
-        <div class="dropdown d-block d-sm-none">
+        <div class="dropdown d-block d-sm-none mb-2">
             <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             알림관리
             <span class="caret"></span>
@@ -127,7 +131,7 @@ echo $buttons;
     </div>
     <!-- } 게시판 페이지 정보 및 버튼 끝 -->
     
-    <br style="clear:both">
+    
 
     <form name="falim" id="falim" action="?mtype=module&mid=alim" onsubmit="return falim_submit(this);" method="post">
     <input type="hidden" name="page" value="<?php echo $page ?>">
@@ -181,6 +185,7 @@ echo $buttons;
 	
 </div>
 
+<?php echo btb\show_widgets(__FILE__, $pg_id, "alim_bot");?>
 
 <?php
 include_once(G5_PATH.'/tail.php');

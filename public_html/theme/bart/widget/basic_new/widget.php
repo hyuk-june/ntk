@@ -2,7 +2,7 @@
 /*
 title:전체게시판 새글
 description:모든게시판에서 댓글을 제외한 새글 출력
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */
@@ -16,8 +16,6 @@ $limit = bt\binstr($wcfg["rowcnt"], 5);
 
 $strlen = 100;
 $list = btb\get_new_data(10, $widget_url, $strlen);
-/*$wcfg["show_name"] = bt\binstr($wcfg["show_name"], "1");
-$wcfg["show_date"] = bt\binstr($wcfg["show_date"], "1");*/
 ?>
 
     <div class="widget-basic-new">

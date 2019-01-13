@@ -4,6 +4,7 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 //기본 데이타도 입력할 것인지 입력하지 않으면 false
 // /data/bart 폴더가 있으면 실행하지 않음
 define('_BT_DATA_', true);
+if(!defined('BT_ADMIN_PATH')) define('BT_ADMIN_PATH', G5_THEME_PATH.'/adm');
 
 function bt_check_installed(){
     

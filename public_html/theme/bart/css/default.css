@@ -26,6 +26,11 @@ input:focus, select:focus, textarea:focus {
   box-shadow:none !important;
 }
 
+table{width: 100% !important;}
+
+hr{display:block;}
+
+img{max-width:100%;}
 
 .ellipsis{display: block; text-overflow: ellipsis; white-space: nowrap; word-wrap: normal; overflow: hidden;}
 
@@ -178,3 +183,5 @@ a.btn.btn-sm, .btn.btn-sm{
 .btn-outline-secondary {
     border:1px solid #6c757d;;
 }
+
+.row-wrap{position: relative;}

@@ -130,6 +130,7 @@ a:hover{color:#f00;}
 /*******************************
 * 제목 및 현재위치
 *******************************/
+/*
 .content-title{color:#333; border-bottom:1px solid #ddd; 
     box-shadow: 0 1px 5px 1px #f5f5f5; 
     margin-top:0;
@@ -145,7 +146,7 @@ a:hover{color:#f00;}
 @media (max-width:768px){
     .content-title .curpos{position: relative; margin-bottom:5px;}
 }
-
+*/
 
 /*******************************
 * 양쪽 날개 영역
@@ -205,6 +206,10 @@ a:hover{color:#f00;}
 .float-btns{position:fixed; bottom:50px; right:10px;}
 .float-btns .float-btn{display:block; font-size:30px; padding:10px; border-radius:50%; background:rgba(0,0,0,0.5); color:#fff; float:right; margin-left:10px;}
 
+@media(max-width:576px){
+    .float-btns{bottom: 10px;}
+}
+
 .card, .img-thumbnail{border-radius:0 !important;}
 
 /* 확인, 취소 버튼 wrap */
@@ -236,6 +241,18 @@ a:hover{color:#f00;}
     padding-right:5px;
     padding-left:5px;
 }
+
+@media(max-width:768px){
+    .container{padding-right:10px; padding-left:10px;}
+    .row{margin-right:-10px; margin-left:-10px;}
+    
+    .col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto{
+        padding-right:10px;
+        padding-left:10px;
+    }
+}
+
+
 
 .input-group *
 .input-group-prepend *,

@@ -72,7 +72,7 @@ add_stylesheet('<style type="text/css">.tail{background-color:'.$footer_bg.'; co
 <script type="text/javascript">
 <!--
 $(document).ready(function(){
-    var pad = ($('.tail').height() + 10) + 'px';
+    var pad = ($('.tail').outerHeight() + 10) + 'px';
     $('body').css('padding-bottom', pad);
 });
 //-->

@@ -2,7 +2,7 @@
 /*
 title:방문자수 표시
 description:방문자수를 출력합니다
-version:1.0.0
+version:1.0.1
 author:NTK
 single:false
 */

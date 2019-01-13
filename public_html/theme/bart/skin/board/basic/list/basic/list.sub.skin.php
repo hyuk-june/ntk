@@ -60,7 +60,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
         <!-- PC용 카테고리 -->
         <nav class="category d-none d-sm-block">
             <h2><?php echo $board['bo_subject'] ?> 카테고리</h2>
-            <ul id="bo_cate_ul">
+            <ul id="bo_cate_ul" class="mb-0">
                 <li<?php echo !bt\isval($sca) ? ' class="active"':''?>>
                     <a href="<?php echo $category_href?>">
                         전체
@@ -130,7 +130,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                 <?php }?>
                 
                 <?php if ($is_category) {?>
-                    <div class="cell cell-cate">지역</div>
+                    <div class="cell cell-cate">분류</div>
                 <?php }?>
                 
                     <div class="cell cell-subject">제목</div>
@@ -203,7 +203,6 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                         <?php echo $list[$i]['icon_reply'];?>
                         <a href="<?php echo $list[$i]['href'] ?>">
                             <?php echo $list[$i]['subject'] ?>
-                            <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?>
                         <?php
                         // if ($list[$i]['link']['count']) { echo '['.$list[$i]['link']['count']}.']'; }
                         // if ($list[$i]['file']['count']) { echo '<'.$list[$i]['file']['count'].'>'; }
@@ -214,6 +213,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                         if (isset($list[$i]['icon_link'])) echo $list[$i]['icon_link'];
                         if (isset($list[$i]['icon_secret'])) echo $list[$i]['icon_secret'];
                         ?>
+                        <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?>
                         </a>
                     </div>
             <?php if($bcfg['list_show_writer']){?>
