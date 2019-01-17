@@ -11,7 +11,7 @@ use kr\bartnet\board as btbo;
     <td><input type="text" name="list_head_color" value="<?php echo $bcfg["list_head_color"]?>" placeholder="#414141"></td>
 </tr>
 <tr>
-    <th>출력옵션</th>
+    <th>숨김</th>
     <td>
         <label>
             <input type="checkbox" name="list_hide_writer" value="1"<?php echo bt\get_checked('1', $bcfg['list_hide_writer'])?>>

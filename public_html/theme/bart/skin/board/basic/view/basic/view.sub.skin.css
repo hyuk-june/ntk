@@ -27,7 +27,7 @@
 .bo-basic-view .view-content-wrap .view-content-btns{text-align:center; margin:10px 0;}
 .bo-basic-view .view-content-wrap .view-content{min-height:200px;}
 .bo-basic-view .view-content-wrap #bo_v_img img,
-.bo-basic-view .view-content-wrap .view-content img{width:auto; height:auto; max-width:100%;}
+.bo-basic-view .view-content-wrap .view-content img{width:100% !important; height:auto !important; max-width:100%;}
 
 .bo-basic-view .view-content-wrap .view-act{margin:10px auto;}
 

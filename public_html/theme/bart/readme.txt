@@ -2,7 +2,7 @@ Theme Name: NTK빌더
 Theme URI: http://kbay.co.kr
 Maker: 권혁준(impactlife@naver.com)
 Maker URI: http://kbay.co.kr
-Version: 1.1.2
+Version: 1.1.3
 Detail: Theme를 활용한 빌더입니다.
 License: Theme 내의 READEME.txt 참조
 GitHub: https://github.com/hyuk-june/ntk.git
