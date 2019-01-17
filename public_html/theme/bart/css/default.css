@@ -58,6 +58,7 @@ img{max-width:100%;}
 .bt-widget-container > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}
 .bt-widget-container.edit{border:1px solid blue;}
 .bt-widget-container.edit > .control-header{display:flex;}
+.bt-widget-container.edit .widget-list{padding:.2rem;}
 
 .bt-widget > .control-header{display:none; background: #608ffb; text-align:right;}
 .bt-widget > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}

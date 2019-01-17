@@ -58,12 +58,13 @@ if($config['cf_add_meta'])
 <link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/default.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/colorset.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/animate.css" />
 <?php if(bt\isval($btcfg['bc_font_url'])){?>
 <link href="<?php echo $btcfg['bc_font_url']?>" rel="stylesheet">
 <?php }?>
 <?php if(bt\isval($btcfg['bc_font_family'])){?>
 <style type="text/css">
-* {font-family:<?php echo $btcfg['bc_font_family']?>}
+* {font-family:<?php echo $btcfg['bc_font_family']?>;}
 </style>
 <?php }?>
 <!-- 확장 기본로딩 css -->
@@ -87,6 +88,7 @@ foreach($files as $_file){
 <script src="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script type="text/javascript" src="<?php echo BT_JS_URL?>/bt.common.js"></script>
 <script type="text/javascript" src="<?php echo BT_JS_URL?>/bt.builder.js"></script>
+<script type="text/javascript" src="<?php echo BT_JS_URL?>/wow.min.js"></script>
 <!-- //NTK빌더 필수 js 파일 로딩 -->
 
 <!-- 그누보드의 특성상 </title> 다음에 <link> 태그 반드시 와야 해서 강제로 빈 <link>넣어 줌 -->

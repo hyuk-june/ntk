@@ -4,6 +4,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 include_once($board_skin_path.'/lib/board.lib.php');
 
 use kr\bartnet as bt;
+use kr\bartnet\builder as btb;
 use kr\bartnet\board as btbo;
 
 include_once(G5_LIB_PATH.'/thumbnail.lib.php');
@@ -20,8 +21,14 @@ $opts = btbo\load_option($bo_table, $wr_id);
 //파일 다운로드 포인트 정리
 btbo\set_down_point($view['file'], $board['bo_download_point'], $opts);
 
+//상단위젯
+echo btb\show_widgets(__FILE__, $bo_table, "board_top");
+
 //view 내부 스킨 로딩
 include_once($sub_paths['view'].'/view.sub.skin.php');
+
+//하단위젯
+echo btb\show_widgets(__FILE__, $bo_table, "board_bot");
 ?>
 
 <script src="<?php echo G5_JS_URL; ?>/viewimageresize.js"></script>

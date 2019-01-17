@@ -208,13 +208,12 @@ function get_select($dir_path){
 * @param boolean 기본체크여부
 * @return string
 **/
-function get_checked($std_val, &$cur_val, $default_check=false){
+function get_checked($std_val, &$cur_val){
     
     $str = '';
     
     //if(!isset($cur_val)) echo ' XXX';
-    
-    if(($default_check && !isset($cur_val)) || ($std_val == $cur_val)){
+    if($std_val == $cur_val){
         $str = ' checked="checked"';
     }
     return $str;

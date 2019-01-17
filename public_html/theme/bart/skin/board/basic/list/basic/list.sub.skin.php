@@ -4,7 +4,6 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 use kr\bartnet\board as btbo;
-use kr\bartnet\loan as btl;
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list'].'/list.sub.skin.css" />');
 ?>
@@ -135,23 +134,23 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                 
                     <div class="cell cell-subject">제목</div>
                 
-                <?php if($bcfg['list_show_writer']){?>
+                <?php if($bcfg['list_hide_writer']!='1'){?>
                     <div class="cell cell-writer">글쓴이</div>
                 <?php }?>
                 
-                <?php if($bcfg['list_show_datetime']){?>
+                <?php if($bcfg['list_hide_datetime']!='1'){?>
                     <div class="cell cell-datetime"><?php echo subject_sort_link('wr_datetime', $qstr2, 1) ?>날짜</a></div>
                 <?php }?>
                 
-                <?php if($bcfg['list_show_hit']){?>
+                <?php if($bcfg['list_hide_hit']!='1'){?>
                     <div class="cell cell-hit"><?php echo subject_sort_link('wr_hit', $qstr2, 1) ?>조회</a></div>
                 <?php }?>
                 
-                <?php if($bcfg['list_show_good'] && $is_good){?>
+                <?php if($bcfg['list_hide_good']!='1' && $is_good){?>
                     <div class="cell cell-good"><?php echo subject_sort_link('wr_good', $qstr2, 1) ?>추천</a></div>
                 <?php }?>
                
-                <?php if($bcfg['list_show_nogood'] && $is_nogood){?>
+                <?php if($bcfg['list_hide_nogood']!='1' && $is_nogood){?>
                     <div class="cell cell-nogood"><?php echo subject_sort_link('wr_nogood', $qstr2, 1) ?>비추천</a></div>
                 <?php }?>
                 
@@ -216,19 +215,19 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                         <?php if ($list[$i]['comment_cnt']) { ?><span class="sound_only">댓글</span><?php echo $list[$i]['comment_cnt']; ?><span class="sound_only">개</span><?php } ?>
                         </a>
                     </div>
-            <?php if($bcfg['list_show_writer']){?>
+            <?php if($bcfg['list_hide_writer']!='1'){?>
                     <div class="cell cell-writer sv_use"><i class="fa fa-user d-inline-block d-sm-none">&nbsp;</i><?php echo $name ?></div>
             <?php }?>
-            <?php if($bcfg['list_show_datetime']){?>
+            <?php if($bcfg['list_hide_datetime']!='1'){?>
                     <div class="cell cell-datetime"><i class="fa fa-clock-o d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['datetime2'] ?></div>
             <?php }?>
-            <?php if($bcfg['list_show_hit']){?>
+            <?php if($bcfg['list_hide_hit']!='1'){?>
                     <div class="cell cell-hit"><i class="fa fa-eye d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['wr_hit'] ?></div>
             <?php }?>
-            <?php if($bcfg['list_show_good'] && $is_good) { ?>
+            <?php if($bcfg['list_hide_good']!='1' && $is_good) { ?>
                     <div class="cell cell-good"><i class="fa fa-thumbs-o-up d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['wr_good'] ?></div>
             <?php }?>
-            <?php if($bcfg['list_show_nogood'] && $is_nogood) { ?>
+            <?php if($bcfg['list_hide_nogood']!='1' && $is_nogood) { ?>
                     <div class="cell cell-nogood"><i class="fa fa-thumbs-o-down d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['wr_nogood'] ?></div>
             <?php }?>
                 </li>

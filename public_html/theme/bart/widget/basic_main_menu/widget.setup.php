@@ -34,6 +34,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="bgcolor_n" value="<?php echo bt\varset($wcfg['bgcolor_n'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="color_n" value="<?php echo bt\varset($wcfg['color_n'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="bold_n" id="bold_n" value="1"<?php echo $wcfg['bold_n']=='1' ? ' checked="checked"' : '';?>>
+            <label for="bold_n">굵게</label>
         </td>
     </tr>
     <tr>
@@ -41,6 +43,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="bgcolor_o" value="<?php echo bt\varset($wcfg['bgcolor_o'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="color_o" value="<?php echo bt\varset($wcfg['color_o'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="bold_o" id="bold_o" value="1"<?php echo $wcfg['bold_o']=='1' ? ' checked="checked"' : '';?>>
+            <label for="bold_o">굵게</label>
         </td>
     </tr>
     <tr>
@@ -48,6 +52,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="bgcolor_c" value="<?php echo bt\varset($wcfg['bgcolor_c'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="color_c" value="<?php echo bt\varset($wcfg['color_c'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="bold_c" id="bold_c" value="1"<?php echo $wcfg['bold_c']=='1' ? ' checked="checked"' : '';?>>
+            <label for="bold_c">굵게</label>
         </td>
     </tr>
     
@@ -63,6 +69,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="s_bgcolor_n" value="<?php echo bt\varset($wcfg['s_bgcolor_n'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="s_color_n" value="<?php echo bt\varset($wcfg['s_color_n'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="s_bold_n" id="s_bold_n" value="1"<?php echo $wcfg['s_bold_n']=='1' ? ' checked="checked"' : '';?>>
+            <label for="s_bold_n">굵게</label>
         </td>
     </tr>
     <tr>
@@ -70,6 +78,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="s_bgcolor_o" value="<?php echo bt\varset($wcfg['s_bgcolor_o'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="s_color_o" value="<?php echo bt\varset($wcfg['s_color_o'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="s_bold_o" id="s_bold_o" value="1"<?php echo $wcfg['s_bold_o']=='1' ? ' checked="checked"' : '';?>>
+            <label for="s_bold_o">굵게</label>
         </td>
     </tr>
     <tr>
@@ -77,6 +87,8 @@ $s->add('both', '배분형');
         <td>
             배경색: <input type="text" name="s_bgcolor_c" value="<?php echo bt\varset($wcfg['s_bgcolor_c'])?>" class="frm_input" size="8">
             글자색: <input type="text" name="s_color_c" value="<?php echo bt\varset($wcfg['s_color_c'])?>" class="frm_input" size="8">
+            <input type="checkbox" name="s_bold_c" id="s_bold_c" value="1"<?php echo $wcfg['s_bold_c']=='1' ? ' checked="checked"' : '';?>>
+            <label for="s_bold_c">굵게</label>
         </td>
     </tr>
     
@@ -84,6 +96,15 @@ $s->add('both', '배분형');
         <th>선색깔</th>
         <td colspan="3">
             <input type="text" name="border_color" value="<?php echo bt\varset($wcfg['border_color'])?>" class="frm_input">
+        </td>
+    </tr>
+    <tr>
+        <th>상하선</th>
+        <td colspan="3">
+            <label>
+                <input type="checkbox" name="vertical" value="1"<?php echo bt\varset($wcfg['vertical']) == '1' ? ' checked="checked"' : '';?>>
+                상하선 표시함
+            </label>
         </td>
     </tr>
     <tr>

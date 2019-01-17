@@ -1,2 +1,2 @@
 <?php exit();?>
-{"ca_type":"normal","ca_col_cnt":"","reward_point":"","skin_list":"webzine","list_head_color":"","list_show_writer":"1","list_show_datetime":"1","list_show_hit":"1","skin_view":"basic","write_show_writer":"1","write_show_datetime":"1","write_show_hit":"1","skin_write":"basic"}
+{"ca_type":"normal","ca_col_cnt":"","reward_point":"","skin_list":"gallery","list_head_color":"","numpr":{"xs":"","sm":"4","md":"","lg":"","xl":""},"thumb_w":"","thumb_h":"","skin_view":"basic","skin_write":"basic"}

@@ -15,14 +15,6 @@ while($rs = sql_fetch_array($result)){
 $rowcnt = 5;
 $subject_len = 30;
 
-if($rs['wg_isset']){
-    $checked_name = false;
-    $checked_date = false;
-}else{
-    $checked_name = false;
-    $checked_date = true;
-}
-
 if(bt\isval($wcfg["bo_table"])){
     $s->selectedFromValue = $wcfg["bo_table"];
 }
@@ -66,14 +58,14 @@ $latest_skins = get_skin_select('latest', 'skin', 'skin', $wcfg['skin'], 'requir
         </td>
     </tr>
     <tr>
-        <th>노출</th>
+        <th>숨김</th>
         <td>
             <label>
-                <input type="checkbox" name="show_name" value="1"<?php echo bt\get_checked("1", $wcfg["show_name"], $checked_name)?>>
+                <input type="checkbox" name="hidden_name" value="1"<?php echo bt\get_checked("1", $wcfg["hidden_name"])?>>
                 작성자
             </label>
             <label>
-                <input type="checkbox" name="show_date" value="1"<?php echo bt\get_checked("1", $wcfg["show_date"], $checked_date)?>>
+                <input type="checkbox" name="hidden_date" value="1"<?php echo bt\get_checked("1", $wcfg["hidden_date"])?>>
                 날짜
             </label>
         </td>
@@ -83,7 +75,8 @@ $latest_skins = get_skin_select('latest', 'skin', 'skin', $wcfg['skin'], 'requir
         <td>
             <textarea name="options" class="frm_input" style="min-height: 200px"><?php echo $wcfg['options']?></textarea>
             <?php echo help("최신글 스킨별로 옵션이 존재할 수 있습니다.");?>
-            <?php echo help("배열행태의 옵션은 JSON 형식으로 정확하게 입력해 주세요");?>
+            <?php echo help("문자열이나 숫자형의 단일옵션은 그대로 입력해 주시고");?>
+            <?php echo help("배열형태의 옵션은 JSON 형식으로 정확하게 입력해 주세요");?>
         </td>
     </tr>
     <tr>

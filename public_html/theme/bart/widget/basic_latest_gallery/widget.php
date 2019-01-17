@@ -61,7 +61,7 @@ if(bt\isval($wcfg['bo_table'])){
     ?>
             <li>
                 <div class="thumb"><a href="<?php echo $a_href?>"><?php echo $img?></a></div>
-            <?php if(bt\isval($wcfg['show_subject'])){?>
+            <?php if($wcfg['hidden_subject']!='1'){?>
                 <div class="desc ellipsis">
                     <a href="<?php echo $a_href?>" title="<?php echo $row["subject"]?>">
                         <?php echo $icons?>
@@ -69,17 +69,17 @@ if(bt\isval($wcfg['bo_table'])){
                     </a>
                 </div>
             <?php }?>
-            <?php if(bt\isval($wcfg['show_name']) || bt\isval($wcfg['show_date'])){?>
+            <?php if($wcfg['hidden_name']!='1' || $wcfg['hidden_date']!='1'){?>
                 <div class="foot ellipsis">
                     <span class="pull-right" data-regdate="<?php echo $row["datetime"]?>">
                     <?php if((int)$row["wr_comment"]){?>
                         <span class="cmt-cnt">+<?php echo $row["wr_comment"]?></span>
                     <?php }?>
                     </span>
-                <?php if($wcfg['show_name']){?>
+                <?php if($wcfg['hidden_name']!='1'){?>
                     <span class="name"><?php echo $row['wr_name'];?></span>
                 <?php }?>
-                <?php if(!$rs['wg_isset'] || $wcfg['show_date']){?>
+                <?php if(!$rs['wg_isset'] || $wcfg['hidden_date']!='1'){?>
                     <span class="date"><?php echo $datetime;?></span>
                 <?php }?>
                 </div>

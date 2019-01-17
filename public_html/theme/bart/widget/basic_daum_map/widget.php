@@ -14,7 +14,6 @@ use kr\bartnet\builder as btb;
 
 if(!bt\isval($wcfg['daum_map_apikey'])) return;
 
-add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/widget.css" />');
 add_javascript('<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey='.$wcfg['daum_map_apikey'].'&libraries=services,clusterer,drawing"></script>');
 add_javascript('<script type="text/javascript" src="'.$widget_url.'/widget.js"></script>');
 ?>

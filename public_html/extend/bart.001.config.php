@@ -156,7 +156,6 @@ bt\array_map_recursive('stripslashes', $btcfg);
 $bdb = bt\database\BDB::getInstance();
 $bdb->setDebug(G5_DISPLAY_SQL_ERROR);
 
-
 //===========================================================================
 // 현재위치 파악
 //===========================================================================

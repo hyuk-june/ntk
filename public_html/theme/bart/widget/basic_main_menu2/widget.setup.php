@@ -88,6 +88,15 @@ use kr\bartnet\builder as btb;
         </td>
     </tr>
     <tr>
+        <th>상하선</th>
+        <td colspan="3">
+            <label>
+                <input type="checkbox" name="vertical" value="1"<?php echo bt\varset($wcfg['vertical']) == '1' ? ' checked="checked"' : '';?>>
+                상하선 표시함
+            </label>
+        </td>
+    </tr>
+    <tr>
         <th>구분선</th>
         <td colspan="3">
             <label>

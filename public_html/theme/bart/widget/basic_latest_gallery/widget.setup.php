@@ -15,16 +15,6 @@ while($rs = sql_fetch_array($result)){
 $rowcnt = 5;
 $subject_len = 30;
 
-if($rs['wg_isset']){
-    $checked_subject = false;
-    $checked_name = false;
-    $checked_date = false;
-}else{
-    $checked_subject = true;
-    $checked_name = false;
-    $checked_date = true;
-}
-
 if(bt\isval($wcfg["bo_table"])){
     $s->selectedFromValue = $wcfg["bo_table"];
 }
@@ -85,18 +75,18 @@ $bo_opts = $s->getOption();
         </td>
     </tr>
     <tr>
-        <th>노출</th>
+        <th>숨김</th>
         <td>
             <label>
-                <input type="checkbox" name="show_subject" value="1"<?php echo bt\get_checked("1", $wcfg["show_subject"], $checked_name)?>>
+                <input type="checkbox" name="hidden_subject" value="1"<?php echo bt\get_checked("1", $wcfg["hidden_subject"])?>>
                 제목
             </label>
             <label>
-                <input type="checkbox" name="show_name" value="1"<?php echo bt\get_checked("1", $wcfg["show_name"], $checked_name)?>>
+                <input type="checkbox" name="hidden_name" value="1"<?php echo bt\get_checked("1", $wcfg["hidden_name"])?>>
                 작성자
             </label>
             <label>
-                <input type="checkbox" name="show_date" value="1"<?php echo bt\get_checked("1", $wcfg["show_date"], $checked_date)?>>
+                <input type="checkbox" name="hidden_date" value="1"<?php echo bt\get_checked("1", $wcfg["hidden_date"])?>>
                 날짜
             </label>
         </td>

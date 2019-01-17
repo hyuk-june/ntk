@@ -17,11 +17,11 @@ include_once(G5_PATH.'/head.sub.php');
 ?>
 
 <style type="text/css">
-body{padding-top:60px;}
-.icon-name{ line-height:50px; left:0; top:0; width:100%; position:fixed; background:#2d2d2d; color:#aaa; padding:0 10px;}
-.icon-name .wrap{position:relative;}
+body{padding-top:100px;}
+.icon-name{ left:0; top:0; width:100%; position:fixed; background:#2d2d2d; color:#aaa; padding:0 10px;}
+.icon-name .wrap{position:relative; padding: 5px 0;}
 .icon-name .wrap input{border:1px solid #ddd; font-size:16px; padding:4px;}
-.icon-name .wrap .btn{position: absolute; top:10px; right:20px; line-height:28px; padding:0 10px; display:block; border:1px solid #aaa; color:#ddd;}
+.icon-name .wrap .btn{line-height:28px; padding:0 10px; border:1px solid #aaa; color:#ddd;}
 .icon-name .wrap .btn:hover{text-decoration: none; background:#000; color:#fff;}
 ul{list-style:none; padding:0; margin:0;}
 li{float:left; padding:10px;}
@@ -30,10 +30,17 @@ li a span{font-size:11px;}
 </style>
 
 <div class="icon-name">
-    <div class="wrap">
-        아이콘명: <input type="text" id="icon_name" size="20">
-        <a href="#" class="btn btn-close">닫기</a>
-    </div>
+    <table class="wrap">
+    <tr>
+        <th>아이콘명</th>
+        <td><input type="text" id="icon_name" class="frm_input" size="20"></td>
+        <td align="right"><a href="#" class="btn btn-close">닫기</a></td>
+    </tr>
+    <tr>
+        <th>태그</th>
+        <td colspan="2"><input type="text" id="icon_tag" class="frm_input" style="width:100%"></td>
+    </tr>
+    </table>
 </div>
 <ul>
 <?php foreach($list as $item){?>
@@ -50,6 +57,7 @@ $(function(){
        evt.preventDefault();
       $('#icon_name').val($(this).data('icon'));
       $('#icon_name').select();
+      $('#icon_tag').val('<i class="fa fa-' + $(this).data('icon') + '"></i>');
    });
    
    $('.btn-close').click(function(){

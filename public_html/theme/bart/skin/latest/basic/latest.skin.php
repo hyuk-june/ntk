@@ -36,11 +36,11 @@ global $wcfg;
                     <span class="cmt-cnt">+<?php echo $list[$i]["wr_comment"]?></span>
                 <?php }?>
                 
-                <?php if($wcfg["show_name"]){?>
+                <?php if($wcfg["hidden_name"]!='1'){?>
                     <span class="name"><?php echo $list[$i]["name"]?></span>
                 <?php }?>
                 
-                <?php if(!$rs['wg_isset'] || $wcfg["show_date"]){?>
+                <?php if($wcfg["hidden_date"]!='1'){?>
                     <span class="date"><?php echo $datetime?></span>
                 <?php }?>
                 

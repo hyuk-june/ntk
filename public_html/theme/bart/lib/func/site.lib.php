@@ -837,6 +837,7 @@ function outlogin($skin_dir='basic')
 function colorformat($color, $default=''){
     
     if(!bt\isval($color)) $color = $default;
+    if(!bt\isval($color)) return;
     
     $color = trim($color, '#');
     if(preg_match('~^[0-9a-f]{3}$|[0-9a-f]{6}$~is', $color)){

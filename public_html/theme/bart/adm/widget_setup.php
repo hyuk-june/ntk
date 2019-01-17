@@ -142,6 +142,11 @@ tbody th{width:120px;}
 table{margin-bottom:10px}
 .new_win{margin-bottom:10px;}
 h1{padding:10px; font-size:18px; color:#fff; background:#333; border-bottom:2px solid #000; min-width:0;}
+textarea.frm_input {
+    height: auto;
+    line-height: 1rem;
+    border: 1px solid #d5d5d5;
+}
 </style>
 
 <h1><?php echo $g5['title']; ?></h1>
@@ -214,6 +219,12 @@ h1{padding:10px; font-size:18px; color:#fff; background:#333; border-bottom:2px 
             이미지가 필요할 경우 업로드 후 URL 복사하여 사용하세요
         </td>
     </tr>
+    <tr>
+        <th>아이콘보기</th>
+        <td colspan="4">
+            <a href="#" onclick="openIcons();">아이콘보기</a>
+        </td>
+    </tr>
     </tbody>
     </table>
     
@@ -234,11 +245,15 @@ function delCheck(wg_idx){
     location.href='?actmode=del&wg_idx=' + wg_idx;
 }
 
+function openIcons(){
+    popup_window(g5_url + '/theme/bart/adm/icon_list.php', 'icon_win', 'width=500, height=800');
+}
+
 $(document).ready(function(){
     $('#btn_fmgr').click(function(e){
         e.preventDefault();
         window.open(g5_url + '/index.php?mtype=module&mid=_filemanager', 'fmgr_win', 'width=810, height=800, scrollbars=no');
-    })
+    });
 });
 //-->
 </script>

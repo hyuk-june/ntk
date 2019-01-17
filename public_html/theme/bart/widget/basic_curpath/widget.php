@@ -19,7 +19,7 @@ $bg = btb\colorformat($wcfg['bg']);
 $color_t = btb\colorformat($wcfg['color_t']);
 $color_s = btb\colorformat($wcfg['color_s']);
 $color_p = btb\colorformat($wcfg['color_p']);
-$color_line = btb\colorformat($wcfg['color_line']);
+$color_line = btb\colorformat($wcfg['color_line'], 'ddd');
 
 $w_t = bt\binstr($wcfg['width_line']['t'], '0').'px';
 $w_r = bt\binstr($wcfg['width_line']['r'], '0').'px';

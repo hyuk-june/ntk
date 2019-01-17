@@ -15,7 +15,7 @@ use kr\bartnet\builder as btb;
 $limit = bt\binstr($wcfg["rowcnt"], 5);
 
 $strlen = 100;
-$list = btb\get_new_data(10, $widget_url, $strlen);
+$list = btb\get_new_data($limit, $widget_url, $strlen);
 ?>
 
     <div class="widget-basic-new">

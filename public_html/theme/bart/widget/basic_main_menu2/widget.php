@@ -40,11 +40,13 @@ $s_bgcolor_c = bt\hex2rgba( bt\binstr($wcfg['s_bgcolor_c'], $wcfg['s_bgcolor_c']
 $s_color_c = bt\binstr($wcfg['s_color_c'], '#'.$wcfg['s_color_c'], '#fff');
 
 ob_start();
+
+if(bt\varset($wcfg['vertical'])=='1') $vborder = 'border-top: 1px solid '.$border_color.'; border-bottom: 1px solid '.$border_color;
 ?>
 <link rel="stylesheet" type="text/css" href="<?php echo $widget_url?>/widget.css" />
 <style type="text/css">
 
-<?php echo $eid?> .gnb .gnb-bar{background:<?php echo $bgcolor?>; border-top:1px solid <?php echo $border_color?>; border-bottom:1px solid <?php echo $border_color?>; }
+<?php echo $eid?> .gnb .gnb-bar{background:<?php echo $bgcolor?>; <?php echo $vborder?>; }
 
 
 <?php if(bt\varset($wcfg['split'])!='1'){?>

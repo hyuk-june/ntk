@@ -2,6 +2,12 @@
 if(!defined("_GNUBOARD_")) exit("Access Denied");
 
 use kr\bartnet as bt;
+
+$valign_s = new bt\html\BSelectbox();
+$valign_s->selectedFromValue = $wcfg['valign'];
+$valign_s->add('top', '위로정렬');
+$valign_s->add('middle', '중앙정렬');
+$valign_s->add('bot', '아래로정렬');
 ?>
 <table>
 <tr>
@@ -33,6 +39,18 @@ use kr\bartnet as bt;
         </tr>
         </tbody>
         </table>
+    </td>
+</tr>
+<tr>
+    <th>내부위젯여백</th>
+    <td colspan="2"><input type="text" name="margin" class="frm_input" value="<?php echo $wcfg['margin']?>" size="4">px</td>
+</tr>
+<tr>
+    <th>내부위젯세로정렬</th>
+    <td colspan="2">
+        <select name="valign" class="frm_input">
+            <?php echo $valign_s->getOption();?>
+        </select>
     </td>
 </tr>
 </table>

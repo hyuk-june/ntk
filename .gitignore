@@ -1,6 +1,9 @@
-public_html/theme/bart/widget/ext_logoplan/widget.php
-public_html/theme/bart/widget/ext_logoplan/widget.setup.before.php
-public_html/theme/bart/widget/ext_logoplan/widget.setup.php
-public_html/theme/bart/widget/ext_movie/widget.css
-public_html/theme/bart/widget/ext_movie/widget.php
-public_html/theme/bart/widget/ext_movie/widget.setup.php
+public_html/theme/bart/widget/ext_logoplan
+public_html/theme/bart/widget/ext_logoplan
+public_html/theme/bart/widget/ext_logoplan
+public_html/theme/bart/widget/ext_movie
+public_html/theme/bart/widget/ext_movie
+public_html/theme/bart/widget/ext_movie
+public_html/theme/bart/widget/ext_uchat
+public_html/theme/bart/widget/ext_card
+public_html/theme/bart/widget/ext_dl

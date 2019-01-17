@@ -61,11 +61,10 @@ $ca_type_opt = $s->getOption();
 ?>
 
 <style type="text/css">
-body{background-color:#f5f5f5;}
 .table{background-color:#fff; margin:0;}
 .sec-title{border-bottom:2px solid #aaa !important; border-top:1px solid #aaa !important; background-color:#e1e1e1}
 th{width:120px}
-td{}
+select{height:26px;}
 </style>
 
 <script type="text/javascript" src="<?php echo $board_skin_url?>/js/board.js"></script>
@@ -94,7 +93,7 @@ $(function(){
 //-->
 </script>
 
-<h1 class="popup-title">게시판 추가설정</h1>
+<h1 class="popup-title mb-0">게시판 추가설정</h1>
 
 <form id="frm_setup" action="setup.php" method="post" class="mb-5">
 <input type="hidden" name="actmode" value="save">
@@ -199,7 +198,7 @@ $(function(){
 
 
 
-<div class="text-center">
+<div class="text-center mt-5">
     <button type="submit" id="btn_submit" class="btn bg-BlackLight">확인</button>
     <button type="button" id="btn_close" class="btn bg-BlackLight">닫기</button>
 </div>

@@ -8,31 +8,39 @@ use kr\bartnet\board as btbo;
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list'].'/list.sub.skin.css" />');
 
 $col['xs'] = bt\binstr($bcfg['numpr']['xs'], 2);
-$col['sm'] = bt\binstr($bcfg['numpr']['sm'], 2);
-$col['md'] = bt\binstr($bcfg['numpr']['md'], 4);
-$col['lg'] = bt\binstr($bcfg['numpr']['lg'], 4);
-$col['xl'] = bt\binstr($bcfg['numpr']['xl'], 6);
+$col['sm'] = bt\varset($bcfg['numpr']['sm']);
+$col['md'] = bt\varset($bcfg['numpr']['md']);
+$col['lg'] = bt\varset($bcfg['numpr']['lg']);
+$col['xl'] = bt\varset($bcfg['numpr']['xl']);
 
 ob_start();
 ?>
 <style type="text/css">
 .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['xs'], 4)?>%;}
 
-@media(max-width:576px){
+<?php if(bt\isval($col['sm'])){?>
+@media(min-width:576px){
     .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['sm'], 4)?>%;}
 }
+<?php }?>
 
+<?php if(bt\isval($col['md'])){?>
 @media(min-width:768px){
     .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['md'], 4)?>%; }
 }
+<?php }?>
 
+<?php if(bt\isval($col['lg'])){?>
 @media(min-width:992px){
     .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['lg'], 4)?>%; }
 }
+<?php }?>
 
+<?php if(bt\isval($col['xl'])){?>
 @media(min-width:1200px){
     .bo-list-gallery ul.plist >li{ width:<?php echo round(100 / $col['xl'], 4)?>%; }
 }
+<?php }?>
 </style>
 <?php
 $style = ob_get_contents();
@@ -169,6 +177,7 @@ ob_end_clean();
         $thumb = btb\get_list_thumbnail(
             $board['bo_table'], $list[$i]['wr_id'], $thumb_w, $thumb_h, 
             array(
+                "append_size" => true,
                 "sizefix" => true,
                 "crop_posx" => bt\image\BThumbnail::CROP_POSX_CENTER,
                 "crop_posy" => bt\image\BThumbnail::CROP_POSY_MIDDLE,
@@ -223,34 +232,34 @@ ob_end_clean();
         
                     <div class="foot">
                         <ul>
-                    <?php if($list_show_writer){?>
+                    <?php if($bcfg['list_hide_writer'] != '1'){?>
                             <li>
                                 <span class="writer sv_use"><i class="fa fa-user"></i> <?php echo $list[$i]['name'];?></span>
                             </li>
                     <?php }?>
                     
-                    <?php if($list_show_hit){?>
+                    <?php if($bcfg['list_hide_hit']!='1'){?>
                             <li>
                                 <span class="hit"><i class="fa fa-eye"></i> <?php echo number_format($list[$i]["wr_hit"]);?></span>
                             </li>
                     <?php }?>
                     
-                    <?php if($list_show_datetime){?>
+                    <?php if($bcfg['list_hide_datetime']!='1'){?>
                             <li>
                                 <span class="datetime"><i class="fa fa-calendar"></i> <?php echo $list[$i]["datetime"];?></span>
                             </li>
                     <?php }?>
                 
                         
-                <?php if($list_show_good || $list_show_nogood){?>
+                <?php if($bcfg['list_hide_good']!='1' || $bcfg['list_hide_nogood']!='1'){?>
                             <li>
                                 <div class="status-row">
                             
-                    <?php if($list_show_good){?>
+                    <?php if($bcfg['list_hide_good']!='1'){?>
                                     <span class="good"><i class="fa fa-thumbs-o-up"></i> <?php echo number_format($list[$i]["wr_good"]);?></span>
                     <?php }?>
                         
-                    <?php if($list_show_nogood){?>
+                    <?php if($bcfg['list_hide_nogood']!='1'){?>
                                     <span class="nogood"><i class="fa fa-thumbs-o-down"></i> <?php echo number_format($list[$i]["wr_nogood"]);?></span>
                     <?php }?>
                                 </div>

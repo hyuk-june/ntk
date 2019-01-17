@@ -20,7 +20,7 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
         </td>
     </tr>
     <tr>
-        <th>사이트위젯</th>
+        <th>사이드위젯</th>
         <td colspan="3">
             <div class="form-check">
                 <input type="checkbox" class="form-check-input" name="hide_wing" id="hide_wing" value="1"<?php echo $fcfg['hide_wing']=='1' ? ' checked="checked"':'';?>>
@@ -31,7 +31,7 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
         </td>
     </tr>
     <tr>
-        <th>사이트위젯높이</th>
+        <th>사이드위젯높이</th>
         <td>
             <input type="text" name="wing_top" class="form-control form-control-sm form-control-inline text-right" size="5" value="<?php echo $fcfg['wing_top']?>">px
         </td>

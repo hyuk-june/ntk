@@ -18,27 +18,26 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
     </header>
 
     <div class="article-info">
-    
-    <?php if($write_show_writer || $write_show_datetime || $write_show_hit || $write_show_cmtcnt){?>
+    <?php if($bcfg['write_hide_writer'] != '1' || $bcfg['write_hide_datetime'] !='1' || $bcfg['write_hide_hit'] !='1' || $bcfg['write_hide_cmtcnt'] != '1'){?>
         <section class="page-info">
             <h2>페이지 정보</h2>
             <dl>
-            <?php if($write_show_writer) { ?>
+            <?php if($bcfg['write_hide_writer']!='1') { ?>
                 <dt><i class="fa fa-user d-inline-block d-sm-none"></i><span class="d-none d-sm-block">작성자:</span></dt>
                 <dd><?php echo $view['name'] ?><?php if ($is_ip_view) { echo '<span class="d-none class="d-sm-inline-block">&nbsp;('.$ip.')</span>'; } ?></dd>
             <?php }?>
             
-            <?php if($write_show_datetime) { ?>
+            <?php if($bcfg['write_hide_datetime']!='1') { ?>
                 <dt><i class="fa fa-calendar d-inline-block d-sm-none"></i><span class="d-none d-sm-block">작성일</span></dt>
                 <dd><?php echo date("m.d H:i", strtotime($view['wr_datetime'])) ?></dd>
             <?php }?>
             
-            <?php if($write_show_hit) { ?>
+            <?php if($bcfg['write_hide_hit']!='1') { ?>
                 <dt><i class="fa fa-eye d-inline d-sm-none"></i><span class="d-none d-sm-block">조회</span></dt>
                 <dd><?php echo number_format($view['wr_hit']) ?></dd>
             <?php }?>
             
-            <?php if($write_show_cmtcnt) { ?>
+            <?php if($bcfg['write_hide_cmtcnt']!='1') { ?>
                 <dt><i class="fa fa-comment d-inline d-sm-none"></i><span class="d-none d-sm-block">댓글</span></dt>
                 <dd><?php echo number_format($view['wr_comment']) ?></dd>
             <?php }?>
@@ -152,7 +151,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
         $content =  get_view_thumbnail($view['content']);
         echo preg_replace('~(<iframe\s[^>]+>\s*<\/iframe>)~is', '<div class="embed-movie">$1</div>', $content);
         ?></div>
-        <?php//echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
+        <?php //echo $view['rich_content']; // {이미지:0} 과 같은 코드를 사용할 경우 ?>
         <!-- } 본문 내용 끝 -->
 
         <?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>

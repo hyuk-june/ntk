@@ -9,6 +9,7 @@ $target_s->add('_self', '현재창');
 $target_s->add('_blank', '새창');
 
 $align_s = new bt\html\BSelectbox();
+$align_s->selectedFromValue = $wcfg['align'];
 $align_s->add('left', '왼쪽정렬');
 $align_s->add('center', '중앙정렬');
 $align_s->add('right', '오른쪽정렬');

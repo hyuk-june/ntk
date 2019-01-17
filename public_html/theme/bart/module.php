@@ -3,7 +3,7 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
 
 use kr\bartnet as bt;
 
-$mid = bt\varset($_REQUEST["mid"]); //모듈명
+$mid = bt\binstr($mid, $_REQUEST["mid"]); //모듈명
 $sec = bt\varset($_REQUEST["sec"]); //섹션
 $act = bt\varset($_REQUEST["act"]); //저장등의 액션
 
@@ -28,7 +28,7 @@ if($mtype == 'module'){
 
 //등록된 모듈 호출이면
 }else{
-    
+
     if(!bt\isval($mid)) exit();
 
     $Q = "SELECT * FROM ".$bt['page_table']." WHERE pg_type='mpage' AND pg_id='".$mid."'";

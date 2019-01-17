@@ -1,2 +1,2 @@
 <?php exit();?>
-{"bc_image_width":"800","bc_skin_frame_main":"basic","bc_skin_mframe_main":"basic","bc_skin_frame_default":"basic","bc_skin_mframe_default":"basic","bc_skin_layout_main":"visual","bc_skin_mlayout_main":"basic","bc_skin_layout_default":"basic","bc_skin_mlayout_default":"basic","bc_pg_id":"wpage|main"}
+{"bc_image_width":"800","bc_skin_frame_main":"basic","bc_skin_mframe_main":"basic","bc_skin_frame_default":"basic","bc_skin_mframe_default":"basic","bc_skin_layout_main":"basic","bc_skin_mlayout_main":"basic","bc_skin_layout_default":"basic","bc_skin_mlayout_default":"basic","bc_pg_id":"wpage|main","bc_font_family":"","bc_font_url":""}

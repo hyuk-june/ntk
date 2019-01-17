@@ -104,8 +104,8 @@ HEREDOC;
             echo '</div>'.PHP_EOL;
         
             echo '<div class="bt-widget-body">'.PHP_EOL;
-            echo '<div class="'.$class.'" '.$attr.'>'.PHP_EOL;
         }
+        echo '<div class="'.$class.'" '.$attr.'>'.PHP_EOL;
         
         //위젯에 고유의 id 세팅
         echo '<div id="'.$wcfg['wg_eid'].'">';
@@ -137,8 +137,8 @@ HEREDOC;
         //위젯 컨트롤러 Element End
         if($is_admin){
             echo '</div>'.PHP_EOL;
-            echo '</div>'.PHP_EOL;
         }
+        echo '</div>'.PHP_EOL;
         echo '</div>'.PHP_EOL;
     }
     

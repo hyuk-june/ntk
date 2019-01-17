@@ -31,12 +31,16 @@ if(bt\varset($wcfg['type'])=='both'){
 $border_color = btb\colorformat($wcfg['border_color'], 'ddd');
 
 $bgcolor = btb\colorformat($wcfg['bgcolor'], 'transparent');
-$bgcolor_n = btb\colorformat($wcfg['bgcolor_n'], 'fff');
+$bgcolor_n = btb\colorformat($wcfg['bgcolor_n'], 'transparent');
 $color_n = btb\colorformat($wcfg['color_n'], '333');
 $bgcolor_o = btb\colorformat($wcfg['bgcolor_o'], '414141');
 $color_o = btb\colorformat($wcfg['color_o'], 'fff');
 $bgcolor_c = btb\colorformat($wcfg['bgcolor_c'], '333');
 $color_c = btb\colorformat($wcfg['color_c'], 'fff');
+
+$bold_n = $wcfg['bold_n']=='1' ? 'bold' : 'normal';
+$bold_o = $wcfg['bold_o']=='1' ? 'bold' : 'normal';
+$bold_c = $wcfg['bold_c']=='1' ? 'bold' : 'normal';
 
 $s_bgcolor = btb\colorformat($wcfg['s_bgcolor'], 'transparent');
 $s_bgcolor_n = btb\colorformat($wcfg['s_bgcolor_n'], 'fff');
@@ -46,12 +50,19 @@ $s_color_o = btb\colorformat($wcfg['s_color_o'], 'fff');
 $s_bgcolor_c = btb\colorformat($wcfg['s_bgcolor_c'], '333');
 $s_color_c = btb\colorformat($wcfg['s_color_c'], 'fff');
 
+$s_bold_n = $wcfg['s_bold_n']=='1' ? 'bold' : 'normal';
+$s_bold_o = $wcfg['s_bold_o']=='1' ? 'bold' : 'normal';
+$s_bold_c = $wcfg['s_bold_c']=='1' ? 'bold' : 'normal';
+
+
 ob_start();
+
+if(bt\varset($wcfg['vertical'])=='1') $vborder = 'border-top: 1px solid '.$border_color.'; border-bottom: 1px solid '.$border_color;
 ?>
 
 <style type="text/css">
 /*#main_menu_container{border-top:1px solid <?php echo $border_color?>; border-bottom:1px solid <?php echo $border_color?>;}*/
-<?php echo $eid?> nav{background:<?php echo $bgcolor?>; border-top:1px solid <?php echo $border_color?>; border-bottom:1px solid <?php echo $border_color?>; }
+<?php echo $eid?> nav{background:<?php echo $bgcolor?>; <?php echo $vborder?>; }
 <?php echo $eid?> nav:after{content:'';display:block;clear:both;}
 <?php echo $eid?> .main-menu >li{width:<?php echo $width?>; text-align:center;}
 
@@ -63,12 +74,12 @@ ob_start();
 <?php }?>
 
 /* 메인메뉴 */
-<?php echo $eid?> .main-menu >li >a{background-color:<?php echo $bgcolor_n?>; color:<?php echo $color_n?>;}
-<?php echo $eid?> .main-menu >li >a.current{background:<?php echo $bgcolor_c?>; color:<?php echo $color_c?>;}
+<?php echo $eid?> .main-menu >li >a{background-color:<?php echo $bgcolor_n?>; color:<?php echo $color_n?>; font-weight:<?php echo $bold_n?>;}
+<?php echo $eid?> .main-menu >li >a.current{background:<?php echo $bgcolor_c?>; color:<?php echo $color_c?>; font-weight:<?php echo $bold_o?>;}
 <?php echo $eid?> .main-menu >li >a:hover,
 <?php echo $eid?> .main-menu >li >a:active,
 <?php echo $eid?> .main-menu >li >a:focus,
-<?php echo $eid?> .main-menu >li >a.highlighted{background:<?php echo $bgcolor_o?>; color:<?php echo $color_o?>;}
+<?php echo $eid?> .main-menu >li >a.highlighted{background:<?php echo $bgcolor_o?>; color:<?php echo $color_o?>; font-weight:<?php echo $bold_c?>;}
 
 <?php echo $eid?> .main-menu >li >a >.sub-arrow{border-top-color:<?php echo $color_n;?>;}
 <?php echo $eid?> .main-menu >li >a.current >.sub-arrow{border-top-color:<?php echo $color_c?>;}
@@ -80,12 +91,12 @@ ob_start();
 
 
 /* 서브 메뉴 */
-<?php echo $eid?> .main-menu li ul a{background-color:<?php echo $s_bgcolor_n?>; color:<?php echo $s_color_n?>;}
-<?php echo $eid?> .main-menu li ul a.current{background:<?php echo $s_bgcolor_c?>; color:<?php echo $s_color_c?>;}
+<?php echo $eid?> .main-menu li ul a{background-color:<?php echo $s_bgcolor_n?>; color:<?php echo $s_color_n?>; font-weight:<?php echo $s_bold_n?>;}
+<?php echo $eid?> .main-menu li ul a.current{background:<?php echo $s_bgcolor_c?>; color:<?php echo $s_color_c?>;font-weight:<?php echo $s_bold_o?>;}
 <?php echo $eid?> .main-menu li ul a:hover, 
 <?php echo $eid?> .main-menu li ul a:active, 
 <?php echo $eid?> .main-menu li ul a:focus, 
-<?php echo $eid?> .main-menu li ul a.highlighted {background-color:<?php echo $s_bgcolor_o?>; color:<?php echo $s_color_o?>;}
+<?php echo $eid?> .main-menu li ul a.highlighted {background-color:<?php echo $s_bgcolor_o?>; color:<?php echo $s_color_o?>; font-weight:<?php echo $s_bold_c?>;}
 <?php echo $eid?> .main-menu li ul a .sub-arrow{border-left-color:<?php echo $s_color_n;?>;}
 
 <?php echo $eid?> .main-menu li ul a .sub-arrow{border-left-color:<?php echo $s_color_n;?>;}

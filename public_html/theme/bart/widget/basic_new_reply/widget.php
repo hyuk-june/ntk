@@ -18,7 +18,7 @@ $limit = bt\binstr($wcfg["rowcnt"], 5);
     where a.bo_table = b.bo_table and b.gr_id = c.gr_id and b.bo_use_search = 1 ";
 $sql_common .= " and a.wr_id = a.wr_parent ";*/
 $strlen = 100;
-$list = btb\get_new_data(10, $widget_url, $strlen, true);
+$list = btb\get_new_data($limit, $widget_url, $strlen, true);
 ?>
 
     <div class="widget-basic-new">
