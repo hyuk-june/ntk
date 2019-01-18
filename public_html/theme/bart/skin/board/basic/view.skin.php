@@ -38,6 +38,9 @@ var point_down = '<?php echo $board['bo_download_point']?>';
 
 $(function() {
     $("a.view_file_download").click(function() {
+        
+        if(point_down <= 0) return;
+        
         if(!g5_is_member) {
             alert("다운로드 권한이 없습니다.\n회원이시라면 로그인 후 이용해 보십시오.");
             return false;

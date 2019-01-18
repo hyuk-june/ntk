@@ -177,12 +177,6 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
             if(count($cls) > 0) $strcls = ' '.@implode('', $cls);
             else $strcls = '';
             
-            if(bt\isval($list[$i]['mb_id'])){
-                $name = $list[$i]['name'];
-            }else{
-                $name = btl\hp_blind($list[$i]['wr_name']);
-            }
-            
             $thumb_w = bt\binstr($bcfg["thumb_w"], 400);
             $thumb_h = bt\binstr($bcfg["thumb_h"], 300);
             
@@ -238,7 +232,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                         </a>
                     </div>
             <?php if($bcfg['list_hide_writer']!='1'){?>
-                    <div class="cell cell-writer sv_use"><i class="fa fa-user d-inline-block d-sm-none">&nbsp;</i><?php echo $name ?></div>
+                    <div class="cell cell-writer sv_use"><i class="fa fa-user d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['name'] ?></div>
             <?php }?>
             <?php if($bcfg['list_hide_datetime']!='1'){?>
                     <div class="cell cell-datetime"><i class="fa fa-clock-o d-inline-block d-sm-none">&nbsp;</i><?php echo $list[$i]['datetime2'] ?></div>
