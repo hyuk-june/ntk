@@ -30,7 +30,7 @@ add_stylesheet($style);
 
 <?php
 if(defined('_MAIN_')) { // index에서만 실행
-    include G5_BBS_PATH.'/newwin.inc.php'; // 팝업레이어
+    include G5_THEME_PATH.'/newwin.inc.php'; // 팝업레이어
 }
 ?>
 
