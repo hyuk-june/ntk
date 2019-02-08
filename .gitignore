@@ -6,5 +6,11 @@ public_html/theme/bart/widget/ext_movie
 public_html/theme/bart/widget/ext_movie
 public_html/theme/bart/widget/ext_uchat
 public_html/theme/bart/widget/ext_card
+public_html/theme/bart/widget/ext_card_widget
 public_html/theme/bart/widget/ext_dl
+public_html/theme/bart/widget/ext_consult
+public_html/theme/bart/widget/ext_title
+public_html/theme/bart/widget/ext_videobg
+public_html/theme/bart/widget/cwmd_consult
+public_html/theme/bart/skin/board/basic/write/consult
 public_html/robots.txt

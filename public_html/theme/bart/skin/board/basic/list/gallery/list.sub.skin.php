@@ -232,34 +232,34 @@ ob_end_clean();
         
                     <div class="foot">
                         <ul>
-                    <?php if($bcfg['list_hide_writer'] != '1'){?>
+                    <?php if(!$list_hide_writer){?>
                             <li>
                                 <span class="writer sv_use"><i class="fa fa-user"></i> <?php echo $list[$i]['name'];?></span>
                             </li>
                     <?php }?>
                     
-                    <?php if($bcfg['list_hide_hit']!='1'){?>
+                    <?php if(!$list_hide_hit){?>
                             <li>
                                 <span class="hit"><i class="fa fa-eye"></i> <?php echo number_format($list[$i]["wr_hit"]);?></span>
                             </li>
                     <?php }?>
                     
-                    <?php if($bcfg['list_hide_datetime']!='1'){?>
+                    <?php if(!$list_hide_datetime){?>
                             <li>
                                 <span class="datetime"><i class="fa fa-calendar"></i> <?php echo $list[$i]["datetime"];?></span>
                             </li>
                     <?php }?>
                 
                         
-                <?php if($bcfg['list_hide_good']!='1' || $bcfg['list_hide_nogood']!='1'){?>
+                <?php if((!$list_hide_good && $is_good) || (!$list_hide_nogood && $is_good)){?>
                             <li>
                                 <div class="status-row">
                             
-                    <?php if($bcfg['list_hide_good']!='1'){?>
+                    <?php if(!$list_hide_good && $is_good){?>
                                     <span class="good"><i class="fa fa-thumbs-o-up"></i> <?php echo number_format($list[$i]["wr_good"]);?></span>
                     <?php }?>
                         
-                    <?php if($bcfg['list_hide_nogood']!='1'){?>
+                    <?php if(!$list_hide_nogood && $is_good){?>
                                     <span class="nogood"><i class="fa fa-thumbs-o-down"></i> <?php echo number_format($list[$i]["wr_nogood"]);?></span>
                     <?php }?>
                                 </div>

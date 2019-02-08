@@ -22,5 +22,32 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
         <input type="text" name="label" id="label" value="<?php echo $wcfg["label"]?>" size="80" class="frm_input">
     </td>
 </tr>
+<tr>
+    <th><label for="label">세로크기</label></th>
+    <td>
+        <table>
+        <thead>
+        <tr>
+            <th>구분</th>
+            <th>xs(&lt;576px)</th>
+            <th>sm(≥576px)</th>
+            <th>md(≥768px)</th>
+            <th>lg(≥992px)</th>
+            <th>xl(≥1200px)</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>세로크기</td>
+            <td><input type="text" name="height[xs]" value="<?php echo $wcfg['height']['xs']?>" class="frm_input" size="4"></td>
+            <td><input type="text" name="height[sm]" value="<?php echo $wcfg['height']['sm']?>" class="frm_input" size="4"></td>
+            <td><input type="text" name="height[md]" value="<?php echo $wcfg['height']['md']?>" class="frm_input" size="4"></td>
+            <td><input type="text" name="height[lg]" value="<?php echo $wcfg['height']['lg']?>" class="frm_input" size="4"></td>
+            <td><input type="text" name="height[xl]" value="<?php echo $wcfg['height']['xl']?>" class="frm_input" size="4"></td>
+        </tr>
+        </tbody>
+        </table>
+    </td>
+</tr>
 </tbody>
 </table>

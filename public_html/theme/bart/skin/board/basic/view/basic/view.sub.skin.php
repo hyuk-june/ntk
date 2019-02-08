@@ -18,26 +18,26 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
     </header>
 
     <div class="article-info">
-    <?php if($bcfg['write_hide_writer'] != '1' || $bcfg['write_hide_datetime'] !='1' || $bcfg['write_hide_hit'] !='1' || $bcfg['write_hide_cmtcnt'] != '1'){?>
+    <?php if(!$write_hide_writer || !$write_hide_datetime || !$write_hide_hit || !$write_hide_cmtcnt){?>
         <section class="page-info">
             <h2>페이지 정보</h2>
             <dl>
-            <?php if($bcfg['write_hide_writer']!='1') { ?>
+            <?php if(!$write_hide_writer) { ?>
                 <dt><i class="fa fa-user d-inline-block d-sm-none"></i><span class="d-none d-sm-block">작성자:</span></dt>
                 <dd><?php echo $view['name'] ?><?php if ($is_ip_view) { echo '<span class="d-none class="d-sm-inline-block">&nbsp;('.$ip.')</span>'; } ?></dd>
             <?php }?>
             
-            <?php if($bcfg['write_hide_datetime']!='1') { ?>
+            <?php if(!$write_hide_datetime) { ?>
                 <dt><i class="fa fa-calendar d-inline-block d-sm-none"></i><span class="d-none d-sm-block">작성일</span></dt>
                 <dd><?php echo date("m.d H:i", strtotime($view['wr_datetime'])) ?></dd>
             <?php }?>
             
-            <?php if($bcfg['write_hide_hit']!='1') { ?>
+            <?php if(!$write_hide_hit) { ?>
                 <dt><i class="fa fa-eye d-inline d-sm-none"></i><span class="d-none d-sm-block">조회</span></dt>
                 <dd><?php echo number_format($view['wr_hit']) ?></dd>
             <?php }?>
             
-            <?php if($bcfg['write_hide_cmtcnt']!='1') { ?>
+            <?php if(!$write_hide_cmtcnt) { ?>
                 <dt><i class="fa fa-comment d-inline d-sm-none"></i><span class="d-none d-sm-block">댓글</span></dt>
                 <dd><?php echo number_format($view['wr_comment']) ?></dd>
             <?php }?>

@@ -103,20 +103,18 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
 	    
         <!-- 모바일 헤더 -->
 	    <div id="mobile_header" class="container d-block d-md-none">
-		    <div class="container">
-                <div class="d-flex justify-content-between">
-			        <div id="mobile-logo">
-                        <?php btb\show_widgets(__FILE__, "", "logo-m")?>
-			        </div>
-			        <div>
-                        <div class="d-flex align-items-center" style="height:100%;">
-				            <a href="#" id="btn_toggle_menu" class="btn btn-default">
-					            <i class="fa fa-bars"></i>
-				            </a>
-                        </div>
-			        </div>
-                </div>
-		    </div>
+            <div class="d-flex justify-content-between">
+			    <div id="mobile-logo">
+                    <?php btb\show_widgets(__FILE__, "", "logo-m")?>
+			    </div>
+			    <div>
+                    <div class="d-flex align-items-center" style="height:100%;">
+				        <a href="#" id="btn_toggle_menu" class="btn btn-default">
+					        <i class="fa fa-bars"></i>
+				        </a>
+                    </div>
+			    </div>
+            </div>
 	    </div>
         <!-- //모바일 헤더 -->
 	    
@@ -131,7 +129,7 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
 </div>
 
 <div id="content_wrap">
-    <?php if($fcfg['hide_wing']!='1'){?>
+    <?php if(bt\varset($fcfg['hide_wing'])!='1'){?>
     <div id="wing" class="d-none d-xl-block<?php echo !defined('_MAIN_') ? ' sub':'';?>">
         <div class="container">
             <aside id="lside">

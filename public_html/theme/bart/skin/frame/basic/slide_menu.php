@@ -18,7 +18,7 @@ add_javascript('<script type="text/javascript" src="'.$frame_url.'/js/jquery.acc
     <h4>Menu</h4>
     <div id="accmenu">
         <ul>
-            <?php echo btb\get_menu_tag($menulist, $bt['curmenu']['bm_idx']);?>
+            <?php echo btb\get_menu_tag($menulist, bt\varset($bt['curmenu']['bm_idx']));?>
         </ul>
     </div>
     

@@ -1,6 +1,5 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
-define('_INDEX_', true);
 
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
@@ -45,7 +44,7 @@ $skin_url = BT_SKIN_URL.'/wpage/'.$wpage_skin;
 //===========================================================================
 // 메뉴에 속하지 않아서 제목, description 이 없으면 page테이블에서 직접 불러온다
 //===========================================================================
-$cur_title = bt\binstr($pgrow["pg_title"], $g5['title']);
+$cur_title = bt\binstr($pgrow["pg_title"], $config['cf_title']);
 $cur_subtitle = $pgrow["pg_subtitle"];
 $cur_keyword = $pgrow["pg_keyword"];
 $cur_desc = $pgrow["pg_desc"];

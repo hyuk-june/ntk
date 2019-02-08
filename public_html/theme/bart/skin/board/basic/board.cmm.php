@@ -24,32 +24,31 @@ $sub_urls = array(
 );
 
 //목록 필드출력 여부
-$list_show_writer = true;
-$list_show_datetime = true;
-$list_show_hit = true;
-$list_show_good = false;
-$list_show_nogood = false;
-
-if(count($bcfg) > 0){
-    $list_show_writer = $bcfg['list_show_writer'];
-    $list_show_datetime = $bcfg['list_show_datetime'];
-    $list_show_hit = $bcfg['list_show_hit'];
-    $list_show_good = $bcfg['list_show_good'];
-    $list_show_nogood = $bcfg['list_show_nogood'];
-}
+$list_hide_writer = true;
+$list_hide_datetime = true;
+$list_hide_hit = true;
+$list_hide_good = false;
+$list_hide_nogood = false;
 
 //읽기 필드출력 여부
-$write_show_writer = true;
-$write_show_datetime = true;
-$write_show_hit = true;
-$write_show_cmtcnt = true;
+$write_hide_writer = true;
+$write_hide_datetime = true;
+$write_hide_hit = true;
+$write_hide_cmtcnt = true;
 
 if(count($bcfg) > 0){
-    $write_show_writer = $bcfg['write_show_writer'];
-    $write_show_datetime = $bcfg['write_show_datetime'];
-    $write_show_hit = $bcfg['write_show_hit'];
-    $write_show_cmtcnt = $bcfg['write_show_cmtcnt'];
+    $list_hide_writer = isset($bcfg['list_hide_writer']) ? true : false;
+    $list_hide_datetime = isset($bcfg['list_hide_datetime']) ? true : false;
+    $list_hide_hit = isset($bcfg['list_hide_hit']) ? true : false;
+    $list_hide_good = isset($bcfg['list_hide_good']) ? true : false;
+    $list_hide_nogood = isset($bcfg['list_hide_nogood']) ? true : false;
+
+    $write_hide_writer = isset($bcfg['write_hide_writer']) ? true : false;
+    $write_hide_datetime = isset($bcfg['write_hide_datetime']) ? true : false;
+    $write_hide_hit = isset($bcfg['write_hide_hit']) ? true : false;
+    $write_hide_cmtcnt = isset($bcfg['write_hide_cmtcnt']) ? true : false;
 }
+
 
 
 $str = <<< HEREDOC

@@ -13,9 +13,12 @@ use kr\bartnet\builder as btb;
 //디버그모드(true), 릴리즈모드(false)
 define('BT_DEBUG', false);
 
-if(BT_DEBUG) ini_set('display_errors', '1');
-else ini_set('display_errors', '0');
-
+if(BT_DEBUG){
+    ini_set('display_errors', '1');
+    error_reporting(E_ALL);
+}else{
+    ini_set('display_errors', '0');
+}
 
 
 //===========================================================================
@@ -65,11 +68,6 @@ define('BT_CSS_URL', BT_URL.'/'.BT_CSS_DIR);
 define('BT_SKIN_DIR', 'skin');
 define('BT_SKIN_PATH', BT_PATH.'/'.BT_SKIN_DIR);
 define('BT_SKIN_URL', BT_URL.'/'.BT_SKIN_DIR);
-
-//위젯 경로
-define('BT_WIDGET_DIR', 'widget');
-define('BT_WIDGET_PATH', BT_PATH.'/'.BT_WIDGET_DIR);
-define('BT_WIDGET_URL', BT_URL.'/'.BT_WIDGET_DIR);
 
 //DATA 경로
 define('BT_DATA_DIR', 'bart');
@@ -159,7 +157,7 @@ $bdb->setDebug(G5_DISPLAY_SQL_ERROR);
 //===========================================================================
 // 현재위치 파악
 //===========================================================================
-if($mtype && $mid){
+if(bt\isval($mtype) && bt\isval($mid)){
 	$bt['curmenu'] = $btmenu->getByMid($mtype, $mid);
 }else{
 	if($bo_table){
@@ -200,22 +198,10 @@ $frame_skin = bt\binstr($bt['curmenu']['bm_skin_frame'], $frame_default);
 $layout_default = bt\binstr($btcfg['bc_skin_layout_default'], 'basic');
 $layout_skin = bt\binstr($bt['curmenu']['bm_skin_layout'], $layout_default);
 
-
-//===========================================================================
-// 사이드메뉴 정의
-//===========================================================================
-//메뉴에 지정된 사이드바가 있으면
-if(bt\isval($bt['curmenu'])){
-	$bt['sidebar'] = 'side_'.$bt['curmenu']['bm_sidebar'];
-//없으면 기본 사이트바
-}else{
-	$bt['sidebar'] = $btcfg['bc_sidebar'];
-}
-
 //===========================================================================
 // 접근권한 체크
 //===========================================================================
-if($bt['curmenu']['bm_perm'] > $member['mb_level']){
+if(bt\varset($bt['curmenu']['bm_perm']) > $member['mb_level']){
 	if(!$member['mb_id']){
 		$url = G5_BBS_URL.'/login.php?'.$qstr.'&url='.urlencode($_SERVER['PHP_SELF'].'?bo_table='.$bo_table);
 		echo <<<EOT

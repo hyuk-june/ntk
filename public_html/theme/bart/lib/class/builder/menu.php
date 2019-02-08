@@ -171,6 +171,7 @@ class BMenu{
 		if($device == 'pc') $aw[] = "bm_device <> 'mobile'";
 		else if($device == 'mobile') $aw[] = "bm_device <> 'pc'";
 		
+        $wsql = '';
 		if(count($aw) > 0) $wsql = " AND ".@implode(' AND ', $aw);
 		
 		//if(count($qlist[$key]) <= 0){
@@ -192,7 +193,7 @@ class BMenu{
                     //if($rs['bm_device'] != 'both' && $device != $rs['bm_device']) continue;;
                 //}
                 $rs['bm_name'] = bt\binstr($rs['pg_title'], $rs['bm_name']);
-                $rs['bm_desc'] = bt\binstr($rs['pg_desc'], $rs['bm_desc']);
+                $rs['bm_subtitle'] = bt\binstr($rs['pg_subtitle'], $rs['bm_subtitle']);
                 $qlist[$key][] = $rs;
             }
 		//}
@@ -398,7 +399,7 @@ class BMenu{
 		return implode($separ, $res);
 	}
     
-    public function getPathList($arr, $atag_attr=''){
+    public static function getPathList($arr, $atag_attr=''){
 
         $res = array();
         for($i=0;$i<count($arr);$i++){

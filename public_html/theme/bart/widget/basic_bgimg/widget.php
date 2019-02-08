@@ -32,7 +32,7 @@ ob_start();
 <?php echo $eid?> .widget-basic-bgimg >.child{bottom:<?php echo bt\binstr($wcfg['margin'], '0')?>px; position:absolute;}
 <?php }else{?>
 <?php echo $eid?> {display:table; width:100%;}
-<?php echo $eid?> .widget-basic-bgimg {display:table-cell; vertical-align:middle;}
+<?php echo $eid?> .widget-basic-bgimg {display:table-cell; vertical-align:middle; padding:<?php echo bt\binstr($wcfg['margin'], '0')?>px;}
 <?php echo $eid?> .widget-basic-bgimg >.child{position:relative;}
 <?php }?>
 </style>

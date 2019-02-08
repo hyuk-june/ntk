@@ -49,7 +49,8 @@ if(bt\isval($wcfg['bo_table'])){
                 "sizefix" => true,
                 "crop_posx" => bt\image\BThumbnail::CROP_POSX_CENTER,
                 "crop_posy" => bt\image\BThumbnail::CROP_POSY_MIDDLE,
-                "is_anigif_thumb" => true
+                "is_anigif_thumb" => true,
+                "append_size" => true
             )
         );
         

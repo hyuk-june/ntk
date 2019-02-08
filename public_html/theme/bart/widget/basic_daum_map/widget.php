@@ -17,7 +17,9 @@ if(!bt\isval($wcfg['daum_map_apikey'])) return;
 add_javascript('<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey='.$wcfg['daum_map_apikey'].'&libraries=services,clusterer,drawing"></script>');
 add_javascript('<script type="text/javascript" src="'.$widget_url.'/widget.js"></script>');
 ?>
-<div class="map" style="width:100%;min-height:400px;"></div>
+<div class="widget-basic-daum-map">
+    <div class="map" style="width:100%;"></div>
+</div>
 
 <?php if(bt\isval($eid)){?>
 <script type="text/javascript">

@@ -1,12 +1,52 @@
 (function($){
     
-    var container = null;
-    var address = '';
-    var label = '';
-    var map = null;
-    var geocoder = null;
-    
     $.fn.daumMap = function(_address, _label){
+        
+        var container = null;
+        var address = '';
+        var label = '';
+        var map = null;
+        var geocoder = null;
+        
+        function show(){
+        
+            geocoder.addressSearch(address, function(result, status) {
+
+                // 정상적으로 검색이 완료됐으면 
+                 if (status === daum.maps.services.Status.OK) {
+                    
+                    var coords = new daum.maps.LatLng(result[0].y, result[0].x);
+
+                    // 결과값으로 받은 위치를 마커로 표시합니다
+                    var marker = new daum.maps.Marker({
+                        map: map,
+                        position: coords
+                    });
+
+                    // 인포윈도우로 장소에 대한 설명을 표시합니다
+                    var infowindow = new daum.maps.InfoWindow({
+                        content: '<div style="width:150px;text-align:center;padding:6px 0;">' + label + '</div>'
+                    });
+                    infowindow.open(map, marker);
+
+                    // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
+                    map.setCenter(coords);
+                } 
+            });
+        };
+        
+        function relayout() {    
+            
+            // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
+            // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
+            // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
+            map.relayout();
+            //console.log('A');
+        }
+        $(window).resize(function(){
+            relayout();
+        });
+        
         
         container = $(this).get(0); //지도를 담을 영역의 DOM 레퍼런스
         address = _address;
@@ -33,48 +73,8 @@
 
         geocoder = new daum.maps.services.Geocoder();
         // 주소로 좌표를 검색합니다
-        
         show();
     }
-    
-    function show(){
-
-        geocoder.addressSearch(address, function(result, status) {
-            
-            // 정상적으로 검색이 완료됐으면 
-             if (status === daum.maps.services.Status.OK) {
-
-                var coords = new daum.maps.LatLng(result[0].y, result[0].x);
-
-                // 결과값으로 받은 위치를 마커로 표시합니다
-                var marker = new daum.maps.Marker({
-                    map: map,
-                    position: coords
-                });
-
-                // 인포윈도우로 장소에 대한 설명을 표시합니다
-                var infowindow = new daum.maps.InfoWindow({
-                    content: '<div style="width:150px;text-align:center;padding:6px 0;">' + label + '</div>'
-                });
-                infowindow.open(map, marker);
-
-                // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다
-                map.setCenter(coords);
-            } 
-        });
-    };
-    
-    function relayout() {    
-        
-        // 지도를 표시하는 div 크기를 변경한 이후 지도가 정상적으로 표출되지 않을 수도 있습니다
-        // 크기를 변경한 이후에는 반드시  map.relayout 함수를 호출해야 합니다 
-        // window의 resize 이벤트에 의한 크기변경은 map.relayout 함수가 자동으로 호출됩니다
-        map.relayout();
-        //console.log('A');
-    }
-    $(window).resize(function(){
-        relayout();
-    });
     
 })(jQuery);
 

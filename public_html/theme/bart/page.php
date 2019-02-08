@@ -35,7 +35,7 @@ $content = $pgrow['pg_content'];
 // 메뉴에 속하지 않아서 제목, description 이 없으면 page테이블에서 직접 불러온다
 //===========================================================================
 //if(!is_array($bt['curpath']) || count($bt['curpath']) <= 0){
-    $cur_title = bt\binstr($pgrow["pg_title"], $g5['title']);
+    $cur_title = bt\binstr($pgrow["pg_title"], $config['cf_title']);
     $cur_subtitle = $pgrow["pg_subtitle"];
     $cur_keyword = $pgrow["pg_keyword"];
     $cur_desc = $pgrow["pg_desc"];

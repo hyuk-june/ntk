@@ -33,12 +33,13 @@ if(bt\isval($bcfg['ca_type']) && bt\isval($categories)){
         $ca_style[] = 'width:'.$width.'%';
     }
 }
-if(count($ca_style) > 0) $ca_style = @implode(';', $ca_style);
+$s_ca_style = '';
+if(count($ca_style) > 0) $s_ca_style = @implode(';', $ca_style);
 
 $str = <<< HEREDOC
 <style type="text/css">
 #bo_cate_ul {overflow:hidden;}
-#bo_cate_ul li{float:left;{$ca_style};}
+#bo_cate_ul li{float:left;{$s_ca_style};}
 </style>
 HEREDOC;
 

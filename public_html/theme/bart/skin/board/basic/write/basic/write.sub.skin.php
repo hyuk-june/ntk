@@ -132,7 +132,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
             </div>
         </div>
         
-            <?php if($bcfg['use_point_down']){?>
+            <?php if($use_point_down){?>
         <div class="form-group row">
             <label for="opts_point_down_<?php echo $i?>" class="col-sm-2">다운로드포인트</label>
             <div class="col-sm-2">
@@ -141,15 +141,6 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
         </div>
             <?php }?>
         <?php } ?>
-        
-        <?php if($bcfg['use_point_view']){?>
-        <div class="form-group row">
-            <label class="col-sm-2 control-label">내용보기포인트</label>
-            <div class="col-sm-2">
-                <input type="text" name="opts[point_view]" class="form-control form-control-sm text-right" placeholder="point" value="<?php echo $opts['point_view']?>">
-            </div>
-        </div>
-        <?php }?>
         
         <?php if ($is_guest) { //자동등록방지  ?>
         <div class="form-group row">

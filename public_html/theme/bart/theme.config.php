@@ -4,7 +4,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 //기본 데이타도 입력할 것인지 입력하지 않으면 false
 // /data/bart 폴더가 있으면 실행하지 않음
 define('_BT_DATA_', true);
-if(!defined('BT_ADMIN_PATH')) define('BT_ADMIN_PATH', G5_THEME_PATH.'/adm');
 
 function bt_check_installed(){
     
@@ -91,23 +90,27 @@ if($_POST["theme"]=='bart'){
     if(!bt_check_installed()){
 
         //테이블 생성하기    
-        $line = bt_get_install_sql( BT_ADMIN_PATH.'/schema.php' );
+        $line = bt_get_install_sql( G5_PATH.'/theme/bart/adm/schema.php' );
 
         foreach($line as $sql){
-            sql_query($sql);
+            try{
+                sql_query($sql);
+            }catch(Exception $e){}
         }
     }
 
     //기본데이타 입력하기
     if(_BT_DATA_ === true && !is_dir(G5_DATA_PATH.'/bart')){
         
-        $line = bt_get_install_sql( BT_ADMIN_PATH.'/schema_insert.php' );
+        $line = bt_get_install_sql( G5_PATH.'/theme/bart/adm/schema_insert.php' );
         
         foreach($line as $sql){
-            sql_query($sql);
+            try{
+                sql_query($sql);
+            }catch(Exception $e){}
         }
         
-        bt_xcopy(BT_PATH.'/init_data', G5_PATH.'/data/bart', 0755);
+        bt_xcopy(G5_PATH.'/theme/bart/init_data', G5_PATH.'/data/bart', 0755);
     }
 }
 

@@ -18,6 +18,7 @@ html, body{width:100%; background:#fff;}
 html{font-size: 13px;}
 body{font-size: 1rem;}
 
+p{margin-bottom:0 !important;}
 
 /* 크롬 focus시 파란테두리 없애기 */
 *:focus { outline:none !important; }

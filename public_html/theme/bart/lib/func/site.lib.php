@@ -336,7 +336,7 @@ function get_menu_tag($menu, $cur_idx='', $active_tag='a', $is_showicon=false, $
         }
 
         //태그정리
-        $str .= '<li'.$lcls.'>'.$pre_a.'<a'.$acls.' href="'.$alink.'" target="'.$node['bm_target'].'"'.$a_cls.'>'.$icon.$node['bm_name'].'</a>';
+        $str .= '<li'.$lcls.'>'.$pre_a.'<a'.$acls.' href="'.$alink.'" target="'.$node['bm_target'].'">'.$icon.$node['bm_name'].'</a>';
         $str .= $sub_str;
         $str .= '</li>'.PHP_EOL;
     }        

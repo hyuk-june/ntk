@@ -54,7 +54,7 @@ class BWidgets{
         //사용자 설정을 디코드 한다
         $wcfg = @json_decode($rs["wg_data"], true);
         if(!is_array($wcfg)) $wcfg = array();
-        $wcfg = array_map_deep('stripslashes', $wcfg);
+        unset($rs['wg_data']);
         
         //레코드와 설정을 합친다
         $wcfg = array_merge($rs, $wcfg);
@@ -94,7 +94,7 @@ HEREDOC;
         }
         
         //위젯 컨트롤러 Element Start
-        echo '<div class="bt-widget" style="margin: '.$margin.'; padding: '.$padding.'">'.PHP_EOL;
+        echo '<div class="bt-widget">'.PHP_EOL;
         
         //관리자패널
         if($is_admin){
@@ -105,17 +105,16 @@ HEREDOC;
         
             echo '<div class="bt-widget-body">'.PHP_EOL;
         }
-        echo '<div class="'.$class.'" '.$attr.'>'.PHP_EOL;
         
         //위젯에 고유의 id 세팅
-        echo '<div id="'.$wcfg['wg_eid'].'">';
+        echo '<div id="'.$wcfg['wg_eid'].'" class="'.$class.'" '.$attr.' style="margin: '.$margin.'; padding: '.$padding.'">';
         
         //위젯내에서 함수를 부를 수 있어서 임시로 global로 등록함
         $GLOBALS['wcfg'] = $wcfg;
         
         //위젯 헤더 (캐시에 포함안시킬 선처리 파일)
         if(file_exists($widget_path.'/widget.head.php'))
-            include_once($widget_path.'/widget.head.php');
+            include($widget_path.'/widget.head.php');
         
         //위젯파일 로딩
         if(isset($wcfg['wg_cache_min']) && (int)bt\varset($wcfg['wg_cache_min']) > 0){
@@ -127,7 +126,7 @@ HEREDOC;
         
         //위젯 헤더 (캐시에 포함안시킬 후처리 파일)
         if(file_exists($widget_path.'/widget.tail.php'))
-            include_once($widget_path.'/widget.tail.php');
+            include($widget_path.'/widget.tail.php');
         
         echo '</div>';
         
@@ -138,7 +137,7 @@ HEREDOC;
         if($is_admin){
             echo '</div>'.PHP_EOL;
         }
-        echo '</div>'.PHP_EOL;
+        
         echo '</div>'.PHP_EOL;
     }
     

@@ -3,7 +3,7 @@ include_once("./_common.php");
 
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
-
+ 
 if(!$is_admin){
     alert_close("권한이 없습니다");
 }
@@ -18,7 +18,6 @@ $sql = "SELECT * FROM ".$bt["widget_table"]." WHERE wg_idx=".$wg_idx;
 $rs = sql_fetch($sql);
 
 $wcfg = @json_decode($rs["wg_data"], true);
-$wcfg = array_map_deep('stripslashes', $wcfg);
 if(!is_array($wcfg)) $wcfg = array();
 
 $widget_path = BT_WIDGET_PATH.'/'.$rs["wg_name"];
@@ -27,6 +26,8 @@ $widget_url = BT_WIDGET_URL.'/'.$rs["wg_name"];
 
 
 if($actmode=="save"){
+    
+    $_POST = bt\array_map_recursive('stripslashes', $_POST);
 
     $wg_margin = @implode('|', $_POST["wg_margin"]);
     $wg_padding = @implode('|', $_POST["wg_padding"]);
@@ -72,7 +73,7 @@ if($actmode=="save"){
     
     @include_once($widget_path.'/widget.setup.before.php');
     
-    $wg_data = @json_encode($_POST);
+    $wg_data = @json_encode($_POST, JSON_UNESCAPED_UNICODE);
     
     $arr = array();
     $arr['wg_step'] = $_POST["wg_step"];
