@@ -8,7 +8,7 @@ global $wcfg;
 
 add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">', 0);
 
-$sql = "SELECT * FROM bt_alim WHERE mb_id='".$member['mb_id']."' AND al_read=0 ORDER BY al_idx DESC LIMIT 3";
+$sql = "SELECT * FROM bt_alim WHERE mb_id='".$member['mb_id']."' AND al_read=0 ORDER BY al_idx DESC";
 $aresult = sql_query($sql);
 $acnt = sql_num_rows($aresult);
 ?>
