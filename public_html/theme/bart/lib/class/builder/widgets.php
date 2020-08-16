@@ -9,6 +9,7 @@ class BWidgets{
     
     public function showWidgetList($wg_skindir, $pg_id, $wg_id){
         global $bt, $is_admin;
+        
         $sql = "SELECT * FROM ".$bt['widget_table']."
             WHERE wg_skindir='".$wg_skindir."'
             AND wp_id='".$pg_id."'
@@ -45,7 +46,7 @@ class BWidgets{
     
     
     //위젯출력
-    private function showWidget($rs){
+    private function showWidget(&$rs){
         global $config, $g5, $bt, $is_admin, $is_member, $member, $is_auth, $bdb;
         
         $path = BT_WIDGET_PATH;

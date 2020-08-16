@@ -33,6 +33,7 @@ new WOW().init();
 //-->
 </script>
 
+<?php run_event('tail_sub'); ?>
 </body>
 </html>
 <?php

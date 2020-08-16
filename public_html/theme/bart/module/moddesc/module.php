@@ -6,7 +6,6 @@ use kr\bartnet\builder as btb;
 
 $g5['title'] = "모듈페이지란?";
 include_once(G5_PATH.'/head.php');
-
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$module_url.'/style.css" />');
 ?>
 <?php echo btb\show_widgets(__FILE__, $pg_id, "moddesc_top");?>

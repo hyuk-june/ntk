@@ -1,25 +1,52 @@
 <?php
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
+// BART 빌더 경로
+define('BT_DIR', 'bart');
+
+// 빌더를 사용하지 않고 있으면
+if(basename(G5_THEME_PATH)!=BT_DIR){
+    // ntk테마로 설정할때
+    if (
+        basename($_SERVER["SCRIPT_FILENAME"]) == 'theme_update.php' 
+        && $_POST["theme"] == BT_DIR
+    ) {
+        include_once(BT_DIR.'/lib/func/cmd.lib.php');
+        include_once(BT_DIR.'/lib/func/site.lib.php');
+        
+        // 테마선택 후 후크
+        add_event(
+            'adm_theme_update',
+            'kr\bartnet\builder\after_theme_update',
+            G5_HOOK_DEFAULT_PRIORITY
+        );
+        
+    // ntk 테마가 아니면 리턴
+    } else {
+        return;
+    }
+}
+
 //===========================================================================
 // 네임스페이스 단축
 //===========================================================================
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 
+
+
 //===========================================================================
 // 디버그모드 or 릴리즈 모드
 //===========================================================================
 //디버그모드(true), 릴리즈모드(false)
-define('BT_DEBUG', false);
+define('BT_DEBUG', true);
 
 if(BT_DEBUG){
     ini_set('display_errors', '1');
-    error_reporting(E_ALL);
+    //error_reporting(E_ALL) // 그누보드 common.php 에 따르기로 해서 주석처리
 }else{
     ini_set('display_errors', '0');
 }
-
 
 //===========================================================================
 // 상수정의
@@ -31,8 +58,6 @@ define('BT_PREFIX', 'bt_');
 
 define('BT_NAME', 'NTK 빌더');
 
-//BART 빌더 경로
-define('BT_DIR', 'bart');
 define('BT_PATH', G5_PATH.'/theme/'.BT_DIR);
 define('BT_URL', G5_URL.'/theme/'.BT_DIR);
 
@@ -85,13 +110,6 @@ function bt_check_theme(){
         exit;
     }
 }
-
-//빌더를 사용하지 않고 있으면 리턴
-if(basename(G5_THEME_PATH)!=BT_DIR){
-    return;
-}
-
-
 
 //===========================================================================
 // 기본 함수 로드
@@ -167,7 +185,11 @@ if(bt\isval($mtype) && bt\isval($mid)){
 	}
 }
 
-$bt['curpath'] = $btmenu->getPath($bt['curmenu']['bm_idx']);
+if (bt\isval($bt['curmenu']['bm_idx'])) {
+    $bt['curpath'] = $btmenu->getPath($bt['curmenu']['bm_idx']);
+} else {
+    $bt['curpath'] = array();
+}
 
 $cur_title = "";
 //$cur_maintitle = "";
@@ -175,7 +197,7 @@ $cur_subtitle = "";
 $cur_keyword = "";
 $cur_desc = "";
 
-if(isset($bt['curmenu'])){
+if(isset($bt['curmenu']['bm_name'])){
     $cur_title = $bt['curmenu']['bm_name'];
     //$cur_maintitle = $cur_title;
     $cur_subtitle = $bt['curmenu']['bm_subtitle'];
@@ -227,3 +249,6 @@ EOT;
 register_shutdown_function('kr\bartnet\builder\BShutdownScript::execute');
 
 if($bo_table) $pg_id = $bo_table;
+
+
+

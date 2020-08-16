@@ -7,6 +7,25 @@ use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 
 /**
+* @desc 테마 적용 후 처리 (기본설정에 모바일항목 비는것 방지)
+**/
+function after_theme_update() {
+    global $g5;
+    
+    $sql = "UPDATE {$g5['config_table']} SET
+        cf_mobile_member_skin = 'basic',
+        cf_mobile_new_skin = 'basic',
+        cf_mobile_search_skin = 'basic',
+        cf_mobile_connect_skin = 'basic',
+        cf_mobile_faq_skin = 'basic'";
+    sql_query($sql);
+    
+    $sql = "UPDATE {$g5['qa_config_table']} SET qa_mobile_skin='basic'";
+    sql_query($sql);
+}
+
+
+/**
 * @bref 사이트메뉴 출력 (스킨에서 사이드를 직접 꾸밀때 사용함: 기본적으로는 사용하지 않음)
 * @param string $skin 스킨
 * @param int $depth 출력 깊이(0 부터시작)
@@ -221,22 +240,18 @@ function get_view_image($contents)
 
 //위젯컨테이너
 function show_widgets($skindir, $pg_id, $wg_id){
-    //include_once(BT_LIB_PATH.'/class/builder/widgets.php');
     
-    $search = BT_PATH;
+    $search = str_replace('/', DS, BT_PATH);
     
     if($skindir == 'wpage' || $skindir == 'page' || $skindir == 'mpage'){
         $wg_skindir = $skindir;
     }else{
-        $wg_skindir = str_replace(DS, "^", trim(str_replace($search, "", dirname($skindir)), "/"));
+        $wg_skindir = str_replace(DS, "^", trim(str_replace($search, "", dirname($skindir)), DS));
     }
     
     $w = btb\BWidgets::getInstance();
     $w->showWidgetList($wg_skindir, $pg_id, $wg_id);
 }
-
-
-
 
 /**
 * @bref 메뉴를 ul, li 태그로 변환해 준다
@@ -336,7 +351,7 @@ function get_menu_tag($menu, $cur_idx='', $active_tag='a', $is_showicon=false, $
         }
 
         //태그정리
-        $str .= '<li'.$lcls.'>'.$pre_a.'<a'.$acls.' href="'.$alink.'" target="'.$node['bm_target'].'">'.$icon.$node['bm_name'].'</a>';
+        $str .= '<li'.$lcls.'>'.$pre_a.'<a'.$acls.' href="'.url($alink).'" target="'.$node['bm_target'].'">'.$icon.$node['bm_name'].'</a>';
         $str .= $sub_str;
         $str .= '</li>'.PHP_EOL;
     }        
@@ -844,4 +859,27 @@ function colorformat($color, $default=''){
         return '#'.$color;
     }
     return $color;
+}
+
+/**
+* @desc URL 만들기 (짧은주소 가능하도록)
+* @param string url
+* @return string
+**/
+function url($url) {
+    global $config;
+    if ($config['cf_bbs_rewrite'] == '0') return $url;
+    
+    if (preg_match('~(?:index.php\?)?mtype=([0-9a-z_]+)&mid=([0-9a-z_]+)(.+)?~is', $url, $mat)) {
+        $url = str_replace($mat[0], $mat[1].'/'.$mat[2], $url);
+        if (isset($mat[3])) {
+            $url .= '?'.trim($mat[3], '&');
+        }
+        return $url;
+
+    } else if (preg_match('~/bbs/board.php\?bo_table=([0-9a-z_]+)$~is', $url, $mat)) {
+        return str_replace($mat[0], '/'.$mat[1], $url);
+    }
+    
+    return get_pretty_url($url);
 }

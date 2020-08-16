@@ -2,6 +2,7 @@
 if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 use \kr\bartnet as bt;
+use \kr\bartnet\builder as btb;
 
 include(BT_SKIN_PATH.'/frame/'.$frame_skin.'/tail.skin.php');
 
