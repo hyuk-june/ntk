@@ -5,6 +5,7 @@ use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 use kr\bartnet\board as btbo;
 
+
 add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'].'/write.sub.skin.css" />');
 ?>
     <div class="bo-basic-write">
@@ -68,7 +69,6 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
             </div>
         </div>
 <?php } ?>
-        
     
         <div class="form-group row">
             <label for="wr_subject" class="col-form-label col-form-label-sm col-sm-2">제목</label>
@@ -152,11 +152,10 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['write'
         <?php } ?>
         
     </div>
-    
-    
+    (<?php echo btb\url2("./board.php?bo_table=".$bo_table)?>)
     <div class="text-center">
         <input type="submit" value="작성완료" id="btn_submit" accesskey="s" class="btn btn-danger">
-        <a href="./board.php?bo_table=<?php echo $bo_table ?>" class="btn btn-outline-dark">취소</a>
+        <a href="<?php echo btb\url2("./board.php?bo_table=".$bo_table)?>" class="btn btn-outline-dark">취소</a>
     </div>
     
     <script type="text/javascript">

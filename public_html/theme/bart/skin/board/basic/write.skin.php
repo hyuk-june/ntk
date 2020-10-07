@@ -24,12 +24,11 @@ $use_point_down = isset($bcfg['use_point_down']) ? true : false;
 echo btb\show_widgets(__FILE__, $bo_table, "board_top");
 ?>
 
-
 <section id="bo_w" class="bt-board mt-3 p-1 p-sm-0">
     <h2 id="container_title"><?php echo $g5['title'] ?></h2>
 
     <!-- 게시물 작성/수정 시작 { -->
-    <form name="fwrite" id="fwrite" action="<?php echo $action_url ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
+    <form name="fwrite" id="fwrite" action="<?php echo btb\url($action_url) ?>" onsubmit="return fwrite_submit(this);" method="post" enctype="multipart/form-data" autocomplete="off">
     <input type="hidden" name="uid" value="<?php echo get_uniqid(); ?>">
     <input type="hidden" name="w" value="<?php echo $w ?>">
     <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">

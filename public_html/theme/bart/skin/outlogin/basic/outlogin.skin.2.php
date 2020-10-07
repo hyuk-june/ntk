@@ -4,6 +4,7 @@ if(!defined("_GNUBOARD_")) exit("Access Denied");
 use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 
+
 global $wcfg;
 
 add_stylesheet('<link rel="stylesheet" href="'.$outlogin_skin_url.'/style.css">', 0);
@@ -52,7 +53,7 @@ $acnt = sql_num_rows($aresult);
                 </a>
             </li>
             <li>
-                <a href="<?php echo G5_URL?>/index.php?mtype=wpage&mid=<?php echo $wcfg['mypage_mid']?>">
+                <a href="<?php echo btb\url(G5_URL.'/index.php?mtype=wpage&mid='.$wcfg['mypage_mid'])?>">
                     <i class="fa fa-address-card"></i>
                     MyPage
                 </a>
@@ -76,7 +77,7 @@ $acnt = sql_num_rows($aresult);
             </div>
         </div>
         <div class="buttons">
-            <?php if ($is_admin == 'super' || $is_auth) {  ?><a href="<?php echo G5_ADMIN_URL ?>">관리자 모드</a><span class="spl">|</span><?php }  ?>
+            <?php if ($is_admin == 'super' || $is_auth) {  ?><a href="<?php echo G5_ADMIN_URL ?>/">관리자 모드</a><span class="spl">|</span><?php }  ?>
             <a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=register_form.php">정보수정</a>
             <span class="spl">|</span>
             <a href="<?php echo G5_BBS_URL ?>/logout.php">로그아웃</a>

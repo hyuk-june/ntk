@@ -867,8 +867,15 @@ function colorformat($color, $default=''){
 * @return string
 **/
 function url($url) {
-    global $config;
+    global $config, $g5_path;
     if ($config['cf_bbs_rewrite'] == '0') return $url;
+
+    $url = bt\str_trim($url, $g5_path['url']);
+    
+    if (preg_match('~^((?:\.\.?/)+)(.*)~', $url, $mat)) {
+        $url = '/'.basename(realpath($mat[1]));
+        if (trim($mat[2])!=='') $url .= '/'.$mat[2];
+    }
     
     if (preg_match('~(?:index.php\?)?mtype=([0-9a-z_]+)&mid=([0-9a-z_]+)(.+)?~is', $url, $mat)) {
         $url = str_replace($mat[0], $mat[1].'/'.$mat[2], $url);
@@ -879,7 +886,9 @@ function url($url) {
 
     } else if (preg_match('~/bbs/board.php\?bo_table=([0-9a-z_]+)$~is', $url, $mat)) {
         return str_replace($mat[0], '/'.$mat[1], $url);
+    } else if (preg_match('~/bbs/write.php\?(.*)~is', $url, $mat)) {
+        return str_replace('bbs/write?'.$mat[1]);
     }
     
-    return get_pretty_url($url);
+    return $url;
 }

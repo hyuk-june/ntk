@@ -103,7 +103,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
     
     <div id="bo_vc_w">
     
-        <form name="fviewcomment" action="./write_comment_update.php" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
+        <form name="fviewcomment" action="<?php echo btb\url('./write_comment_update.php')?>" onsubmit="return fviewcomment_submit(this);" method="post" autocomplete="off">
         <input type="hidden" name="w" value="<?php echo $w ?>" id="w">
         <input type="hidden" name="bo_table" value="<?php echo $bo_table ?>">
         <input type="hidden" name="wr_id" value="<?php echo $wr_id ?>">
