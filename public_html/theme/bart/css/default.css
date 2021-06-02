@@ -18,7 +18,7 @@ html, body{width:100%; background:#fff;}
 html{font-size: 13px;}
 body{font-size: 1rem;}
 
-p{margin-bottom:0 !important;}
+/*p{margin-bottom:0 !important;}*/
 
 /* 크롬 focus시 파란테두리 없애기 */
 *:focus { outline:none !important; }
@@ -55,9 +55,10 @@ img{max-width:100%;}
 
 /* 위젯 컨테이너 */
 .bt-widget-container{ box-sizing: border-box; width:100%; /*overflow-x:hidden;*/}
-.bt-widget-container > .control-header{display:none; background: #ff6e33; border:1px solid #555; text-align:right;}
+.bt-widget-container > .control-header{display:none; background-color: #485461;
+  background-image: linear-gradient(to bottom, #485461 0%, #28313b 74%); border:1px solid #555; text-align:right;}
 .bt-widget-container > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}
-.bt-widget-container.edit{border:1px solid blue;}
+.bt-widget-container.edit{border:1px dashed blue;}
 .bt-widget-container.edit > .control-header{display:flex;}
 .bt-widget-container.edit .widget-list{padding:.2rem;}
 
@@ -65,7 +66,9 @@ img{max-width:100%;}
 .bt-widget > .control-header > i{color:#fff; cursor:pointer; border:1px solid #fff; padding:2px 4px; margin:2px;}
 .bt-widget.edit > .control-header{display:flex;}
 
-.bt-frame.edit{border:4px solid #f00;}
+.bt-frame.edit{border:4px solid #000; position: relative;}
+.bt-frame.edit::after { content: \00a0; display: block; position: absolute; top: 0; right: 0; bottom: 0; left: 0; background-color: rgba(0,0,0,0.5); z-index: 1;}
+
 
 /* 버튼 컬러 */
 .btn.btn-black{
@@ -166,7 +169,7 @@ input, textarea, button, .btn,
 /************************************************
 * Gnuboard override
 ************************************************/
-.btn, a.btn, button.btn{/*font-size:1em !important;*/ line-height: 1.5; height: auto; font-weight:bold; border:inherit; padding: .375rem .75rem;}
+.btn, a.btn, button.btn{font-size:1em !important; line-height: 1.5; height: auto; font-weight:bold; border:inherit; padding: .375rem .75rem;}
 
 #bo_w .btn_submit,
 #bo_w .btn_cancel,
@@ -187,3 +190,7 @@ a.btn.btn-sm, .btn.btn-sm{
 }
 
 .row-wrap{position: relative;}
+
+.box-shadow {
+    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.05); 
+}

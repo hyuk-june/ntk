@@ -52,7 +52,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <?php if($view['email'] || $view['hp']) { ?>
     <section class="mb-2 border-bottom">
         <h2 class="d-none">연락처</h2>
-        <dl class="d-flex">
+        <dl class="flex">
             <?php if($view['email']) { ?>
             <dt class="col-sm-2 p-2">이메일</dt>
             <dd class="col-sm-4 p-2"><?php echo $view['email']; ?></dd>
@@ -66,18 +66,18 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <?php } ?>
 
     <!-- 게시물 상단 버튼 시작 { -->
-    <div class="d-flex justify-content-between mb-2">
+    <div class="flex justify-between mb-2">
         <?php
         ob_start();
          ?>
         <?php if ($prev_href || $next_href) { ?>
-        <ul class="d-flex">
+        <ul class="flex">
             <?php if ($prev_href) { ?><li class="mr-1"><a href="<?php echo $prev_href ?>" class="btn btn-sm btn-dark">이전글</a></li><?php } ?>
             <?php if ($next_href) { ?><li><a href="<?php echo $next_href ?>" class="btn btn-sm btn-dark">다음글</a></li><?php } ?>
         </ul>
         <?php } ?>
 
-        <ul class="d-flex">
+        <ul class="flex">
             <?php if ($update_href) { ?><li><a href="<?php echo $update_href ?>" class="btn btn-sm btn-dark mr-1">수정</a></li><?php } ?>
             <?php if ($delete_href) { ?><li><a href="<?php echo $delete_href ?>" class="btn btn-sm btn-dark mr-1" onclick="del(this.href); return false;">삭제</a></li><?php } ?>
             <li><a href="<?php echo $list_href ?>" class="btn btn-sm btn-dark mr-1">목록</a></li>
@@ -164,7 +164,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <?php } ?>
 
     <!-- 링크 버튼 시작 { -->
-    <div class="d-flex justify-content-between mb-2">
+    <div class="flex justify-between mb-2">
         <?php echo $link_buttons ?>
     </div>
     <!-- } 링크 버튼 끝 -->

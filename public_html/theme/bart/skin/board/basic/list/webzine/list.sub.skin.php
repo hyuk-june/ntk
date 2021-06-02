@@ -83,7 +83,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
         
         <!-- 모바일용 카테고리 -->
         <div id="bo_cate_m" class="category dropdown d-sm-none mb-2">
-            <button class="btn btn-default dropdown-toggle d-block" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <button class="btn btn-default dropdown-toggle block" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 카테고리
                 <span class="caret"></span>
             </button>
@@ -258,7 +258,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
         
 
     <?php if ($list_href || $is_checkbox || $write_href) { ?>
-        <div class="d-flex mt-2 <?php echo ($is_checkbox) ? 'justify-content-between' : 'justify-content-end'?>">
+        <div class="flex mt-2 <?php echo ($is_checkbox) ? 'justify-between' : 'justify-end'?>">
             <?php if ($is_checkbox) { ?>
             <div>
                 <ul class="btn-bo-adm d-none d-sm-flex">
@@ -269,7 +269,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['list']
                     <li><a href="#" onclick="Bt.board.openConfig('<?php echo $bo_table?>');" class="btn btn-danger"><i class="fa fa-cogs"></i><span class="d-none d-sm-inline">&nbsp;기타설정</span></a></li>
                 </ul>
                 
-                <div class="dropdown d-block d-sm-none">
+                <div class="dropdown block d-sm-none">
                     <button class="btn btn-secondary dropdown-toggle" type="button" id="board_buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fa fa-cog"></i>
                         Control

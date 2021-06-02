@@ -23,15 +23,15 @@ $sty_li = array();
 $sty_txt = array();
 $width = 'auto';
 
-$cls_ul[] = 'd-flex flex-wrap';
+$cls_ul[] = 'flex flex-wrap';
 
 //박스 정렬
 if($wcfg['flex_align']=='left'){
-    $cls_ul[] = 'justify-content-start';
+    $cls_ul[] = 'justify-start';
 }else if($wcfg['flex_align']=='right'){
-    $cls_ul[] = 'justify-content-end';
+    $cls_ul[] = 'justify-end';
 }else{
-    $cls_ul[] = 'justify-content-between';
+    $cls_ul[] = 'justify-between';
     $width = (round(100 / count($wcfg['url']), 4)).'%';
 }
 

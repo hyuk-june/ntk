@@ -53,9 +53,9 @@ if($config['cf_add_meta'])
     echo $config['cf_add_meta'].PHP_EOL;
 ?>
 <?php include_once(G5_THEME_PATH.'/seo.php');?>
-<link rel="stylesheet" href="<?php echo G5_JS_URL ?>/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="<?php echo G5_CSS_URL ?>/font-awesome/css/fontawesome.min.css">
 <link rel="stylesheet" type="text/css" href="<?php echo G5_CSS_URL?>/default.css" />
-<link rel="stylesheet" href="//stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+<link rel="stylesheet" href="<?php echo G5_THEME_CSS_URL?>/tailwindcss/dist/tailwind.css">
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/default.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/colorset.css" />
 <link rel="stylesheet" type="text/css" href="<?php echo G5_THEME_CSS_URL?>/animate.css" />

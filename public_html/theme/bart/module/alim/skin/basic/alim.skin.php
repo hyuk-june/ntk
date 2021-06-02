@@ -109,7 +109,7 @@ ob_start();
         	</ul>
         </div>
         
-        <div class="dropdown d-block d-sm-none mb-2">
+        <div class="dropdown block d-sm-none mb-2">
             <button class="btn btn-info btn-sm dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             알림관리
             <span class="caret"></span>

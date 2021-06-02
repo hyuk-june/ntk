@@ -20,8 +20,8 @@ class BWidgets{
         
         echo '<div class="bt-widget-container">';
         if($is_admin){
-            echo '<div class="control-header justify-content-between px-1">'.PHP_EOL;
-            echo '<span class="text-light">위젯컨테이너</span>'.PHP_EOL;
+            echo '<div class="control-header justify-between px-1">'.PHP_EOL;
+            echo '<span class="text-white">위젯컨테이너</span>'.PHP_EOL;
             echo '<i class="fa fa-plus" data-wg_skindir="'.$wg_skindir.'" data-wp_id="'.$pg_id.'" data-wg_id="'.$wg_id.'"></i>'.PHP_EOL;
             echo '</div>'.PHP_EOL;
         }
@@ -99,8 +99,8 @@ HEREDOC;
         
         //관리자패널
         if($is_admin){
-            echo '<div class="control-header justify-content-between px-1">'.PHP_EOL;
-                echo '<span class="text-light">'.$wcfg["wg_name"].'</span>'.PHP_EOL;
+            echo '<div class="control-header justify-between px-1">'.PHP_EOL;
+                echo '<span class="text-white">'.$wcfg["wg_name"].'</span>'.PHP_EOL;
                 echo '<i class="fa fa-cog" data-wg_idx="'.$wcfg["wg_idx"].'"></i>'.PHP_EOL;
             echo '</div>'.PHP_EOL;
         

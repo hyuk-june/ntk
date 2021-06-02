@@ -23,7 +23,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
     <?php if( count($faq_master_list) ){?>
     <nav class="cate-wrap mb-2">
         <h2 class="d-none">자주하시는질문 분류</h2>
-        <ul class="cate-list d-flex flex-wrap">
+        <ul class="cate-list flex flex-wrap">
             <?php
             foreach( $faq_master_list as $v ){
                 $category_msg = '';
@@ -58,7 +58,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
                 ?>
                 <div class="card">
                     <div class="card-header" id="question_<?php echo $i?>">
-                        <h5 class="mb-0 d-flex" data-toggle="collapse" data-target="#answer_<?php echo $i?>" aria-expanded="true" aria-controls="collapseOne">
+                        <h5 class="mb-0 flex" data-toggle="collapse" data-target="#answer_<?php echo $i?>" aria-expanded="true" aria-controls="collapseOne">
                             <span class="tit-bg align-middle font-size-4 bg-danger">Q</span>
                             <div class="question pl-5 font-size-2 font-weight-normal"><?php echo conv_content($v['fa_subject'], 1); ?></div>
                         </h5>
@@ -104,7 +104,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$faq_skin_url.'/style.css">', 0);
     <div id="faq_timg" class="faq_img"><img src="<?php echo $timg_src?>" alt=""></div>
     <?php }?>
 
-    <form name="faq_search_form" method="get" class="d-flex justify-content-center row">
+    <form name="faq_search_form" method="get" class="flex justify-center row">
         <div class="input-group col-sm-3">
             <input type="hidden" name="fm_id" value="<?php echo $fm_id;?>">
             <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>

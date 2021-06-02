@@ -3,51 +3,6 @@ if (!defined('_GNUBOARD_')) exit; // 개별 페이지 접근 불가
 
 // BART 빌더 경로
 define('BT_DIR', 'bart');
-
-// 빌더를 사용하지 않고 있으면
-if(basename(G5_THEME_PATH)!=BT_DIR){
-    // ntk테마로 설정할때
-    if (
-        basename($_SERVER["SCRIPT_FILENAME"]) == 'theme_update.php' 
-        && $_POST["theme"] == BT_DIR
-    ) {
-        include_once(BT_DIR.'/lib/func/cmd.lib.php');
-        include_once(BT_DIR.'/lib/func/site.lib.php');
-        
-        // 테마선택 후 후크
-        add_event(
-            'adm_theme_update',
-            'kr\bartnet\builder\after_theme_update',
-            G5_HOOK_DEFAULT_PRIORITY
-        );
-        
-    // ntk 테마가 아니면 리턴
-    } else {
-        return;
-    }
-}
-
-//===========================================================================
-// 네임스페이스 단축
-//===========================================================================
-use kr\bartnet as bt;
-use kr\bartnet\builder as btb;
-
-
-
-//===========================================================================
-// 디버그모드 or 릴리즈 모드
-//===========================================================================
-//디버그모드(true), 릴리즈모드(false)
-define('BT_DEBUG', true);
-
-if(BT_DEBUG){
-    ini_set('display_errors', '1');
-    //error_reporting(E_ALL) // 그누보드 common.php 에 따르기로 해서 주석처리
-}else{
-    ini_set('display_errors', '0');
-}
-
 //===========================================================================
 // 상수정의
 //===========================================================================
@@ -98,6 +53,52 @@ define('BT_SKIN_URL', BT_URL.'/'.BT_SKIN_DIR);
 define('BT_DATA_DIR', 'bart');
 define('BT_DATA_PATH', G5_DATA_PATH.'/'.BT_DATA_DIR);
 define('BT_DATA_URL', G5_DATA_URL.'/'.BT_DATA_DIR);
+
+// 빌더를 사용하지 않고 있으면
+if(basename(G5_THEME_PATH)!=BT_DIR){
+    // ntk테마로 설정할때
+    if (
+        basename($_SERVER["SCRIPT_FILENAME"]) == 'theme_update.php' 
+        && $_POST["theme"] == BT_DIR
+    ) {
+        include_once(BT_DIR.'/lib/func/cmd.lib.php');
+        include_once(BT_DIR.'/lib/func/site.lib.php');
+        
+        // 테마선택 후 후크
+        add_event(
+            'adm_theme_update',
+            'kr\bartnet\builder\after_theme_update',
+            G5_HOOK_DEFAULT_PRIORITY
+        );
+        
+    // ntk 테마가 아니면 리턴
+    } else {
+        return;
+    }
+}
+
+//===========================================================================
+// 네임스페이스 단축
+//===========================================================================
+use kr\bartnet as bt;
+use kr\bartnet\builder as btb;
+
+
+
+//===========================================================================
+// 디버그모드 or 릴리즈 모드
+//===========================================================================
+//디버그모드(true), 릴리즈모드(false)
+define('BT_DEBUG', true);
+
+if(BT_DEBUG){
+    ini_set('display_errors', '1');
+    //error_reporting(E_ALL) // 그누보드 common.php 에 따르기로 해서 주석처리
+}else{
+    ini_set('display_errors', '0');
+}
+
+
 
 
 //테마를 빌더로 선택했는지 체크
@@ -210,7 +211,6 @@ if(trim($cur_title)=='' && $bo_table){
 //현재위치 (BreadCrumb 를 위한)
 $cur_path_list = bt\builder\BMenu::getPathList($bt['curpath']);
 
-
 //===========================================================================
 // 기본 프레임 및 레이아웃 세팅
 //===========================================================================
@@ -250,5 +250,11 @@ register_shutdown_function('kr\bartnet\builder\BShutdownScript::execute');
 
 if($bo_table) $pg_id = $bo_table;
 
+
+//===========================================================================
+// 그누보드 기본세팅 변경
+//===========================================================================
+// 에디터 세로크기
+$editor_height = '500px';
 
 

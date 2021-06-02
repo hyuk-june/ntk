@@ -12,7 +12,7 @@ $list = file("icon_list.txt");
 
 include_once(G5_PATH.'/head.sub.php');
 
-//add_stylesheet('<link rel="stylesheet" type="text/css" href="'.G5_THEME_CSS_URL.'/font-awesome.min.css" />');
+add_stylesheet('<link rel="stylesheet" type="text/css" href="'.G5_THEME_CSS_URL.'/css/font-awesome/fontawesome.min.css" />');
 
 ?>
 
@@ -45,7 +45,8 @@ li a span{font-size:11px;}
 <ul>
 <?php foreach($list as $item){?>
     <li>
-        <a href="#" class="icon" data-icon="<?php echo $item?>" title="<?php echo $item?>"><i class="fa fa-<?php echo $item?>"></i>  <span class=""><?php echo 'fa-'.$item?></span></a>
+        <!-- <a href="#" class="icon" data-icon="<?php echo $item?>" title="<?php echo $item?>"><i class="fa fa-<?php echo $item?>"></i>  <span class=""><?php echo 'fa-'.$item?></span></a> -->
+        <a href="#" class="icon" data-icon="<?php echo $item?>" title="<?php echo $item?>"><i class="<?php echo $item?>"></i>  <span class=""><?php echo $item?></span></a>
     </li>
 <?php }?>
 </ul>

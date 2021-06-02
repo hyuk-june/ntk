@@ -48,7 +48,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$popular_skin_url.'/style.css">',
     <div class="title title-underline">
         <span class="title-underline-focus enf">인기검색어</span>
     </div>
-    <div class="d-flex">
+    <div class="flex">
         <ul>
         <?php for ($i=0; $i<count($list); $i++) {  ?>
             <li><a href="<?php echo G5_BBS_URL ?>/search.php?sfl=wr_subject&amp;sop=and&amp;stx=<?php echo urlencode($list[$i]['pp_word']) ?>"><?php echo get_text($list[$i]['pp_word']); ?></a></li>

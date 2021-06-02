@@ -123,7 +123,7 @@ function get_paging($write_pages, $cur_page, $total_page, $url, $add="")
     }
 
     if ($str)
-        return '<div class="pagination-wrap d-flex justify-content-center"><ul class="pagination">'.$str.'</ul></div>';
+        return '<div class="pagination-wrap flex justify-center"><ul class="pagination">'.$str.'</ul></div>';
     else
         return "";
 }

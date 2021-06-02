@@ -26,7 +26,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
 
     <!-- 전체게시물 검색 시작 { -->
     
-    <form name="fnew" method="get" class="d-flex justify-content-center border mb-3">
+    <form name="fnew" method="get" class="flex justify-center border mb-3">
         <div class="row col-sm-10 p-2 mb-0">
             <div class="col-6 col-sm-3 mb-2 mb-sm-0">
                 <select name="gr_id" id="gr_id" class="form-control form-control-sm">
@@ -81,7 +81,7 @@ for ($i=0; $row=sql_fetch_array($result); $i++) {
                 <div class="list-cell list-cell-writer">이름</div>
                 <div class="list-cell list-cell-datetime">일시</div>
             </div>
-            <div class="list-row d-block d-sm-none">
+            <div class="list-row block d-sm-none">
                 <div class="list-cell text-center">새 글</div>
             </div>
         </div>

@@ -18,7 +18,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <!-- 카테고리 시작 { -->
     <nav class="mb-2">
         <h2 class="d-none"><?php echo $qaconfig['qa_title'] ?> 카테고리</h2>
-        <ul id="bo_cate" class="d-flex flex-wrap">
+        <ul id="bo_cate" class="flex flex-wrap">
             <?php echo $category_option ?>
         </ul>
     </nav>
@@ -26,14 +26,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
     <?php } ?>
 
      <!-- 게시판 페이지 정보 및 버튼 시작 { -->
-    <div class="d-flex justify-content-between mb-2">
+    <div class="flex justify-between mb-2">
         <div>
             <span>Total <?php echo number_format($total_count) ?>건</span>
             <?php echo $page ?> 페이지
         </div>
 
         <?php if ($admin_href || $write_href) { ?>
-        <ul class="d-flex justify-content-end">
+        <ul class="flex justify-end">
             <?php if ($admin_href) { ?><li><a href="<?php echo $admin_href ?>" class="btn btn-sm btn-danger mr-1">관리자</a></li><?php } ?>
             <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn btn-sm btn-primary">문의등록</a></li><?php } ?>
         </ul>
@@ -98,14 +98,14 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
         </div>
     
 
-        <div class="d-flex justify-content-between">
+        <div class="flex justify-between">
             <?php if ($is_checkbox) { ?>
             <ul>
                 <li><input type="submit" name="btn_submit" class="btn btn-sm btn-danger" value="선택삭제" onclick="document.pressed=this.value"></li>
             </ul>
             <?php } ?>
 
-            <ul class="d-flex">
+            <ul class="flex">
                 <?php if ($list_href) { ?><li class="mr-1"><a href="<?php echo $list_href ?>" class="btn btn-sm btn-dark">목록</a></li><?php } ?>
                 <?php if ($write_href) { ?><li><a href="<?php echo $write_href ?>" class="btn btn-sm btn-primary">문의등록</a></li><?php } ?>
             </ul>
@@ -127,7 +127,7 @@ add_stylesheet('<link rel="stylesheet" href="'.$qa_skin_url.'/style.css">', 0);
 
     <!-- 게시판 검색 시작 { -->
 
-    <form name="fsearch" method="get" class="d-flex justify-content-center">
+    <form name="fsearch" method="get" class="flex justify-center">
         <div class="input-group input-group-sm col-sm-3">
             <input type="hidden" name="sca" value="<?php echo $sca ?>">
             <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>

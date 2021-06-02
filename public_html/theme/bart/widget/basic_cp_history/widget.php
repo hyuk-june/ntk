@@ -33,11 +33,11 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$widget_url.'/wid
 <div class="widget-basic-cp-history">
     <ul class="list-year py-2">
 <?php foreach($list as $year => $yitem){?>
-        <li class="d-flex">
+        <li class="flex">
             <div class="mr-4 my-3"><span class="year"><?php echo $year?>.</span></div>
             <ul class="list-month w-100">
     <?php foreach($yitem as $month => $mitem){?>
-                <li class="d-flex py-3">
+                <li class="flex py-3">
                     <div class="mr-4"><span class="month"><?php echo sprintf('%02d', $month)?></span></div>
                     <ul>
         <?php for($i=0; $i<count($mitem); $i++){?>

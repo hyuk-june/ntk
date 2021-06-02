@@ -13,7 +13,8 @@ use kr\bartnet as bt;
 use kr\bartnet\builder as btb;
 
 add_stylesheet('<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />');
-add_javascript('<script type="text/javascript" src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>');
+//add_javascript('<script type="text/javascript" src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>');
+add_javascript('<script type="text/javascript" src="'.$widget_url.'/js/jquery.bxslider.fix.js"></script>');
 ob_start();
 
 $vh_xs = bt\binstr($wcfg['vheight']['xs'], 200);
@@ -59,7 +60,7 @@ add_stylesheet($style);
 ?>
         <li>
             <div class="sv sv<?php echo $j?>">
-                <div class="container d-flex align-items-center">
+                <div class="container flex items-center">
                     <?php btb\show_widgets(__FILE__, $pg_id, "visual_inner".$j)?>
                 </div>
             </div>
@@ -70,7 +71,7 @@ add_stylesheet($style);
     <script type="text/javascript">
     $(document).ready(function(){
         var slider = $('.slider-visual').bxSlider({
-            auto: true,
+            auto: !get_cookie('widget-controller'),
             pager: false,
             controls:true,
             useCSS: false /* 이 부분이 없으면 한바퀴돌면 깜빡인다 (왜 그런지 모르겠음) */
@@ -78,6 +79,7 @@ add_stylesheet($style);
         
         $('#btn_widget_controller').click(function(){
             var ck = get_cookie('widget-controller');
+            console.log(ck)
             if(ck !== undefined && ck !== ''){
                 slider.stopAuto();
             }else{

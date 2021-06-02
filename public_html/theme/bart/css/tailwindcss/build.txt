@@ -1,0 +1,3 @@
+빌드명령어
+
+npx tailwindcss-cli@latest build ./src/tailwind.css -o ./dist/tailwind.css

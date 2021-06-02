@@ -684,7 +684,7 @@ function get_paging($write_pages, $cur_page, $total_page, $url, $add="")
     }
 
     if ($str){
-        return '<nav aria-label="Pagging" class="mx-auto my-3"><ul class="pagination justify-content-center">'.$str.'</ul></nav>';
+        return '<nav aria-label="Pagging" class="mx-auto my-3"><ul class="pagination justify-center">'.$str.'</ul></nav>';
     }else{
         return "";
     }

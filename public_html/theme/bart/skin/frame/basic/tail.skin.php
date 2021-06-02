@@ -14,7 +14,7 @@ add_stylesheet('<style type="text/css">.tail{background-color:'.$footer_bg.'; co
 
 
 <div class="bt-frame">
-    <div class="d-block d-sm-none">
+    <div class="block d-sm-none">
         <div class="container">
             <div class="row">
                 <div class="col-2 col-sm-4"></div>

@@ -180,7 +180,7 @@ var char_max = parseInt(<?php echo $comment_max ?>); // 최대
         
             <div class="panel-footer">
         
-                <div class="d-sm-flex justify-content-between">
+                <div class="d-sm-flex justify-between">
                     <div class="captcha-wrap">
                 <?php if ($is_guest) { ?>
                     <?php echo $captcha_html; ?>

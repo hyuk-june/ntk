@@ -18,7 +18,7 @@ $group_select .= '</select>';
         <form name="fsearch" class="form" onsubmit="return fsearch_submit(this);" method="get">
         <input type="hidden" name="srows" value="<?php echo $srows ?>">
 
-            <div class="form-row align-items-center">
+            <div class="form-row items-center">
                 <div class="col-6 col-sm-2 mb-2 mb-sm-0">
                     <?php echo $group_select ?>
                     <script>document.getElementById("gr_id").value = "<?php echo $gr_id ?>";</script>
@@ -51,7 +51,7 @@ $group_select .= '</select>';
                     </div>
                 </div>
                 <div class="col-12 col-sm-2">
-                    <button type="submit" class="btn btn-primary d-block w-100"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
+                    <button type="submit" class="btn btn-primary block w-100"><i class="fa fa-search" aria-hidden="true"></i> 검색</button>
                 </div>
             </div>
             

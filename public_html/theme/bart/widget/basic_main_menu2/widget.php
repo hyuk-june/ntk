@@ -46,6 +46,7 @@ if(bt\varset($wcfg['vertical'])=='1') $vborder = 'border-top: 1px solid '.$borde
 <link rel="stylesheet" type="text/css" href="<?php echo $widget_url?>/widget.css" />
 <style type="text/css">
 
+<?php echo $eid?> .gnb { position: relative; }
 <?php echo $eid?> .gnb .gnb-bar{background:<?php echo $bgcolor?>; <?php echo $vborder?>; }
 
 
@@ -88,7 +89,7 @@ if(bt\varset($wcfg['vertical'])=='1') $vborder = 'border-top: 1px solid '.$borde
 <?php echo $eid?> .gnb.on .wrap{background-color:<?php echo $s_bgcolor?>; display:block; border-width:1px; border-bottom:2px solid <?php echo $border_color?>;}
 
 /*서브메뉴*/
-<?php echo $eid?> .gnb .gnb-bar ul ul{display:none; height:100%; margin-top:-<?php echo $height?>px; padding:5px; padding-top:<?php echo $height+4?>px; bottom:0;}
+<?php echo $eid?> .gnb .gnb-bar ul ul{ display:none; height:100%; margin-top:-<?php echo $height?>px; padding:5px; padding-top:<?php echo $height+4?>px; bottom:0;}
 <?php echo $eid?> .gnb .gnb-bar ul ul li a{text-align:left; font-weight:normal; font-size:.9rem; padding:5px;}
 <?php echo $eid?> .gnb.on ul li >ul{display:block; opacity:1; width:100%; 
     box-shadow: 1px 0 0 0 <?php echo $border_color?>, 1px 0 0 0 <?php echo $border_color?> inset;
@@ -106,7 +107,6 @@ add_stylesheet($style);
 ?>
 
 <script type="text/javascript">
-<!--
 (function($){
     
     var eid = '<?php echo $eid?>';
@@ -140,15 +140,12 @@ add_stylesheet($style);
     });
     
 })(jQuery);
-
-
-//-->
 </script>
 
 <?php
 ob_start();
 ?>
-<ul class="d-flex">
+<ul class="flex">
     <?php if(bt\varset($wcfg['show_home'])=='1'){?>
     <li><a href="<?php echo G5_URL?>"<?php echo !bt\isval($bt['curmenu']['bm_idx']) ? ' class="current"':'';?>><i class="fa fa-home"></i> HOME</a></li>
 <?php }?>
@@ -163,11 +160,11 @@ ob_end_clean();
     <div class="gnb-bar">
         <div class="container">
         <?php if($wcfg['use_widget']){?>
-            <div class="row">
-                <div class="col-md-3">
+            <div class="flex">
+                <div class="w-3/12">
                     <?php btb\show_widgets(__FILE__, "", "menu_widget");?>
                 </div>
-                <div class="col-md-9">
+                <div class="w-9/12">
                     <?php echo $str?>
                 </div>
             </div>

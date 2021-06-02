@@ -12,8 +12,8 @@ $Q = "SELECT DISTINCT fm_dir FROM ".$bt['fmgr_table']." ORDER BY fm_dir DESC";
 $dirs = $bdb->fetchAll($Q);
 ?>
 
-<div id="fmgr" class="d-flex">
-    <header class="d-flex">
+<div id="fmgr" class="flex">
+    <header class="flex">
         <div class="mr-auto">
             <h1 class="font-size-3">파일매니저</h1>
         </div>
@@ -141,7 +141,7 @@ var _attachFile = function(){
             + '<p class="card-text font-weight-bold pb-1 mb-1 border-bottom">'
             + file.fm_name
             + '</p>'
-            + '<p class="d-flex p-1">'
+            + '<p class="flex p-1">'
             + '<a href="#" class="card-link btn-url mr-auto" data-url="' + file.fm_dir + '/' + file.fm_rname + '" data-name="' + file.fm_name + '" data-toggle="modal" data-target="#modal_url">URL 복사</a>'
             + '<a href="#" class="card-link btn-del" data-fm_idx="' + file.fm_idx + '">삭제</a>'
             + '</p>'

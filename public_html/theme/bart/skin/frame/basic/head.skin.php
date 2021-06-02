@@ -43,56 +43,70 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
 
 <div class="bt-frame">
 
-    <aside class="tnb d-none d-md-block">
+    <aside class="tnb hidden lg:block">
 	    <div class="container">
-            <?php if($is_admin){?>
-            <nav class="float-left">
-                <ul class="adm-menu">
-                    <li><a href="#" id="btn_favorite" title="즐겨찾기"><i class="fa fa-bookmark"></i></a></li>
-                </ul>
-            </nav>
-            <?php }?>
-            
-		    <nav class="float-right">
-			    <ul class="tnb-menu">
-		    <?php if($is_member){?>
-			    <?php if ($is_admin) {  ?>
-            	    <li><a href="<?php echo G5_ADMIN_URL ?>/"><i class="fa fa-cog"></i> 관리자</a></li>
-                <?php }  ?>
-            	    <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-edit"></i> 정보수정</a></li>
-				    <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
-                    <li class="dropdown">
-                        <a href="#" data-toggle="dropdown" id="tnb_dropdown_menu1" data-toggle="dropdown"><i class="fa fa-plus"></i> 추가메뉴</a>
-                        <ul class="dropdown-menu" aria-labelledby="tnb_dropdown_menu1">
-                            <li><a href="<?php echo G5_BBS_URL ?>/faq.php"><i class="fa fa-question"></i> FAQ</a></li>
-                            <li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><i class="fa fa-comment-o"></i> 1:1문의</a></li>
-                            <li><a href="<?php echo G5_URL?>/bbs/new.php"><i class="fa fa-plus-square"></i> 새글</a></li>
-                            <li><a href="<?php echo G5_URL?>/bbs/current_connect.php"><i class="fa fa-user"></i> 현재접속자</a></li>
-                        </ul>
-                    </li>
-		    <?php }else{?>
-				    <li><a href="<?php echo G5_URL?>/bbs/login.php"><i class="fa fa-sign-in"></i> 로그인</a></li>
-				    <li><a href="<?php echo G5_URL?>/bbs/register.php"><i class="fa fa-sign-in"></i> 회원가입</a></li>
-		    <?php }?>
-			    </ul>
-		    </nav>
+            <div class="flex justify-between">
+                <?php if($is_admin){?>
+                <nav>
+                    <ul class="adm-menu">
+                        <li><a href="#" id="btn_favorite" title="즐겨찾기"><i class="fa fa-bookmark"></i></a></li>
+                    </ul>
+                </nav>
+                <?php } else { ?>
+                <div></div>
+                <?php }?>
+                
+                <nav>
+                    <ul class="tnb-menu">
+                <?php if($is_member){?>
+                    <?php if ($is_admin) {  ?>
+                        <li><a href="<?php echo G5_ADMIN_URL ?>/"><i class="fa fa-cog"></i> 관리자</a></li>
+                    <?php }  ?>
+                        <li><a href="<?php echo G5_BBS_URL ?>/member_confirm.php?url=<?php echo G5_BBS_URL ?>/register_form.php"><i class="fa fa-edit"></i> 정보수정</a></li>
+                        <li><a href="<?php echo G5_BBS_URL ?>/logout.php"><i class="fa fa-power-off"></i> 로그아웃</a></li>
+                        <li>
+                            <div class="dropdown" data-show="false" data-trigger="click" data-z-index="100">
+                                <a href="#" id="tnb_dropdown_menu1" aria-expanded="true" aria-haspopup="true"><i class="fa fa-plus"></i> 추가메뉴</a>
+                                <ul class="py-1 origin-top-right right-0 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none" role="none">
+                                    <li><a href="<?php echo G5_BBS_URL ?>/faq.php"><i class="fa fa-question"></i> FAQ</a></li>
+                                    <li><a href="<?php echo G5_BBS_URL ?>/qalist.php"><i class="fa fa-comment-o"></i> 1:1문의</a></li>
+                                    <li><a href="<?php echo G5_URL?>/bbs/new.php"><i class="fa fa-plus-square"></i> 새글</a></li>
+                                    <li><a href="<?php echo G5_URL?>/bbs/current_connect.php"><i class="fa fa-user"></i> 현재접속자</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                <?php }else{?>
+                        <li><a href="<?php echo G5_URL?>/bbs/login.php"><i class="fa fa-sign-in"></i> 로그인</a></li>
+                        <li><a href="<?php echo G5_URL?>/bbs/register.php"><i class="fa fa-sign-in"></i> 회원가입</a></li>
+                <?php }?>
+                    </ul>
+                </nav>
+            </div>
 	    </div>
     </aside>
-
-    <header class="header d-none d-md-block">
+<style>
+#tnb_dropdown_menu1.active i {
+    transform: rotate(180deg);
+}
+</style>
+<script src="<?php echo BT_JS_URL?>/jquery.bart.js"></script>
+<script>
+$('.dropdown').dropdown();
+</script>
+    <header class="header hidden lg:block">
 	    <div class="container">
-            <div class="row">
-                <div class="col-md-4">
+            <div class="flex">
+                <div class="w-2/6">
                     <?php btb\show_widgets(__FILE__, "", "logo")?>
                     
 		            <!--<a class="logo" href="<?php echo G5_URL?>">
 			            <img src="<?php echo G5_THEME_URL?>/img/logo.png">
 		            </a>-->
                 </div>
-                <div class="col-md-4">
+                <div class="w-2/6">
                     <?php btb\show_widgets(__FILE__, "", "header_mid")?>
                 </div>
-                <div class="col-md-4">
+                <div class="w-2/6">
                     <?php btb\show_widgets(__FILE__, "", "header_right")?>
                 </div>
             </div>
@@ -102,13 +116,13 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
     <div class="menubar">
 	    
         <!-- 모바일 헤더 -->
-	    <div id="mobile_header" class="container d-block d-md-none">
-            <div class="d-flex justify-content-between">
+	    <div id="mobile_header" class="container block lg:hidden">
+            <div class="flex justify-between">
 			    <div id="mobile-logo">
                     <?php btb\show_widgets(__FILE__, "", "logo-m")?>
 			    </div>
 			    <div>
-                    <div class="d-flex align-items-center" style="height:100%;">
+                    <div class="flex items-center" style="height:100%;">
 				        <a href="#" id="btn_toggle_menu" class="btn btn-default">
 					        <i class="fa fa-bars"></i>
 				        </a>
@@ -119,7 +133,7 @@ html .jqueryslidemenu{height: 1%;} /*Holly Hack for IE7 and below*/
         <!-- //모바일 헤더 -->
 	    
 	    
-        <div class="d-none d-md-block">
+        <div class="hidden lg:block">
 	        <?php btb\show_widgets(__FILE__, "", "main_menu");?>
         </div>
         

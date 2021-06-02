@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+
+.form-input { @apply border-gray-300; }
+
+@tailwind utilities;

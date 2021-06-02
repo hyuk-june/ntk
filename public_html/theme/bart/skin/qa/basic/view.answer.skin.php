@@ -3,7 +3,7 @@ if (!defined("_GNUBOARD_")) exit; // 개별 페이지 접근 불가
 ?>
 
 <section class="qa-cmt">
-    <div class="d-flex justify-content-between mb-2">
+    <div class="flex justify-between mb-2">
         <h2>답변: <?php echo get_text($answer['qa_subject']); ?></h2>
         <div>
             <a href="<?php echo $rewrite_href; ?>" class="btn btn-sm btn-dark">추가질문</a>

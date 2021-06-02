@@ -67,7 +67,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
             for ($i=0; $i<count($view['file']); $i++) {
                 if (isset($view['file'][$i]['source']) && $view['file'][$i]['source'] && !$view['file'][$i]['view']) {
             ?>
-                <li class="d-flex flex-wrap">
+                <li class="flex flex-wrap">
                     <div class="d-inline-block d-sm-block mr-2">
                         <a href="<?php echo $view['file'][$i]['href'];?>" data-point="<?php echo $view['file'][$i]['point']?>" class="view_file_download">
                             <img src="<?php echo $board_skin_url ?>/img/icon_file.gif" alt="첨부">
@@ -157,7 +157,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
         <?php if ($is_signature) { ?><p><?php echo $signature ?></p><?php } ?>
 
         
-        <div class="d-flex justify-content-between">
+        <div class="flex justify-between">
             <div>
                 <!-- 스크랩 추천 비추천 시작 { -->
                 <?php if ($scrap_href || $good_href || $nogood_href) { ?>
@@ -207,10 +207,10 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
     
     
     <!-- 게시물 버튼 시작 { -->
-    <div class="view-btns-wrap d-flex <?php echo ($prev_href || $next_href) ? 'justify-content-between' : 'justify-content-end';?> mb-3">
+    <div class="view-btns-wrap flex <?php echo ($prev_href || $next_href) ? 'justify-between' : 'justify-end';?> mb-3">
     
         <?php if ($prev_href || $next_href) { ?>
-        <ul class="view-btns-navi d-flex">
+        <ul class="view-btns-navi flex">
             <?php if ($prev_href) { ?><li class="mr-1"><a href="<?php echo $prev_href ?>" class="btn btn-dark"><i class="fa fa-arrow-circle-left mr-sm-1"></i><span class="d-none d-sm-inline-block">이전글</span></a></li><?php } ?>
             <?php if ($next_href) { ?><li class="mr-1"><a href="<?php echo $next_href ?>" class="btn btn-dark"><i class="fa fa-arrow-circle-right mr-sm-1"></i><span class="d-none d-sm-inline-block">다음글</span></a></li><?php } ?>
             <?php if ($copy_href) { ?><li class="mr-1"><a href="<?php echo $copy_href ?>" class="btn btn-danger" onclick="board_move(this.href); return false;"><i class="fa fa-copy mr-1"></i><span class="d-none d-sm-inline-block">복사</span></a></li><?php } ?>
@@ -219,7 +219,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
         <?php } ?>
 
         <div>
-            <ul class="view-btns-ctrl d-none d-sm-flex justify-content-end">
+            <ul class="view-btns-ctrl d-none d-sm-flex justify-end">
                 <?php if ($update_href) { ?><li class="mr-1"><a href="<?php echo $update_href ?>" class="btn btn-dark"><i class="fa fa-edit mr-1"></i>수정</a></li><?php } ?>
                 <?php if ($delete_href) { ?><li class="mr-1"><a href="<?php echo $delete_href ?>" class="btn btn-dark" onclick="del(this.href); return false;"><i class="fa fa-trash-alt mr-1"></i>삭제</a></li><?php } ?>
                 <?php if ($search_href) { ?><li class="mr-1"><a href="<?php echo $search_href ?>" class="btn btn-dark"><i class="fa fa-search mr-1"></i>검색</a></li><?php } ?>
@@ -228,7 +228,7 @@ add_stylesheet('<link rel="stylesheet" type="text/css" href="'.$sub_urls['view']
                 <?php if ($write_href) { ?><li class="mr-1"><a href="<?php echo $write_href ?>" class="btn btn-dark"><i class="fa fa-pencil-alt mr-1"></i>글쓰기</a></li><?php } ?>
             </ul>
             
-            <div class="dropdown d-block d-sm-none">
+            <div class="dropdown block d-sm-none">
                 <button class="btn btn-secondary dropdown-toggle" type="button" id="board_buttons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <i class="fa fa-cog"></i>
                     Control
